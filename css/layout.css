@@ -96,11 +96,13 @@ input:checked + .slider:before {
 :root {
   --color1: #0a0b0b;
   --color2: #e4e7e7;
+  --color3: #111313;
 }
 
 body.light, html.light {
   --color1: #e4e7e7;
   --color2: #0a0b0b;
+  --color3: #eee;
 }
 
 

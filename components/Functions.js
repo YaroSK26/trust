@@ -9,31 +9,56 @@ import "../css/layout.css";
 
 
 const useFunctions = () => {
+  
+  //theme
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const { isSignedIn } = useAuth();
-  const router = useRouter();
-
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
-
+  //sheet open / close
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
   const openSheet = () => setIsSheetOpen(true);
   const closeSheet = () => setIsSheetOpen(false);
-
+  
   useEffect(() => {
     document.body.className = theme;
     document.documentElement.className = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
-
+  //redirect
+  const router = useRouter();
+  const { isSignedIn } = useAuth();
+  
   useEffect(() => {
     if (!isSignedIn) {
       router.push("/");
     }
   }, [isSignedIn, router]);
 
-  return { theme, toggleTheme, isSheetOpen, openSheet, closeSheet,isSignedIn };
+  //resizer
+  const [windowWidth, setWindowWidth] = useState(null);
+
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", updateWindowWidth);
+    updateWindowWidth();
+
+    return () => {
+      window.removeEventListener("resize", updateWindowWidth);
+    };
+  }, []);
+
+  return {
+    theme,
+    toggleTheme,
+    isSheetOpen,
+    openSheet,
+    closeSheet,
+    windowWidth,
+  };
 };
 
 export default useFunctions;

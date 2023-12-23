@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 
 const TestAPI = () => {
   const [quote, setQuote] = useState({
-    text: "Loading...",
-    author: "Loading...",
+    Verse: "Loading...",
   });
   useEffect(() => {
     const getQuote = async () => {

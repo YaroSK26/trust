@@ -2,6 +2,7 @@
 
 import Navbar from "../../components/NavBar";
 import useFunctions from "../../components/Functions";
+import Footer from "../../components/Footer";
 
 const Prayers = () => {
   const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
@@ -18,10 +19,11 @@ const Prayers = () => {
       />
 
       {!isSheetOpen && (
-        <div>
+        <div className="pt-20">
           <div className="text-[var(--color2)]">
             <p>Prayers</p>
           </div>
+          <Footer></Footer>
         </div>
       )}
     </div>

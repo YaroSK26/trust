@@ -2,10 +2,75 @@
 
 import Navbar from "../../components/NavBar";
 import useFunctions from "../../components/Functions";
+import { toast } from "react-hot-toast";
+import { withSwal } from "react-sweetalert2";
+import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import Footer from "../../components/Footer";
 
-const Contact = () => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
-    useFunctions();
+const Contact = ({ swal }) => {
+  const {
+    theme,
+    toggleTheme,
+    isSheetOpen,
+    openSheet,
+    closeSheet,
+    windowWidth,
+  } = useFunctions();
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs
+      .send(
+        "service_81tw9xw",
+        "template_m37okw1",
+        {
+          from_name: form.name,
+          to_name: "Jaroslav",
+          from_email: form.email,
+          to_email: "jaroba0@gmail.com",
+          message: form.message,
+        },
+        "ao9Pnvt-EA8-h9gBU"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          swal.fire({
+            title: "Thank you for your email",
+            text: "We will send you a feedback soon!",
+            icon: "success",
+          });
+
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+
+          toast.error("Something went wrong.");
+        }
+      );
+  };
 
   return (
     <div>
@@ -15,17 +80,68 @@ const Contact = () => {
         isSheetOpen={isSheetOpen}
         openSheet={openSheet}
         closeSheet={closeSheet}
+        windowWidth={windowWidth}
       />
 
       {!isSheetOpen && (
         <div>
-          <div className="text-[var(--color2)]">
-            <p>Contact</p>
+          <div className="text-[var(--color2)] flex  justify-center flex items-center gap-10   pt-28">
+            {windowWidth > 768 && (
+              <div>
+                <img
+                  src="contact.png"
+                  alt="The heart of man plans his way, but the LORD establishes his steps."
+                  className="w-72 rounded-sm  border-[var(--color2)] border"
+                />
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+              <h1 className="text-4xl text-center">Contact Us</h1>
+
+              <input
+                required
+                type="text"
+                name="name"
+                id="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                className="bg-transparent outline-none border-b-[var(--color2)] border p-1"
+              />
+              <input
+                required
+                type="email"
+                name="email"
+                id="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Enter your valid address"
+                className="bg-transparent outline-none border-b-[var(--color2)] border p-1"
+              />
+              <textarea
+                required
+                cols="30"
+                rows="8"
+                name="message"
+                id="message"
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Enter your message"
+                className="bg-transparent resize-none outline-none  border-b-[var(--color2)] border p-1 "
+              ></textarea>
+              <center>
+                <button className="button">
+                  {loading ? "Sending..." : "Send"}
+                </button>
+              </center>
+            </form>
           </div>
+          <Footer></Footer>
         </div>
       )}
     </div>
   );
 };
 
-export default Contact;
+export default withSwal(Contact);
