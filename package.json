@@ -12,6 +12,8 @@
     "@clerk/nextjs": "^4.28.1",
     "@emailjs/browser": "^3.11.0",
     "@radix-ui/react-dialog": "^1.0.5",
+    "@react-three/drei": "^9.92.6",
+    "@react-three/fiber": "^8.15.12",
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -25,6 +27,7 @@
     "react-tilt": "^1.0.2",
     "tailwind-merge": "^2.1.0",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.160.0",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
