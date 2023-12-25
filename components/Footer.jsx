@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <div className="mt-16 flex  justify-center items-center text-center  ">
       <footer
-        className=" text-center   w-[75vw] h-[110px]  flex justify-center flex-col items-center border-t-2 border-[var(--color2)] bg-[var(--color1)] md:text-lg  text-sm "
+        className=" text-center   w-[70vw] h-[110px]  flex justify-center flex-col items-center border-t-2 border-[var(--color2)] bg-[var(--color1)] md:text-lg  text-sm "
         style={{
           transition: "background-color 150ms ease, border-color 150ms ease",
         }}

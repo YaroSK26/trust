@@ -7,6 +7,8 @@ import { withSwal } from "react-sweetalert2";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import Footer from "../../components/Footer";
+import { slideIn } from "../../utils/motion";
+import { motion } from "framer-motion";
 
 const Contact = ({ swal }) => {
   const {
@@ -85,18 +87,28 @@ const Contact = ({ swal }) => {
 
       {!isSheetOpen && (
         <div>
-          <div className="text-[var(--color2)] flex  justify-center flex items-center gap-10   pt-28">
+          <div className="text-[var(--color2)] justify-center flex items-center gap-10   pt-28">
             {windowWidth > 768 && (
-              <div>
+              <motion.div
+                initial="hidden"
+                animate="show"
+                variants={slideIn("left", "tween", 0.2, 1)}
+              >
                 <img
                   src="contact.png"
                   alt="The heart of man plans his way, but the LORD establishes his steps."
                   className="w-72 rounded-sm  border-[var(--color2)] border"
                 />
-              </div>
+              </motion.div>
             )}
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+            <motion.form
+              initial="hidden"
+              animate="show"
+              variants={slideIn("right", "tween", 0.2, 1)}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-3"
+            >
               <h1 className="text-4xl text-center">Contact Us</h1>
 
               <input
@@ -107,7 +119,7 @@ const Contact = ({ swal }) => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="bg-transparent outline-none border-b-[var(--color2)] border p-1"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
               />
               <input
                 required
@@ -117,7 +129,7 @@ const Contact = ({ swal }) => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your valid address"
-                className="bg-transparent outline-none border-b-[var(--color2)] border p-1"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
               />
               <textarea
                 required
@@ -128,14 +140,14 @@ const Contact = ({ swal }) => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Enter your message"
-                className="bg-transparent resize-none outline-none  border-b-[var(--color2)] border p-1 "
+                className="bg-transparent resize-none outline-none border-t-transparent border-x-transparent   border-b-[var(--color2)] border p-1 "
               ></textarea>
               <center>
                 <button className="button">
                   {loading ? "Sending..." : "Send"}
                 </button>
               </center>
-            </form>
+            </motion.form>
           </div>
           <Footer></Footer>
         </div>

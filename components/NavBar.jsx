@@ -33,7 +33,7 @@ const Navbar = ({
             <Link className="w-full" href={"/"}>
               <img
                 className="md:w-64 md:h-16 sm:w-48 sm:h-12 w-32 h-8"
-                src={theme === "dark" ? "logo-white.png" : "logo-black.png"}
+                src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
                 alt="logo of Trust app"
               />
             </Link>

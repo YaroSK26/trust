@@ -11,7 +11,17 @@ import "../css/layout.css";
 const useFunctions = () => {
   
   //theme
+  // const [theme, setTheme] = useState("dark"); // default to "dark"
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  useEffect(() => {
+    
+    // Access localStorage only on client-side
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+    }
+  }, []);
+
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
