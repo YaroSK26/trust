@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
-import { slideIn, textVariant } from "../../utils/motion";
+import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 
 
@@ -148,7 +148,7 @@ const Prayers = () => {
               <div className="flex flex-col">
                 <label className="text-center mb-3">Your thoughts</label>
                 {prayersLoading ? (
-                  <p className="text-center">Loading...</p> // Display this when loading
+                  <p className="text-center">Loading...</p> 
                 ) : prayers.length > 0 ? (
                   prayers.map((prayer, index) => (
                     <div key={index} className="mb-7">

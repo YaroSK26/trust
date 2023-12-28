@@ -17,7 +17,6 @@ export async function POST(request) {
 export async function GET(request) {
   try {
     await connectMongoDB();
-    const userId = request.nextUrl.searchParams.get("userId"); 
     const Prayer = await Prayers.find();
     return NextResponse.json({ Prayer });
   } catch (error) {

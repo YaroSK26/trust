@@ -26,7 +26,7 @@ const Footer = () => {
             Jaroslav Barabáš
           </Link>
         </p>
-        <div className=" flex justify-center items-center gap-3 text-[var(--color2)]">
+        <div className=" flex justify-center items-center gap-3 text-[var(--color2)] mt-1">
           <Link
             target="_blank"
             href={"https://www.instagram.com/jaroslav_barabas/"}
