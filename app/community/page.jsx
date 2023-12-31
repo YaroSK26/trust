@@ -107,7 +107,7 @@ const Community = ({ swal }) => {
         };
 
         if (res) {
-          toast.success("Sended!");
+          toast.success("Sent!");
           refreshPage();
         } else {
           throw new Error("Error");

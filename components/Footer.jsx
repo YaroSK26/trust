@@ -9,7 +9,7 @@ const Footer = () => {
    const isSmallScreen = useMediaQuery({ maxWidth: 600 });
    const iconSize = isSmallScreen ? 40 : 48;
   return (
-    <div className="mt-16 flex  justify-center items-center text-center  ">
+    <div className="mt-16 flex justify-center items-center text-center  ">
       <footer
         className=" text-center   w-[70vw] h-[110px]  flex justify-center flex-col items-center border-t-2 border-[var(--color2)] bg-[var(--color1)] md:text-lg  text-sm "
         style={{
@@ -17,7 +17,7 @@ const Footer = () => {
         }}
       >
         <p>
-          &copy; Copyright all right reserved. Created by{" "}
+          &copy; Copyright all rights reserved. Created by
           <Link
             target="_blank"
             href={"https://jaroslav-portfolio.vercel.app/"}

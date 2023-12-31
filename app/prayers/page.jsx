@@ -125,6 +125,7 @@ const Prayers = () => {
                   Tell god something
                 </label>
                 <textarea
+                required
                   type="text"
                   placeholder="I am happy for .. "
                   className="bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
@@ -179,6 +180,7 @@ const Prayers = () => {
               </div>
             </motion.div>
           </div>
+          
           <Footer></Footer>
         </div>
       )}

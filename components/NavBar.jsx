@@ -69,6 +69,16 @@ const Navbar = ({
             </ul>
           )}
 
+          {!isSignedIn && (
+            <ul className="flex gap-3 justify-end items-center">
+              <li>
+                <Link href={isSignedIn ? "/" : "/sign-up"}>
+                  <button className="button">Login</button>
+                </Link>
+              </li>
+            </ul>
+          )}
+
           {windowWidth <= 768 && isSignedIn && (
             <Sheet open={isSheetOpen} className="pb-20">
               <SheetTrigger>
