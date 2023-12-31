@@ -9,32 +9,46 @@ import "../css/layout.css";
 
 const useFunctions = () => {
   //theme
-  // const [theme, setTheme] = useState("dark"); // default to "dark"
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
-  useEffect(() => {
-    // Access localStorage only on client-side
-    const storedTheme = localStorage.getItem("theme");
+  const { isSignedIn,user } = useAuth();
+const [theme, setTheme] = useState("dark"); // default to dark
+
+// Generate a unique localStorage key for each user based on their user ID
+const themeKey = user ? `theme_${user.id}` : "theme";
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
+    // Retrieve the theme using the user-specific key
+    const storedTheme = localStorage.getItem(themeKey);
     if (storedTheme) {
       setTheme(storedTheme);
     }
-  }, []);
+  }
+}, [user]); // Dependency on user ensures this runs when user logs in/out
 
-  const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
-  };
+const toggleTheme = () => {
+  setTheme((prevTheme) => {
+    const newTheme = prevTheme === "dark" ? "light" : "dark";
+    if (typeof window !== "undefined") {
+      // Save the new theme using the user-specific key
+      localStorage.setItem(themeKey, newTheme);
+    }
+    return newTheme;
+  });
+};
+
+// Apply the theme class to the body whenever the theme changes
+useEffect(() => {
+  document.body.className = theme;
+  document.documentElement.className = theme;
+}, [theme]);
   //sheet open / close
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const openSheet = () => setIsSheetOpen(true);
   const closeSheet = () => setIsSheetOpen(false);
 
-  useEffect(() => {
-    document.body.className = theme;
-    document.documentElement.className = theme;
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+ 
   //redirect
   const router = useRouter();
-  const { isSignedIn } = useAuth();
 
   useEffect(() => {
     if (!isSignedIn) {

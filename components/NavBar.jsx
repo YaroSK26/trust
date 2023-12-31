@@ -6,6 +6,7 @@ import { UserButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../@/components/ui/sheet";
 import useFunctions from "./Functions";
+import "../css/layout.css"
 
 const Navbar = ({
   theme,
@@ -34,7 +35,7 @@ const Navbar = ({
               <img
                 className="md:w-64 md:h-16 sm:w-48 sm:h-12 w-32 h-8"
                 src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
-                alt="logo of Trust app"
+                alt="logo of Trust site"
               />
             </Link>
           </div>
@@ -52,7 +53,7 @@ const Navbar = ({
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
-              <li>
+              <span>
                 <div className="text-[var(--color2)]">
                   <label className="switch">
                     <input
@@ -63,7 +64,7 @@ const Navbar = ({
                     <span className="slider"></span>
                   </label>
                 </div>
-              </li>
+              </span>
               <UserButton afterSignOutUrl="/"></UserButton>
             </ul>
           )}

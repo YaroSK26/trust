@@ -21,7 +21,7 @@ const Layout = () => {
           <img
             className="md:w-64 md:h-16 sm:w-48 sm:h-12 w-32 h-8"
             src={theme === "dark" ? "logo-white.png" : "logo-black.png"}
-            alt=""
+            alt="logo of the Trust site"
           />
         </Link>
 
@@ -61,7 +61,7 @@ const Layout = () => {
           <Link target="_blank" href={"https://github.com/YaroSK26"}>
             <Github style={{ width: iconSize, height: iconSize }} />
           </Link>
-          <div className="right-0 bottom-0 mr-2 absolute">
+          <div className="left-2 bottom-2 mr-2 absolute">
             <label className="switch">
               <input
                 type="checkbox"

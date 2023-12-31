@@ -8,6 +8,7 @@ import { useState,useEffect } from "react";
 import { withSwal } from "react-sweetalert2";
 import { slideIn, textVariant } from "../../../utils/motion";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 const Love = ({swal}) => {
@@ -73,15 +74,15 @@ const Love = ({swal}) => {
   const handleDay1Thought = () => {
     swal.fire({
       title: "Thought",
-      text: "a",
+      text: "How do you respond when you hear that God loves us so much that He gave His only Son so that we might have eternal life? Excuse me? Those words, do they belong to me? Well surely it is often easier to believe that this is true of others, just not of us. Clearly his God loves us, after all he is so good... But he can't love me, because he knows what I have on my plate... I don't deserve his love.Sure, we're not all equally good, but if God's love for us depended on our actions, no one would deserve it. But God loves us not because of how we are, but because of how He is.God does not love you based on your performance, but simply because He loves you. No strings attached.If you have trouble believing the words of John 3:16, write it down in a prominent place by adding your name instead of the words world and no one. Ask God to show you his love these days in a way you can receive.",
       confirmButtonColor: "#000",
       confirmButtonText: "Amen",
     });
   };
    const handleDay1Verse = () => {
      swal.fire({
-       title: "Verse",
-       text: "a",
+       title: "John 3:16",
+       text: "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life",
        confirmButtonColor: "#000",
        confirmButtonText: "Amen",
      });
@@ -89,15 +90,15 @@ const Love = ({swal}) => {
     const handleDay2Thought = () => {
       swal.fire({
         title: "Thought",
-        text: "a",
+        text: "God proves His love to us every day - we just have to keep our eyes on Him, not on people. We wander around the internet feeling sorry for ourselves that we don't look like the people in the perfectly edited photos. We think we're fat, ugly, incompetent, ...Try to look at yourself as God sees you. He wanted someone just like you, that's why He created you! He made you as a unique person with unique qualities and abilities. You are of inestimable value to Him. He loves you passionately - even more than your parents. According to His words in the Bible, you are a jewel, a pearl of great price, a precious treasure. He sacrificed everything for you, even the life of His only Son.Even today he says to you: I love you! You are my precious child. I bless you and protect you. Do you believe God? Or your feelings? Comparing yourself to others won't do you any good. But if you realize that in Jesus Christ you have everything, it can change you forever! ",
         confirmButtonColor: "#000",
         confirmButtonText: "Amen",
       });
     };
      const handleDay2Verse = () => {
        swal.fire({
-         title: "Verse",
-         text: "a",
+         title: "John 4:16",
+         text: "And we who have believed have come to know the love that God has for us. God is love; and he that abideth in love abideth in God, and God abideth in him.",
          confirmButtonColor: "#000",
          confirmButtonText: "Amen",
        });
@@ -105,15 +106,15 @@ const Love = ({swal}) => {
       const handleDay3Thought = () => {
         swal.fire({
           title: "Thought",
-          text: "a",
+          text: "Do you experience a feeling of closeness and a strong bond with someone? This is what defines a deep relationship between two people who love each other. It may surprise you, but this is exactly the kind of relationship God - the Creator of all things - wants to have with you!When God created the first humans, Adam and Eve spent time with God and enjoyed His presence. This relationship was only disrupted by their sin, which still draws us humans away from God today.Thankfully, God's concern for man did not end with Adam and Eve's departure from the Garden of Eden. Scripture is filled with stories of how he continued to accompany people and sought to make himself known to them. He so loved the world that he later sent his Son Jesus to earth to seek and save the lost. Jesus was physically present and the people around Him experienced how wonderful it was to have a close relationship with Him. Through the stories of the lost sheep, the lost coin, and the lost son, He showed how God cares about each of us. While we are stubbornly looking for love, money, or recognition, He is looking for us...because He created us in His image and we are important to Him. Can a loving God forget His child?",
           confirmButtonColor: "#000",
           confirmButtonText: "Amen",
         });
       };
        const handleDay3Verse = () => {
          swal.fire({
-           title: "Verse",
-           text: "a",
+           title: "2 Thessalonians 3:5",
+           text: "May the Lord lead your hearts into a full understanding and expression of the love of God and the patient endurance that comes from Christ.",
            confirmButtonColor: "#000",
            confirmButtonText: "Amen",
          });
@@ -131,8 +132,12 @@ const Love = ({swal}) => {
 
       {!isSheetOpen && (
         <div className=" flex flex-col relative pt-20 text-[var(--color2)] justify-center items-center ">
-          <motion.h1 initial="hidden"
-            animate="show" variants={textVariant()} className="text-4xl  mt-10">
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            variants={textVariant()}
+            className="text-4xl  mt-10"
+          >
             Love
           </motion.h1>
 
@@ -186,7 +191,7 @@ const Love = ({swal}) => {
                       onClick={() => handleDay1Verse()}
                       className="cursor-pointer"
                     >
-                      Zalmy&nbsp;15:30
+                      John&nbsp;3:16&nbsp;
                     </h1>
                     <label
                       className="container cursor-pointer"
@@ -250,7 +255,7 @@ const Love = ({swal}) => {
                       className="cursor-pointer"
                       onClick={() => handleDay2Verse()}
                     >
-                      Zalmy&nbsp;15:30
+                      John&nbsp;4:16
                     </h1>
                     <label
                       className="container cursor-pointer "
@@ -313,7 +318,7 @@ const Love = ({swal}) => {
                       className="cursor-pointer"
                       onClick={() => handleDay3Verse()}
                     >
-                      2&nbsp;thessalonia&nbsp;15:31
+                      2&nbsp;Thessalonians&nbsp;3:5
                     </h1>
                     <label
                       className="container cursor-pointer"
@@ -339,7 +344,16 @@ const Love = ({swal}) => {
             } `}
           >
             <h2 className="text-3xl font-bold">Finished Plan</h2>
-            <p>Congratulations on completing the Love plan!</p>
+            <p>
+              Congratulations on completing the Love plan! Check more from{" "}
+              <Link
+                href={"https://agapeslovensko.sk"}
+                target="_blank"
+                className="underline"
+              >
+                Agapé Slovensko
+              </Link>
+            </p>
           </div>
           <div className="">
             <Footer></Footer>

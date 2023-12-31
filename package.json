@@ -18,6 +18,7 @@
     "axios": "^1.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "crisp-sdk-web": "^1.0.21",
     "framer-motion": "^10.16.16",
     "lucide-react": "^0.294.0",
     "mongodb": "^6.3.0",

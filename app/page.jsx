@@ -10,7 +10,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { motion } from "framer-motion";
 
 
-
 const Dashboard = () => {
   const projects = [
     {
@@ -28,7 +27,7 @@ const Dashboard = () => {
           name: "friendship",
         },
       ],
-      image: "love.webp",
+      image: "/love.webp",
       source_website: ["plans/love"],
     },
     {
@@ -46,7 +45,7 @@ const Dashboard = () => {
           name: "faith",
         },
       ],
-      image: "trust.jpg",
+      image: "/trust.jpg",
       source_website: ["plans/trust"],
     },
     {
@@ -64,7 +63,7 @@ const Dashboard = () => {
           name: "peace",
         },
       ],
-      image: "anger.webp",
+      image: "/anger.webp",
       source_website: ["plans/anger"],
     },
   ];
