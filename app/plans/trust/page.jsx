@@ -131,7 +131,7 @@ const Trust = ({swal}) => {
       />
 
       {!isSheetOpen && (
-        <div className=" flex flex-col  pt-20 text-[var(--color2)] justify-center items-center ">
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <motion.h1
             initial="hidden"
             animate="show"
@@ -355,9 +355,7 @@ const Trust = ({swal}) => {
               </Link>
             </p>
           </div>
-          <div className="bottom-0 absolute">
-            <Footer></Footer>
-          </div>
+          <Footer></Footer>
         </div>
       )}
     </div>

@@ -6,6 +6,7 @@ import { withSwal } from "react-sweetalert2";
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/NavBar";
 import useFunctions from "../../../components/Functions";
+import { useMediaQuery } from "react-responsive";
 
 const EditPage = ({ swal }) => {
   const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
@@ -54,6 +55,10 @@ const EditPage = ({ swal }) => {
       });
   };
 
+   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+   const cols = isSmallScreen ? 20 : 30;
+   const rows = isSmallScreen ? 7 : 7;
+
   return (
     <div>
       <Navbar
@@ -63,33 +68,32 @@ const EditPage = ({ swal }) => {
         openSheet={openSheet}
         closeSheet={closeSheet}
       ></Navbar>
-      <div className="flex-col pt-28 flex items-center justify-center gap-2">
-        <h1 className="text-center text-3xl font-bold mb-4">Edit prayer</h1>
-        <div className="flex flex-col">
-          <textarea
-            className="border  border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56 resize-none"
-            rows="7"
-            cols="30"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="loading.."
-            style={{
-              transition:
-                "background-color 150ms ease, border-color 150ms ease",
-            }}
-          />
-          <button
-            className="bg-[var(--color2)] p-1 rounded-lg text-[var(--color1)] w-full h-10  mt-2"
-            onClick={() => handleEdit()}
-            
-          >
-            Save
-          </button>
-        </div>
-        <div className="absolute bottom-0 ">
+      {!isSheetOpen && (
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
+          <div className="flex flex-col mt-10">
+          <h1 className="text-center text-3xl font-bold mb-4">Edit prayer</h1>
+            <textarea
+              className="border  border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56 resize-none"
+              rows={rows}
+              cols={cols}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              placeholder="loading.."
+              style={{
+                transition:
+                  "background-color 150ms ease, border-color 150ms ease",
+              }}
+            />
+            <button
+              className="bg-[var(--color2)] p-1 rounded-lg text-[var(--color1)] w-full h-10  mt-2"
+              onClick={() => handleEdit()}
+            >
+              Save
+            </button>
+          </div>
           <Footer></Footer>
         </div>
-      </div>
+      )}
     </div>
   );
 };

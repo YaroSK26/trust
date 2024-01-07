@@ -7,7 +7,7 @@ import { useMediaQuery } from "react-responsive";
 
 const Footer = () => {
    const isSmallScreen = useMediaQuery({ maxWidth: 600 });
-   const iconSize = isSmallScreen ? 40 : 48;
+   const iconSize = isSmallScreen ? 38 : 48;
   return (
     <div className="mt-16 flex justify-center items-center text-center  ">
       <footer

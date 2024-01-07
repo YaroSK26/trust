@@ -3,9 +3,13 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "./Loader";
+import { useMediaQuery } from "react-responsive";
 
 const Model = () => {
   const model = useGLTF("./model3D/scene.gltf");
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+  const scale = isSmallScreen ? 0.07 : 0.10;
 
   return (
     <mesh>
@@ -21,7 +25,7 @@ const Model = () => {
       <pointLight intensity={2} />
       <primitive
         object={model.scene}
-        scale={0.10}
+        scale={scale}
         position={[0, -0.05, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />

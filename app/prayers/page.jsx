@@ -11,6 +11,7 @@ import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
 import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 
 const Prayers = () => {
@@ -99,6 +100,10 @@ const Prayers = () => {
     }
   }, [userId]);
 
+   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+   const cols = isSmallScreen ? 20 : 30;
+   const rows = isSmallScreen ? 7 : 7;
+
 
   return (
     <div>
@@ -111,7 +116,7 @@ const Prayers = () => {
       />
 
       {!isSheetOpen && (
-        <div className="pt-20">
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <div className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3">
             <motion.form
               initial="hidden"
@@ -125,12 +130,12 @@ const Prayers = () => {
                   Tell god something
                 </label>
                 <textarea
-                required
+                  required
                   type="text"
                   placeholder="I am happy for .. "
                   className="bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
-                  rows="7"
-                  cols="30"
+                  rows={rows}
+                  cols={cols}
                   id="prayer"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
@@ -149,7 +154,7 @@ const Prayers = () => {
               <div className="flex flex-col">
                 <label className="text-center mb-3">Your thoughts</label>
                 {prayersLoading ? (
-                  <p className="text-center">Loading...</p> 
+                  <p className="text-center">Loading...</p>
                 ) : prayers.length > 0 ? (
                   prayers.map((prayer, index) => (
                     <div key={index} className="mb-7">
@@ -158,8 +163,8 @@ const Prayers = () => {
                         type="text"
                         placeholder="Loading.. "
                         className="bg-transparent resize-none outline-none  border-[var(--color2)] border-2 rounded-lg p-2  "
-                        rows="7"
-                        cols="30"
+                        rows={rows}
+                        cols={cols}
                         id={`prayer-${index}`}
                         value={prayer.text}
                         readOnly
@@ -180,7 +185,7 @@ const Prayers = () => {
               </div>
             </motion.div>
           </div>
-          
+
           <Footer></Footer>
         </div>
       )}

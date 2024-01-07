@@ -85,7 +85,7 @@ const DeletePage = ({ swal }) => {
   };
 
   return (
-    <div >
+    <div>
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
@@ -93,32 +93,32 @@ const DeletePage = ({ swal }) => {
         openSheet={openSheet}
         closeSheet={closeSheet}
       ></Navbar>
-      <div className=" flex-col flex  pt-28  items-center justify-center gap-2">
-        <h1 className="text-center text-3xl font-bold mb-4">Delete prayer</h1>
-        <div>
-          <input
-            className="border border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56"
-            type="text"
-            value={value}
-            disabled
-            placeholder="Loading..."
-            style={{
-              transition:
-                "background-color 150ms ease, border-color 150ms ease",
-            }}
-          />
-          <button
-            className="bg-red-600 p-1 rounded-lg text-white w-16"
-            disabled={loading}
-            onClick={() => handleDelete()}
-          >
-            Delete
-          </button>
-        </div>
-        <div className="absolute bottom-0 ">
+      {!isSheetOpen && (
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
+          <div>
+          <h1 className="text-center text-3xl font-bold mb-4 mt-10">Delete prayer</h1>
+            <input
+              className="border border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56"
+              type="text"
+              value={value}
+              disabled
+              placeholder="Loading..."
+              style={{
+                transition:
+                  "background-color 150ms ease, border-color 150ms ease",
+              }}
+            />
+            <button
+              className="bg-red-600 p-1 rounded-lg text-white w-16"
+              disabled={loading}
+              onClick={() => handleDelete()}
+            >
+              Delete
+            </button>
+          </div>
           <Footer></Footer>
         </div>
-      </div>
+      )}
     </div>
   );
 };

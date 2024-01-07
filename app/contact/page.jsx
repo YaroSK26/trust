@@ -9,6 +9,7 @@ import { useState } from "react";
 import Footer from "../../components/Footer";
 import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
+import { useMediaQuery } from "react-responsive";
 
 const Contact = ({ swal }) => {
   const {
@@ -74,6 +75,11 @@ const Contact = ({ swal }) => {
       );
   };
 
+     const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+     const cols = isSmallScreen ? 10 : 15;
+     const rows = isSmallScreen ? 6 : 8;
+    
+
   return (
     <div>
       <Navbar
@@ -87,7 +93,7 @@ const Contact = ({ swal }) => {
 
       {!isSheetOpen && (
         <div>
-          <div className="text-[var(--color2)] justify-center flex items-center gap-10   pt-28">
+          <div className="flex min-h-screen  text-[var(--color2)] justify-center items-center gap-10   pt-16">
             {windowWidth > 768 && (
               <motion.div
                 initial="hidden"
@@ -119,7 +125,7 @@ const Contact = ({ swal }) => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-68 sm:w-72"
               />
               <input
                 required
@@ -129,12 +135,12 @@ const Contact = ({ swal }) => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="Enter your valid address"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-68 sm:w-72"
               />
               <textarea
                 required
-                cols="30"
-                rows="8"
+                rows={rows}
+                cols={cols}
                 name="message"
                 id="message"
                 value={form.message}

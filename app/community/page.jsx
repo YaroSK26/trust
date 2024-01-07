@@ -189,7 +189,7 @@ const Community = ({ swal }) => {
       />
 
       {!isSheetOpen && (
-        <div className="pt-20">
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <motion.div
             initial="hidden"
             animate="show"
@@ -267,9 +267,7 @@ const Community = ({ swal }) => {
               </div>
             </div>
             {messageCount >= 2 && (
-              <p className="text-center text-red-500">
-                Wait {timer} seconds. 
-              </p>
+              <p className="text-center text-red-500">Wait {timer} seconds.</p>
             )}
 
             <form onSubmit={(e) => handleCommunity(e)} className="flex gap-3">
