@@ -8,65 +8,11 @@ import ModelCanvas from "../components/Model";
 import Footer from "../components/Footer"
 import { fadeIn, textVariant } from "../utils/motion";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import {projects} from "../components/projects"
 
 
 const Dashboard = () => {
-  const projects = [
-    {
-      name: "LOVE",
-      description:
-        "Build love not only with yourself, but also with family, enemies and especially god, because a good Christian is to love everyone in his or her life.",
-      tags: [
-        {
-          name: "love",
-        },
-        {
-          name: "kindness",
-        },
-        {
-          name: "friendship",
-        },
-      ],
-      image: "/love.webp",
-      source_website: ["plans/love"],
-    },
-    {
-      name: "TRUST",
-      description:
-        "Hope comes from faith in Jesus Christ. Trust with all your heart in the lord of the house, and he himself will make the paths straight for you. ",
-      tags: [
-        {
-          name: "trust",
-        },
-        {
-          name: "hope",
-        },
-        {
-          name: "faith",
-        },
-      ],
-      image: "/trust.jpg",
-      source_website: ["plans/trust"],
-    },
-    {
-      name: "ANGER",
-      description:
-        "The lack of peace in your life causes anger. Calm your mind, for the day has had enough of its torment.  Like a sheep, find peace in your shepherd.",
-      tags: [
-        {
-          name: "anger",
-        },
-        {
-          name: "hate",
-        },
-        {
-          name: "peace",
-        },
-      ],
-      image: "/anger.webp",
-      source_website: ["plans/anger"],
-    },
-  ];
 
 
   const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
@@ -83,21 +29,26 @@ const Dashboard = () => {
       />
 
       {!isSheetOpen && (
-        <motion.div variants={textVariant()}
-      initial="hidden"
-      animate="show" className="pt-20 ">
+        <motion.div
+          variants={textVariant()}
+          initial="hidden"
+          animate="show"
+          className="pt-20 "
+        >
           <div className="text-[var(--color2)] flex justify-center ">
             <TestAPI></TestAPI>
           </div>
           <h1 className="text-center text-4xl mt-10 underline">Bible Plans</h1>
           <div className=" flex justify-center items-center flex-wrap gap-10 mt-10 p-4 ">
-            {projects.map((project , index) => (
+            {projects.slice(0, 3).map((project, index) => (
               <Tilt
                 key={project.name}
                 option={{ max: 45, scale: 1, speed: 450 }}
-                className="bg-[var(--color3)] p-5 rounded-2xl sm:w-[360px] w-full border-l-2 border-r-2 border-[var(--color2)]"
+                className="bg-[var(--color3)] p-5 rounded-2xl sm:w-[360px] h-[510px] w-full border-l-2 border-r-2 border-[var(--color2)]"
               >
-                <motion.div variants={fadeIn("right", "spring", index * 0.5, 0.75)}>
+                <motion.div
+                  variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+                >
                   <div className="relative w-full h-[230px] ">
                     <img
                       src={project.image}
@@ -139,6 +90,12 @@ const Dashboard = () => {
               </Tilt>
             ))}
           </div>
+
+          <Link href={"/plans"}>
+            <p className="text-center text-3xl mt-4 underline animate-bounce">
+              See more...
+            </p>
+          </Link>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
               <path

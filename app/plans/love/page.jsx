@@ -12,7 +12,7 @@ import Link from "next/link";
 
 
 const Love = ({swal}) => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+  const { theme, toggleTheme } =
     useFunctions();
 
   const [activeDay, setActiveDay] = useState(null);
@@ -125,12 +125,8 @@ const Love = ({swal}) => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
       />
 
-      {!isSheetOpen && (
         <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center ">
           <motion.h1
             initial="hidden"
@@ -357,7 +353,6 @@ const Love = ({swal}) => {
           </div>
             <Footer></Footer>  
         </div>
-      )}
     </div>
   );
 };

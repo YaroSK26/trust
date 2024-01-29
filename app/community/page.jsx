@@ -13,7 +13,7 @@ import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 
 const Community = ({ swal }) => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+  const { theme, toggleTheme } =
     useFunctions();
   //timer
   // Load initial state from localStorage or set to default
@@ -184,11 +184,8 @@ const Community = ({ swal }) => {
         theme={theme}
         toggleTheme={toggleTheme}
         isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
       />
 
-      {!isSheetOpen && (
         <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <motion.div
             initial="hidden"
@@ -290,7 +287,6 @@ const Community = ({ swal }) => {
           </motion.div>
           <Footer></Footer>
         </div>
-      )}
     </div>
   );
 };

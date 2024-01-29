@@ -15,7 +15,7 @@ import { useMediaQuery } from "react-responsive";
 
 
 const Prayers = () => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+  const { theme, toggleTheme } =
     useFunctions();
 
 
@@ -101,7 +101,7 @@ const Prayers = () => {
   }, [userId]);
 
    const isSmallScreen = useMediaQuery({ maxWidth: 600 });
-   const cols = isSmallScreen ? 20 : 30;
+   const cols = isSmallScreen ? 25 : 25;
    const rows = isSmallScreen ? 7 : 7;
 
 
@@ -110,12 +110,9 @@ const Prayers = () => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
+
       />
 
-      {!isSheetOpen && (
         <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <div className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3">
             <motion.form
@@ -188,7 +185,6 @@ const Prayers = () => {
 
           <Footer></Footer>
         </div>
-      )}
     </div>
   );
 };

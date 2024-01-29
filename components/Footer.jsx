@@ -17,13 +17,13 @@ const Footer = () => {
         }}
       >
         <p>
-          &copy; Copyright all rights reserved. Created by
+          &copy; Copyright all rights reserved. Created by &nbsp;
           <Link
             target="_blank"
             href={"https://jaroslav-portfolio.vercel.app/"}
             className="underline"
           >
-            Jaroslav Barabáš
+             Jaroslav Barabáš
           </Link>
         </p>
         <div className=" flex justify-center items-center gap-3 text-[var(--color2)] mt-1">

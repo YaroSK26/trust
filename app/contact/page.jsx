@@ -15,9 +15,6 @@ const Contact = ({ swal }) => {
   const {
     theme,
     toggleTheme,
-    isSheetOpen,
-    openSheet,
-    closeSheet,
     windowWidth,
   } = useFunctions();
 
@@ -85,13 +82,10 @@ const Contact = ({ swal }) => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
         windowWidth={windowWidth}
       />
 
-      {!isSheetOpen && (
+
         <div>
           <div className="flex min-h-screen  text-[var(--color2)] justify-center items-center gap-10   pt-16">
             {windowWidth > 768 && (
@@ -124,6 +118,7 @@ const Contact = ({ swal }) => {
                 id="name"
                 value={form.name}
                 onChange={handleChange}
+                autocomplete="off"
                 placeholder="Enter your name"
                 className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-68 sm:w-72"
               />
@@ -134,6 +129,7 @@ const Contact = ({ swal }) => {
                 id="email"
                 value={form.email}
                 onChange={handleChange}
+                autocomplete="off"
                 placeholder="Enter your valid address"
                 className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-68 sm:w-72"
               />
@@ -145,6 +141,7 @@ const Contact = ({ swal }) => {
                 id="message"
                 value={form.message}
                 onChange={handleChange}
+                autocomplete="off"
                 placeholder="Enter your message"
                 className="bg-transparent resize-none outline-none border-t-transparent border-x-transparent   border-b-[var(--color2)] border p-1 "
               ></textarea>
@@ -157,7 +154,6 @@ const Contact = ({ swal }) => {
           </div>
           <Footer></Footer>
         </div>
-      )}
     </div>
   );
 };

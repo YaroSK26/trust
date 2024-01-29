@@ -32,7 +32,7 @@
 
         <section className=" mt-[70px]  mb-2">
           <div className="text-[var(--color2)] flex justify-center items-center flex-col px-1">
-            <h1 className="text-center md:text-7xl sm:text-5xl text-3xl mb-2">
+            <h1 className="text-center md:text-7xl sm:text-5xl text-4xl mb-2">
               Build trust with
               <TypewriterComponent
                 options={{
@@ -42,7 +42,7 @@
                 }}
               />
             </h1>
-            <p className="md:text-xl sm:text-md text-sm italic mb-8">
+            <p className="md:text-xl sm:text-lg text-md italic mb-8">
               You are on the right path
             </p>
             <Link href={isSignedIn ? "/" : "/sign-up"}>

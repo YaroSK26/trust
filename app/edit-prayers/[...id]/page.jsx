@@ -9,7 +9,7 @@ import useFunctions from "../../../components/Functions";
 import { useMediaQuery } from "react-responsive";
 
 const EditPage = ({ swal }) => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+  const { theme, toggleTheme } =
     useFunctions();
 
   const [value, setValue] = useState("");
@@ -64,11 +64,7 @@ const EditPage = ({ swal }) => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
       ></Navbar>
-      {!isSheetOpen && (
         <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
           <div className="flex flex-col mt-10">
           <h1 className="text-center text-3xl font-bold mb-4">Edit prayer</h1>
@@ -93,7 +89,6 @@ const EditPage = ({ swal }) => {
           </div>
           <Footer></Footer>
         </div>
-      )}
     </div>
   );
 };

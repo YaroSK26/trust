@@ -10,7 +10,7 @@ import Navbar from "../../../components/NavBar";
 import useFunctions from "../../../components/Functions";
 
 const DeletePage = ({ swal }) => {
-  const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+  const { theme, toggleTheme } =
     useFunctions();
 
   const [value, setValue] = useState("");
@@ -89,11 +89,7 @@ const DeletePage = ({ swal }) => {
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        isSheetOpen={isSheetOpen}
-        openSheet={openSheet}
-        closeSheet={closeSheet}
       ></Navbar>
-      {!isSheetOpen && (
         <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
           <div>
           <h1 className="text-center text-3xl font-bold mb-4 mt-10">Delete prayer</h1>
@@ -118,7 +114,6 @@ const DeletePage = ({ swal }) => {
           </div>
           <Footer></Footer>
         </div>
-      )}
     </div>
   );
 };
