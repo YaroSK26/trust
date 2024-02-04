@@ -226,7 +226,7 @@ const Community = ({ swal }) => {
                             />
 
                             <h1 className="pl-[18px] text-[var(--color1)]">
-                              {i.text} - {i.name}
+                              {i.text} - {i.name ? i.name : "Guest"}
                             </h1>
                             <img
                               className="w-10 rounded-full"
@@ -242,7 +242,7 @@ const Community = ({ swal }) => {
                               alt="profile picture of user"
                             />
                             <h1 className="text-[var(--color1)] pr-[18px]">
-                              {i.name} - {i.text}
+                              {i.name? i.name : "Guest"} - {i.text}
                             </h1>
 
                             <Copy

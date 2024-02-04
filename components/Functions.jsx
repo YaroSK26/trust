@@ -41,10 +41,6 @@ useEffect(() => {
   document.body.className = theme;
   document.documentElement.className = theme;
 }, [theme]);
-  //sheet open / close
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
-  const openSheet = () => setIsSheetOpen(true);
-  const closeSheet = () => setIsSheetOpen(false);
 
  
   //redirect
@@ -55,6 +51,8 @@ useEffect(() => {
       router.push("/");
     }
   }, [isSignedIn, router]);
+
+
 
   //resizer
   const [windowWidth, setWindowWidth] = useState(null);
@@ -75,10 +73,8 @@ useEffect(() => {
   return {
     theme,
     toggleTheme,
-    isSheetOpen,
-    openSheet,
-    closeSheet,
     windowWidth,
+    isSignedIn,
   };
 };
 

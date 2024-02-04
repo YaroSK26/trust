@@ -24,7 +24,8 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/api/proxy.ts"
+    "app/api/proxy.ts",
+    "app/(auth)/(routes)/layout.tsx"
   ],
   "exclude": ["node_modules"]
 }

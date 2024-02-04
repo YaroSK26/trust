@@ -1,11 +1,12 @@
-"use client"
-import Layout from "../../../../../components/Layout"
+import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
-
   return (
-   <div>
-    <Layout/>
-   </div>
+    <div>
+      <br />
+      <br />
+      <br />
+      <SignIn />
+    </div>
   );
 }

@@ -9,7 +9,7 @@ import { projects } from "../../components/projects";
 import { useState, useEffect } from "react";
 
 const Plans = () => {
-    const { theme, toggleTheme, isSheetOpen, openSheet, closeSheet } =
+    const { theme, toggleTheme } =
     useFunctions();
 
    const [nameFilter, setNameFilter] = useState("");
@@ -42,12 +42,8 @@ const Plans = () => {
         <Navbar
           theme={theme}
           toggleTheme={toggleTheme}
-          isSheetOpen={isSheetOpen}
-          openSheet={openSheet}
-          closeSheet={closeSheet}
         />
 
-        {!isSheetOpen && (
           <motion.div
             variants={textVariant()}
             initial="hidden"
@@ -139,7 +135,7 @@ const Plans = () => {
             </div>
             <Footer />
           </motion.div>
-        )}
+       
       </div>
     );
 };

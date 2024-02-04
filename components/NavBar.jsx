@@ -40,7 +40,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       >
         <div className="flex justify-between w-full ">
           <div>
-            <Link href={"/"}>
+            <Link href={"/home"}>
               <img
                 className="md:w-64 md:h-16 sm:w-48 sm:h-12 w-32 h-8"
                 src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
@@ -52,7 +52,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           {windowWidth > 768 && isSignedIn && (
             <ul className="flex gap-3 justify-end items-center">
               <li>
-                <Link href={"/"}>Home</Link>
+                <Link href={"/home"}>Home</Link>
               </li>
               <li>
                 <Link href={"/community"}>Community</Link>
