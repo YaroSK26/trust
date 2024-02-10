@@ -1,8 +1,7 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-
-import CanvasLoader from "./Loader";
+import Loader from "./Loader";
 import { useMediaQuery } from "react-responsive";
 
 const Model = () => {
@@ -43,7 +42,7 @@ const ModelCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
       style={{ width: "100%", height: "400px",}}
     >
-      <Suspense fallback={<CanvasLoader />}>
+      <Suspense fallback={<Loader />}>
         <OrbitControls
           autoRotate={true}
           enableZoom={false}

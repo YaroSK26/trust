@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ToasterProvider } from "../components/ToastProvider";
 import { CrispProvider } from "../components/CrispProvider";
 import { Analytics } from '@vercel/analytics/react';
+import CookieConsent from '../components/CookieConsent';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           <ToasterProvider />
           {children}
           <Analytics />
+          <CookieConsent />
           <CrispProvider />
         </body>
       </ClerkProvider>

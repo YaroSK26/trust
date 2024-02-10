@@ -26,6 +26,6 @@
     "**/*.tsx",
     "app/api/proxy.ts",
     "app/(auth)/(routes)/layout.tsx"
-, "app/api/plans/route.js"  ],
+, "app/api/plans/route.js", "middleware.js"  ],
   "exclude": ["node_modules"]
 }
