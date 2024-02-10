@@ -9,19 +9,18 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import "../css/layout.css";
 
-
 const Layout = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
   const iconSize = isSmallScreen ? 44 : 64;
 
   const { theme, toggleTheme, isSignedIn } = useFunctions();
   const router = useRouter();
-  
-    useEffect(() => {
-      if (isSignedIn) {
-        router.push("/home");
-      }
-    }, [isSignedIn, router]);
+
+  useEffect(() => {
+    if (isSignedIn) {
+      router.push("/home");
+    }
+  }, [isSignedIn, router]);
 
   return (
     <div className={theme} style={{ width: "100vw" }}>
@@ -35,7 +34,7 @@ const Layout = () => {
         </Link>
 
         <Link href={isSignedIn ? "/home" : "/sign-up"}>
-          <button className="button">Login</button>
+          <button className="button">{isSignedIn ? "Home" : "Login"}</button>
         </Link>
       </nav>
 
@@ -55,7 +54,7 @@ const Layout = () => {
             You are on the right path
           </p>
           <Link href={isSignedIn ? "/home" : "/sign-up"}>
-            <button className="button">Login</button>
+            <button className="button">{isSignedIn ? "Home" : "Login"}</button>
           </Link>
         </div>
 

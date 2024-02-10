@@ -80,7 +80,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           )}
 
           {!isSignedIn && (
-            <ul className="flex gap-3 justify-end items-center">
+            <ul className="flex gap-3 justify-end items-center no-underline transition-none">
               <li>
                 <Link href={"/sign-up"}>
                   <button className="button">Login</button>
