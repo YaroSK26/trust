@@ -120,7 +120,7 @@ const Contact = ({ swal }) => {
                 onChange={handleChange}
                 autocomplete="off"
                 placeholder="Enter your name"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-68 sm:w-72"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72"
               />
               <input
                 required
@@ -131,7 +131,7 @@ const Contact = ({ swal }) => {
                 onChange={handleChange}
                 autocomplete="off"
                 placeholder="Enter your valid address"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-68 sm:w-72"
+                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-64 sm:w-72"
               />
               <textarea
                 required

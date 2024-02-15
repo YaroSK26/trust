@@ -24,7 +24,7 @@ const Layout = () => {
 
   return (
     <div className={theme} style={{ width: "100vw" }}>
-      <nav className="border-b-2 border-[var(--color2)] bg-[var(--color1)] gap-2  flex justify-between items-center h-20 px-4 transition-all">
+      <nav className="border-b-2 border-[var(--color2)] bg-[var(--color1)] gap-2  flex justify-between items-center h-20 px-4 transition-all relative">
         <Link href={"/"}>
           <img
             className="md:w-64 md:h-16 sm:w-48 sm:h-12 w-32 h-8"
@@ -32,7 +32,16 @@ const Layout = () => {
             alt="logo of the Trust site"
           />
         </Link>
-
+        <div className="right-44  absolute">
+          <label className="switch">
+            <input
+              type="checkbox"
+              onChange={toggleTheme}
+              checked={theme === "light"}
+            />
+            <span className="slider"></span>
+          </label>
+        </div>
         <Link href={isSignedIn ? "/home" : "/sign-up"}>
           <button className="button">{isSignedIn ? "Home" : "Login"}</button>
         </Link>
@@ -70,16 +79,6 @@ const Layout = () => {
             <Link target="_blank" href={"https://github.com/YaroSK26"}>
               <Github style={{ width: iconSize, height: iconSize }} />
             </Link>
-          </div>
-          <div className="left-2 bottom-2 mr-2 absolute">
-            <label className="switch">
-              <input
-                type="checkbox"
-                onChange={toggleTheme}
-                checked={theme === "light"}
-              />
-              <span className="slider"></span>
-            </label>
           </div>
         </div>
       </section>

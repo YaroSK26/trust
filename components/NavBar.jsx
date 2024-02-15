@@ -3,7 +3,7 @@
 import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
-import { Menu, X } from "lucide-react";
+import { Menu, Settings, X } from "lucide-react";
 import "../css/layout.css";
 import { useState, useEffect } from "react";
 
@@ -48,7 +48,6 @@ const Navbar = ({ theme, toggleTheme }) => {
               />
             </Link>
           </div>
-
           {windowWidth > 768 && isSignedIn && (
             <ul className="flex gap-3 justify-end items-center">
               <li>
@@ -63,22 +62,13 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
-              <span>
-                <div className="text-[var(--color2)]">
-                  <label className="switch">
-                    <input
-                      type="checkbox"
-                      onChange={toggleTheme}
-                      checked={theme === "light"}
-                    />
-                    <span className="slider"></span>
-                  </label>
-                </div>
-              </span>
+              <span></span>
               <UserButton afterSignOutUrl="/"></UserButton>
+              <Link href={"/settings"}>
+                <Settings size={28} />
+              </Link>
             </ul>
           )}
-
           {!isSignedIn && (
             <ul className="flex gap-3 justify-end items-center no-underline transition-none">
               <li>
@@ -88,7 +78,6 @@ const Navbar = ({ theme, toggleTheme }) => {
               </li>
             </ul>
           )}
-
           {windowWidth <= 768 && isSignedIn && (
             <div className="">
               <button
@@ -129,16 +118,9 @@ const Navbar = ({ theme, toggleTheme }) => {
                   >
                     Contact
                   </Link>
-                  <div>
-                    <label className="switch">
-                      <input
-                        type="checkbox"
-                        onChange={toggleTheme}
-                        checked={theme === "light"}
-                      />
-                      <span className="slider"></span>
-                    </label>
-                  </div>
+                  <Link href={"/settings"} onClick={toggleMobileMenu}>
+                    <Settings size={28} />
+                  </Link>
                   <UserButton afterSignOutUrl="/"></UserButton>
                 </div>
               )}

@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Barlow&family=Jost:wght@500&family=Noto+Sans+Osmanya&family=Poppins:wght@300;500;600&family=Roboto:wght@100&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
     font-family: Poppins, sans-serif;
 }
@@ -204,3 +207,58 @@ nav ul li :hover::before {
 nav ul li :hover::after {
     width: 0%;}
 
+
+#google_translate_element {
+  @apply flex justify-center items-center  
+}
+
+#google_translate_element select {
+  width: 100%;
+}
+
+.goog-te-gadget .goog-te-combo {
+  padding: 10px;
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  background-color: var(--clr); 
+  @apply bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72; 
+  cursor: pointer; 
+}
+
+/* Skrytie značky Google */
+.goog-logo-link {
+  display: none !important;
+}
+.goog-attribution {
+  display: none !important;
+}
+
+/* Skrytie ikony a textu Google */
+.goog-te-gadget .goog-te-gadget-simple {
+  background: none !important;
+}
+
+#google_translate_element span {
+  display: none !important;
+
+}
+
+#google_translate_element div, 
+#google_translate_element span {
+  visibility: hidden;
+}
+#google_translate_element div:empty,
+#google_translate_element span:empty {
+  visibility: visible;
+}
+
+#google_translate_element select {
+  visibility: visible;
+}
+
+
+
+
+.badge-div img{
+  @apply w-52 h-52
+}
