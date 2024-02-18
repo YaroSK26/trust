@@ -93,12 +93,12 @@ const Trust = ({ swal }) => {
           Loading...
         </p>
       ) : (
-        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center underline">
           <motion.h1
             initial="hidden"
             animate="show"
             variants={textVariant()}
-            className="text-4xl  mt-10  flex justify-center items-center relative"
+            className="text-4xl  mt-10  flex justify-center items-center relative "
           >
             <ArrowLeft
               className="absolute left-[-40px] cursor-pointer"

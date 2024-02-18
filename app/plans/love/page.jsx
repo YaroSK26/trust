@@ -97,7 +97,7 @@ const Love = ({ swal }) => {
           Loading...
         </p>
       ) : (
-        <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center ">
+        <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center underline ">
           <motion.h1
             initial="hidden"
             animate="show"

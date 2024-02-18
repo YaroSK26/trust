@@ -61,34 +61,33 @@ const EditPage = ({ swal }) => {
 
   return (
     <div>
-      <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
-      ></Navbar>
-        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
-          <div className="flex flex-col mt-10">
-          <h1 className="text-center text-3xl font-bold mb-4">Edit prayer</h1>
-            <textarea
-              className="border  border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56 resize-none"
-              rows={rows}
-              cols={cols}
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              placeholder="loading.."
-              style={{
-                transition:
-                  "background-color 150ms ease, border-color 150ms ease",
-              }}
-            />
-            <button
-              className="bg-[var(--color2)] p-1 rounded-lg text-[var(--color1)] w-full h-10  mt-2"
-              onClick={() => handleEdit()}
-            >
-              Save
-            </button>
-          </div>
-          <Footer></Footer>
+      <Navbar theme={theme} toggleTheme={toggleTheme}></Navbar>
+      <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
+        <div className="flex flex-col mt-10">
+          <h1 className="text-center text-4xl font-bold mb-4 underline">
+            Edit prayer
+          </h1>
+          <textarea
+            className="border  border-[var(--color2)] m-1 pl-1 p-1 bg-[var(--color1)] rounded-lg w-56 resize-none"
+            rows={rows}
+            cols={cols}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            placeholder="loading.."
+            style={{
+              transition:
+                "background-color 150ms ease, border-color 150ms ease",
+            }}
+          />
+          <button
+            className="bg-[var(--color2)] p-1 rounded-lg text-[var(--color1)] w-full h-10  mt-2"
+            onClick={() => handleEdit()}
+          >
+            Save
+          </button>
         </div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

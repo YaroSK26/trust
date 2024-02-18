@@ -107,84 +107,80 @@ const Prayers = () => {
 
   return (
     <div>
-      <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      />
-
-        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
-          <div className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3">
-            <motion.form
-              initial="hidden"
-              animate="show"
-              variants={slideIn("left", "tween", 0.2, 1)}
-              onSubmit={(e) => handlePrayers(e)}
-            >
-              <h1 className=" text-4xl ">Prayers</h1>
-              <div className="flex flex-col">
-                <label htmlFor="prayer" className="text-center mb-3">
-                  Tell god something
-                </label>
-                <textarea
-                  required
-                  type="text"
-                  placeholder="I am happy for .. "
-                  className="bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
-                  rows={rows}
-                  cols={cols}
-                  id="prayer"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                />
-                <button className="button mx-auto mt-3">
-                  {loading == true ? "Sending.." : "Amen"}
-                </button>
-              </div>
-            </motion.form>
-            <motion.div
-              initial="hidden"
-              animate="show"
-              variants={slideIn("right", "tween", 0.2, 1)}
-            >
-              <h1 className=" text-4xl mt-10 ">History</h1>
-              <div className="flex flex-col">
-                <label className="text-center mb-3">Your thoughts</label>
-                {prayersLoading ? (
-                  <p className="text-center">Loading...</p>
-                ) : prayers.length > 0 ? (
-                  prayers.map((prayer, index) => (
-                    <div key={index} className="mb-7">
-                      <p>{prayer.date}</p>
-                      <textarea
-                        type="text"
-                        placeholder="Loading.. "
-                        className="bg-transparent resize-none outline-none  border-[var(--color2)] border-2 rounded-lg p-2  "
-                        rows={rows}
-                        cols={cols}
-                        id={`prayer-${index}`}
-                        value={prayer.text}
-                        readOnly
-                      />
-                      <div className="flex justify-center items-center gap-3 mt-2">
-                        <Link href={"edit-prayers/" + prayer._id}>
-                          <Pencil size={36} />
-                        </Link>
-                        <Link href={"delete-prayers/" + prayer._id}>
-                          <Trash size={36} color="red" />
-                        </Link>
-                      </div>
+      <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
+        <div className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3">
+          <motion.form
+            initial="hidden"
+            animate="show"
+            variants={slideIn("left", "tween", 0.2, 1)}
+            onSubmit={(e) => handlePrayers(e)}
+          >
+            <h1 className=" text-4xl underline mb-8">Prayers</h1>
+            <div className="flex flex-col">
+              <label htmlFor="prayer" className="text-center mb-3">
+                Tell god something
+              </label>
+              <textarea
+                required
+                type="text"
+                placeholder="I am happy for .. "
+                className="bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
+                rows={rows}
+                cols={cols}
+                id="prayer"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+              />
+              <button className="button mx-auto mt-3">
+                {loading == true ? "Sending.." : "Amen"}
+              </button>
+            </div>
+          </motion.form>
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={slideIn("right", "tween", 0.2, 1)}
+          >
+            <h1 className=" text-3xl mt-10 ">History</h1>
+            <div className="flex flex-col">
+              <label className="text-center mb-3">Your thoughts</label>
+              {prayersLoading ? (
+                <p className="text-center">Loading...</p>
+              ) : prayers.length > 0 ? (
+                prayers.map((prayer, index) => (
+                  <div key={index} className="mb-7">
+                    <p>{prayer.date}</p>
+                    <textarea
+                      type="text"
+                      placeholder="Loading.. "
+                      className="bg-transparent resize-none outline-none  border-[var(--color2)] border-2 rounded-lg p-2  "
+                      rows={rows}
+                      cols={cols}
+                      id={`prayer-${index}`}
+                      value={prayer.text}
+                      readOnly
+                    />
+                    <div className="flex justify-center items-center gap-3 mt-2">
+                      <Link href={"edit-prayers/" + prayer._id}>
+                        <Pencil size={36} />
+                      </Link>
+                      <Link href={"delete-prayers/" + prayer._id}>
+                        <Trash size={36} color="red" />
+                      </Link>
                     </div>
-                  ))
-                ) : (
-                  <p className="text-center">Prayers not found.</p>
-                )}
-              </div>
-            </motion.div>
-          </div>
-
-          <Footer></Footer>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center">Prayers not found.</p>
+              )}
+            </div>
+          </motion.div>
         </div>
+
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

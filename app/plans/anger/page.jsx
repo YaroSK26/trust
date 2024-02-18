@@ -95,7 +95,7 @@ import { useEffect, useState } from "react";
             Loading...
           </p>
         ) : (
-          <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
+          <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center underline">
             <motion.h1
               initial="hidden"
               animate="show"
@@ -131,43 +131,45 @@ import { useEffect, useState } from "react";
                   <div className="checkmark"></div>
                 </label>
                 {activeDay === "day1" && (
-                <div className="flex flex-col gap-2 mt-2  ">
-                  <div className="flex justify-center items-center gap-2 ">
-                    <h1
-                      onClick={() => handleDay1Thought()}
-                      className="cursor-pointer underline"
-                    >
-                      Thought
-                    </h1>
-                    <label className="container cursor-pointer flex justify-end">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[1].thought}
-                        onChange={(event) => handleCheckboxChange(1, "thought")}
-                      />
-                      <div className="checkmark"></div>
-                    </label>
-                  </div>
-                  <div className="flex justify-center items-center gap-2 ">
-                    <h1
-                      onClick={() => handleDay1Verse()}
-                      className="cursor-pointer underline   "
-                    >
-                      Matthew&nbsp;6:12&nbsp;-15
-                    </h1>
-                    <label className="container cursor-pointer">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[1].verse}
-                        onChange={(event) => handleCheckboxChange(1, "verse")}
-                      />
+                  <div className="flex flex-col gap-2 mt-2  ">
+                    <div className="flex justify-center items-center gap-2 ">
+                      <h1
+                        onClick={() => handleDay1Thought()}
+                        className="cursor-pointer underline"
+                      >
+                        Thought
+                      </h1>
+                      <label className="container cursor-pointer flex justify-end">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[1].thought}
+                          onChange={(event) =>
+                            handleCheckboxChange(1, "thought")
+                          }
+                        />
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
+                    <div className="flex justify-center items-center gap-2 ">
+                      <h1
+                        onClick={() => handleDay1Verse()}
+                        className="cursor-pointer underline   "
+                      >
+                        Matthew&nbsp;6:12&nbsp;-15
+                      </h1>
+                      <label className="container cursor-pointer">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[1].verse}
+                          onChange={(event) => handleCheckboxChange(1, "verse")}
+                        />
 
-                      <div className="checkmark"></div>
-                    </label>
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
                   </div>
-                </div>
                 )}
               </div>
               <div
@@ -185,42 +187,44 @@ import { useEffect, useState } from "react";
                   <div className="checkmark"></div>
                 </label>
                 {activeDay === "day2" && (
-                <div className="flex flex-col gap-2 mt-2  ">
-                  <div className="flex justify-center items-center gap-2 ">
-                    <h1
-                      className="cursor-pointer underline"
-                      onClick={() => handleDay2Thought()}
-                    >
-                      Thought
-                    </h1>
-                    <label className="container cursor-pointer flex justify-end">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[2].thought}
-                        onChange={(event) => handleCheckboxChange(2, "thought")}
-                      />
-                      <div className="checkmark"></div>
-                    </label>
+                  <div className="flex flex-col gap-2 mt-2  ">
+                    <div className="flex justify-center items-center gap-2 ">
+                      <h1
+                        className="cursor-pointer underline"
+                        onClick={() => handleDay2Thought()}
+                      >
+                        Thought
+                      </h1>
+                      <label className="container cursor-pointer flex justify-end">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[2].thought}
+                          onChange={(event) =>
+                            handleCheckboxChange(2, "thought")
+                          }
+                        />
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
+                    <div className="flex justify-center items-center gap-2  ">
+                      <h1
+                        className="cursor-pointer underline"
+                        onClick={() => handleDay2Verse()}
+                      >
+                        Ephesians&nbsp;4:26&nbsp;-27
+                      </h1>
+                      <label className="container cursor-pointer ">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[2].verse}
+                          onChange={(event) => handleCheckboxChange(2, "verse")}
+                        />
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
                   </div>
-                  <div className="flex justify-center items-center gap-2  ">
-                    <h1
-                      className="cursor-pointer underline"
-                      onClick={() => handleDay2Verse()}
-                    >
-                      Ephesians&nbsp;4:26&nbsp;-27
-                    </h1>
-                    <label className="container cursor-pointer ">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[2].verse}
-                        onChange={(event) => handleCheckboxChange(2, "verse")}
-                      />
-                      <div className="checkmark"></div>
-                    </label>
-                  </div>
-                </div>
                 )}
               </div>
               <div
@@ -238,42 +242,44 @@ import { useEffect, useState } from "react";
                   <div className="checkmark"></div>
                 </label>
                 {activeDay === "day3" && (
-                <div className="flex flex-col gap-2 mt-2  ">
-                  <div className="flex justify-center items-center gap-2 ">
-                    <h1
-                      className="cursor-pointer underline"
-                      onClick={() => handleDay3Thought()}
-                    >
-                      Thought
-                    </h1>
-                    <label className="container cursor-pointer flex justify-end ">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[3].thought}
-                        onChange={(event) => handleCheckboxChange(3, "thought")}
-                      />
-                      <div className="checkmark"></div>
-                    </label>
+                  <div className="flex flex-col gap-2 mt-2  ">
+                    <div className="flex justify-center items-center gap-2 ">
+                      <h1
+                        className="cursor-pointer underline"
+                        onClick={() => handleDay3Thought()}
+                      >
+                        Thought
+                      </h1>
+                      <label className="container cursor-pointer flex justify-end ">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[3].thought}
+                          onChange={(event) =>
+                            handleCheckboxChange(3, "thought")
+                          }
+                        />
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
+                    <div className="flex justify-center items-center gap-2  ">
+                      <h1
+                        className="cursor-pointer underline"
+                        onClick={() => handleDay3Verse()}
+                      >
+                        1&nbsp;Corinthians&nbsp;10:24
+                      </h1>
+                      <label className="container cursor-pointer">
+                        <input
+                          disabled={loading}
+                          type="checkbox"
+                          checked={dayStates[3].verse}
+                          onChange={(event) => handleCheckboxChange(3, "verse")}
+                        />
+                        <div className="checkmark"></div>
+                      </label>
+                    </div>
                   </div>
-                  <div className="flex justify-center items-center gap-2  ">
-                    <h1
-                      className="cursor-pointer underline"
-                      onClick={() => handleDay3Verse()}
-                    >
-                      1&nbsp;Corinthians&nbsp;10:24
-                    </h1>
-                    <label className="container cursor-pointer">
-                      <input
-                        disabled={loading}
-                        type="checkbox"
-                        checked={dayStates[3].verse}
-                        onChange={(event) => handleCheckboxChange(3, "verse")}
-                      />
-                      <div className="checkmark"></div>
-                    </label>
-                  </div>
-                </div>
                 )}
               </div>
             </motion.div>

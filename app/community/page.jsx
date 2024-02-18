@@ -180,112 +180,109 @@ const Community = ({ swal }) => {
 
   return (
     <div>
-      <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
-      />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
-          <motion.div
-            initial="hidden"
-            animate="show"
-            variants={slideIn("left", "tween", 0.2, 1)}
-            className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3"
-          >
-            <h1 className=" text-4xl">Community</h1>
+      <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={slideIn("left", "tween", 0.2, 1)}
+          className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3"
+        >
+          <h1 className=" text-4xl underline">Community</h1>
 
-            <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[350px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
-              <div className="flex bg-[var(--color2)] text-[var(--color1)] rounded-lg py-2 justify-center items-center">
-                <p className="mr-2">get to know people like you</p>
-                <MessagesSquare />
-              </div>
-
-              <div className=" py-4 flex flex-col  gap-4 sm:max-h-[460px] max-h-[350px]  overflow-y-auto">
-                {commLoading ? (
-                  <p className="text-center">Loading...</p>
-                ) : comm.length > 0 ? (
-                  comm.map((i) => (
-                    <div
-                      key={i._id}
-                      className={`flex mx-2 ${
-                        i.userId === userId ? "justify-end" : "justify-start"
-                      }`}
-                    >
-                      <span className=" bg-[var(--color2)] p-2 rounded-2xl  ">
-                        {i.userId === userId ? (
-                          <div className="flex justify-left items-start gap-1 relative">
-                            <Copy
-                              onClick={() => handleCopyText(i.text)}
-                              size={15}
-                              className="cursor-pointer absolute left-0 top-0 text-[var(--color1)]"
-                            />
-                            <Trash
-                              onClick={() => handleDelete(i._id)}
-                              size={15}
-                              className="cursor-pointer absolute left-0 top-5 text-red-500"
-                            />
-
-                            <h1 className="pl-[18px] text-[var(--color1)]">
-                              {i.text} - {i.name ? i.name : "Guest"}
-                            </h1>
-                            <img
-                              className="w-10 rounded-full"
-                              src={i.profileImg}
-                              alt="profile picture of user"
-                            />
-                          </div>
-                        ) : (
-                          <div className="flex justify-left items-start gap-1 relative">
-                            <img
-                              className="w-10 rounded-full "
-                              src={i.profileImg}
-                              alt="profile picture of user"
-                            />
-                            <h1 className="text-[var(--color1)] pr-[18px]">
-                              {i.name? i.name : "Guest"} - {i.text}
-                            </h1>
-
-                            <Copy
-                              onClick={() => handleCopyText(i.text)}
-                              size={15}
-                              className="cursor-pointer absolute right-0 top-0 text-[var(--color1)]"
-                            />
-                          </div>
-                        )}
-                      </span>
-                    </div>
-                  ))
-                ) : (
-                  <p className="text-center">
-                    silent as the grave, start a conversation!
-                  </p>
-                )}
-              </div>
+          <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[350px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
+            <div className="flex bg-[var(--color2)] text-[var(--color1)] rounded-lg py-2 justify-center items-center">
+              <p className="mr-2">get to know people like you</p>
+              <MessagesSquare />
             </div>
-            {messageCount >= 2 && (
-              <p className="text-center text-red-500">Wait {timer} seconds.</p>
-            )}
 
-            <form onSubmit={(e) => handleCommunity(e)} className="flex gap-3">
-              <input
-                type="text"
-                required
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Send a message"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
+            <div className=" py-4 flex flex-col  gap-4 sm:max-h-[460px] max-h-[350px]  overflow-y-auto">
+              {commLoading ? (
+                <p className="text-center">Loading...</p>
+              ) : comm.length > 0 ? (
+                comm.map((i) => (
+                  <div
+                    key={i._id}
+                    className={`flex mx-2 ${
+                      i.userId === userId ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    <span className=" bg-[var(--color2)] p-2 rounded-2xl  ">
+                      {i.userId === userId ? (
+                        <div className="flex justify-left items-start gap-1 relative">
+                          <Copy
+                            onClick={() => handleCopyText(i.text)}
+                            size={15}
+                            className="cursor-pointer absolute left-0 top-0 text-[var(--color1)]"
+                          />
+                          <Trash
+                            onClick={() => handleDelete(i._id)}
+                            size={15}
+                            className="cursor-pointer absolute left-0 top-5 text-red-500"
+                          />
+
+                          <h1 className="pl-[18px] text-[var(--color1)]">
+                            {i.text} - {i.name ? i.name : "Guest"}
+                          </h1>
+                          <img
+                            className="w-10 rounded-full"
+                            src={i.profileImg}
+                            alt="profile picture of user"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex justify-left items-start gap-1 relative">
+                          <img
+                            className="w-10 rounded-full "
+                            src={i.profileImg}
+                            alt="profile picture of user"
+                          />
+                          <h1 className="text-[var(--color1)] pr-[18px]">
+                            {i.name ? i.name : "Guest"} - {i.text}
+                          </h1>
+
+                          <Copy
+                            onClick={() => handleCopyText(i.text)}
+                            size={15}
+                            className="cursor-pointer absolute right-0 top-0 text-[var(--color1)]"
+                          />
+                        </div>
+                      )}
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <p className="text-center">
+                  silent as the grave, start a conversation!
+                </p>
+              )}
+            </div>
+          </div>
+          {messageCount >= 2 && (
+            <p className="text-center text-red-500">Wait {timer} seconds.</p>
+          )}
+
+          <form onSubmit={(e) => handleCommunity(e)} className="flex gap-3">
+            <input
+              type="text"
+              required
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              placeholder="Send a message"
+              className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
+            />
+            <button>
+              <Send
+                size={52}
+                className="bg-[var(--color2)] text-[var(--color1)] p-1 rounded-2xl cursor-pointer"
               />
-              <button>
-                <Send
-                  size={52}
-                  className="bg-[var(--color2)] text-[var(--color1)] p-1 rounded-2xl cursor-pointer"
-                />
-              </button>
-            </form>
-            {loading == true ? "Sending.." : ""}
-          </motion.div>
-          <Footer></Footer>
-        </div>
+            </button>
+          </form>
+          {loading == true ? "Sending.." : ""}
+        </motion.div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

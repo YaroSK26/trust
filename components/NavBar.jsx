@@ -62,11 +62,10 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
-              <span></span>
               <UserButton afterSignOutUrl="/"></UserButton>
-              <Link href={"/settings"}>
+              <a href="/settings">
                 <Settings size={28} />
-              </Link>
+              </a>
             </ul>
           )}
           {!isSignedIn && (
@@ -118,9 +117,9 @@ const Navbar = ({ theme, toggleTheme }) => {
                   >
                     Contact
                   </Link>
-                  <Link href={"/settings"} onClick={toggleMobileMenu}>
+                  <a href="/settings" onClick={toggleMobileMenu}>
                     <Settings size={28} />
-                  </Link>
+                  </a>
                   <UserButton afterSignOutUrl="/"></UserButton>
                 </div>
               )}

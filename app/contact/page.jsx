@@ -85,75 +85,74 @@ const Contact = ({ swal }) => {
         windowWidth={windowWidth}
       />
 
-
-        <div>
-          <div className="flex min-h-screen  text-[var(--color2)] justify-center items-center gap-10   pt-16">
-            {windowWidth > 768 && (
-              <motion.div
-                initial="hidden"
-                animate="show"
-                variants={slideIn("left", "tween", 0.2, 1)}
-              >
-                <img
-                  src="contact.png"
-                  alt="The heart of man plans his way, but the LORD establishes his steps."
-                  className="w-72 rounded-sm  border-[var(--color2)] border"
-                />
-              </motion.div>
-            )}
-
-            <motion.form
+      <div>
+        <div className="flex min-h-screen  text-[var(--color2)] justify-center items-center gap-10   pt-16">
+          {windowWidth > 768 && (
+            <motion.div
               initial="hidden"
               animate="show"
-              variants={slideIn("right", "tween", 0.2, 1)}
-              onSubmit={handleSubmit}
-              className="flex flex-col gap-3"
+              variants={slideIn("left", "tween", 0.2, 1)}
             >
-              <h1 className="text-4xl text-center">Contact Us</h1>
+              <img
+                src="contact.png"
+                alt="The heart of man plans his way, but the LORD establishes his steps."
+                className="w-72 rounded-sm  border-[var(--color2)] border"
+              />
+            </motion.div>
+          )}
 
-              <input
-                required
-                type="text"
-                name="name"
-                id="name"
-                value={form.name}
-                onChange={handleChange}
-                autocomplete="off"
-                placeholder="Enter your name"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72"
-              />
-              <input
-                required
-                type="email"
-                name="email"
-                id="email"
-                value={form.email}
-                onChange={handleChange}
-                autocomplete="off"
-                placeholder="Enter your valid address"
-                className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-64 sm:w-72"
-              />
-              <textarea
-                required
-                rows={rows}
-                cols={cols}
-                name="message"
-                id="message"
-                value={form.message}
-                onChange={handleChange}
-                autocomplete="off"
-                placeholder="Enter your message"
-                className="bg-transparent resize-none outline-none border-t-transparent border-x-transparent   border-b-[var(--color2)] border p-1 "
-              ></textarea>
-              <center>
-                <button className="button">
-                  {loading ? "Sending..." : "Send"}
-                </button>
-              </center>
-            </motion.form>
-          </div>
-          <Footer></Footer>
+          <motion.form
+            initial="hidden"
+            animate="show"
+            variants={slideIn("right", "tween", 0.2, 1)}
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-3"
+          >
+            <h1 className="text-4xl text-center underline">Contact Us</h1>
+
+            <input
+              required
+              type="text"
+              name="name"
+              id="name"
+              value={form.name}
+              onChange={handleChange}
+              autocomplete="off"
+              placeholder="Enter your name"
+              className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72"
+            />
+            <input
+              required
+              type="email"
+              name="email"
+              id="email"
+              value={form.email}
+              onChange={handleChange}
+              autocomplete="off"
+              placeholder="Enter your valid address"
+              className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-64 sm:w-72"
+            />
+            <textarea
+              required
+              rows={rows}
+              cols={cols}
+              name="message"
+              id="message"
+              value={form.message}
+              onChange={handleChange}
+              autocomplete="off"
+              placeholder="Enter your message"
+              className="bg-transparent resize-none outline-none border-t-transparent border-x-transparent   border-b-[var(--color2)] border p-1 "
+            ></textarea>
+            <center>
+              <button className="button">
+                {loading ? "Sending..." : "Send"}
+              </button>
+            </center>
+          </motion.form>
         </div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };
