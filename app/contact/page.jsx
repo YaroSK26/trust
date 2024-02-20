@@ -86,7 +86,7 @@ const Contact = ({ swal }) => {
       />
 
       <div>
-        <div className="flex min-h-screen  text-[var(--color2)] justify-center items-center gap-10   pt-16">
+        <div className="flex min-h-[75vh]  text-[var(--color2)] justify-center items-center gap-10   pt-28">
           {windowWidth > 768 && (
             <motion.div
               initial="hidden"

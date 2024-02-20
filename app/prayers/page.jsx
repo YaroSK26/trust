@@ -101,7 +101,7 @@ const Prayers = () => {
   }, [userId]);
 
    const isSmallScreen = useMediaQuery({ maxWidth: 600 });
-   const cols = isSmallScreen ? 25 : 25;
+   const cols = isSmallScreen ? 24 : 24;
    const rows = isSmallScreen ? 7 : 7;
 
 

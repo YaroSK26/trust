@@ -165,7 +165,7 @@ const TestAPI = () => {
 
 
   return (
-    <div className="flex relative flex-col items-center justify-center lg:w-[30rem] w-[20rem]">
+    <div className="flex relative flex-col items-center justify-center lg:w-[30rem] w-[19rem]">
       {quote.text !== "Loading..." ? (
         <div>
           <Copy
@@ -173,7 +173,7 @@ const TestAPI = () => {
             size={20}
             className="cursor-pointer absolute right-[-20px] top-5 text-[var(--color2)]"
           />
-          <div className="cursor-pointer absolute right-[-50px] top-[18px] text-[var(--color2)]">
+          <div className="cursor-pointer absolute right-[-22px] top-[50px] text-[var(--color2)]">
             {booked == false ? (
               <Bookmark onClick={(e) => handleBookPost(e, quote.text, quote.reference)} />
             ) : (

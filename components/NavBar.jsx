@@ -85,15 +85,15 @@ const Navbar = ({ theme, toggleTheme }) => {
                 style={{ transform: "translate(10%, 10%)" }}
               >
                 {isMobileMenuOpen ? (
-                  <X className="mt-6" />
+                  <X className="mt-16" />
                 ) : (
                   <Menu className="text-[var(--color2)]" />
                 )}
               </button>
 
               {isMobileMenuOpen && (
-                <div className="flex flex-col mt-5 gap-5 justify-start w-[100vw] p-0 h-[100vh] bg-[var(--color1)] ">
-                  <Link href={"/"} onClick={toggleMobileMenu} className="w-1">
+                <div className="flex flex-col mt-10 gap-5 justify-start w-[100vw] p-0 h-[100vh] bg-[var(--color1)] ">
+                  <Link href={"/home"} onClick={toggleMobileMenu} className="w-1">
                     Home
                   </Link>
                   <Link

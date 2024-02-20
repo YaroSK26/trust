@@ -104,10 +104,9 @@ const Love = ({ swal }) => {
             variants={textVariant()}
             className="text-4xl  mt-10 flex justify-center items-center relative"
           >
-            <ArrowLeft
-              className="absolute left-[-40px] cursor-pointer"
-              onClick={() => (window.location.href = "/home")}
-            />
+            <Link href={"/home"}>
+              <ArrowLeft className="absolute  left-[-40px] top-2 cursor-pointer" />
+            </Link>
             Love
           </motion.h1>
 

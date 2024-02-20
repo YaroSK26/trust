@@ -106,9 +106,9 @@ const Settings = () => {
           <h1 className="text-center text-2xl mt-10 mb-5">Saved verses</h1>
           <div className="flex justify-center items-center  flex-col">
             {savedVerses.length ? (
-              <ul className="text-center relative lg:w-[30rem] w-[20rem] ">
+              <ul className="text-center  lg:w-[30rem] w-[19rem] ">
                 {savedVerses.map((verse) => (
-                  <li key={verse._id}>
+                  <li className="relative" key={verse._id}>
                     <p>
                       {verse.date} <br />
                     </p>
@@ -119,7 +119,7 @@ const Settings = () => {
                     />
                     <BookmarkCheck
                       onClick={(e) => handleBookDelete(verse._id)}
-                      className="cursor-pointer absolute right-[-50px]  text-[var(--color2)]"
+                      className="cursor-pointer absolute  right-[-22px] top-[50px]  text-[var(--color2)]"
                     />
                     {verse.text} - {verse.author} <br />
                     <br />

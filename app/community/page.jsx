@@ -191,7 +191,7 @@ const Community = ({ swal }) => {
         >
           <h1 className=" text-4xl underline">Community</h1>
 
-          <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[350px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
+          <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[400px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
             <div className="flex bg-[var(--color2)] text-[var(--color1)] rounded-lg py-2 justify-center items-center">
               <p className="mr-2">get to know people like you</p>
               <MessagesSquare />
@@ -260,7 +260,10 @@ const Community = ({ swal }) => {
             </div>
           </div>
           {messageCount >= 2 && (
-            <p className="text-center text-red-500">Wait {timer} seconds.</p>
+            <p className="text-center text-red-500">
+              Wait <span className="notranslate">&nbsp;{timer}&nbsp;</span>{" "}
+              seconds.
+            </p>
           )}
 
           <form onSubmit={(e) => handleCommunity(e)} className="flex gap-3">
@@ -270,7 +273,7 @@ const Community = ({ swal }) => {
               value={text}
               onChange={(e) => setText(e.target.value)}
               placeholder="Send a message"
-              className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1"
+              className="bg-transparent border-t-transparent border-x-transparent w-64  outline-none border-b-[var(--color2)] border p-1"
             />
             <button>
               <Send

@@ -7,6 +7,8 @@ import { fadeIn, textVariant } from "../../utils/motion";
 import { motion } from "framer-motion";
 import { projects } from "../../components/projects";
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
 
 const Plans = () => {
     const { theme, toggleTheme } =
@@ -112,13 +114,13 @@ const Plans = () => {
                       <center>
                         <div className="mt-4 flex flex-wrap gap-2 flex-col w-[150px]">
                           {project.source_website.map((w) => (
-                            <a
+                            <Link
                               href={`/${w}`}
                               key={w}
                               className="text-[14px] underline"
                             >
                               <button className="button">Start</button>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                       </center>

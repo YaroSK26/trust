@@ -23,6 +23,8 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <Head>
             <link rel="icon" href="/icon.png" sizes="any" />
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
           </Head>
           <ToasterProvider />
           <Script

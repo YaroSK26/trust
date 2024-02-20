@@ -23,7 +23,7 @@ const Layout = () => {
   }, [isSignedIn, router]);
 
   return (
-    <div className={theme} style={{ width: "100vw" }}>
+    <div className={`${theme} notranslate`} style={{ width: "100vw" }}>
       <nav className="border-b-2 border-[var(--color2)] bg-[var(--color1)] gap-2  flex justify-between items-center h-20 px-4 transition-all relative">
         <Link href={"/"}>
           <img
@@ -47,7 +47,7 @@ const Layout = () => {
         </Link>
       </nav>
 
-      <section className=" mt-[70px]  mb-2">
+      <section className="mt-[70px]  mb-2">
         <div className="text-[var(--color2)] flex justify-center items-center flex-col px-1">
           <h1 className="text-center md:text-7xl sm:text-5xl text-4xl mb-2">
             Build trust with
