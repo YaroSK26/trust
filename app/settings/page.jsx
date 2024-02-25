@@ -165,7 +165,7 @@ useEffect(() => {
 
         <div>
           <h1 className="text-center text-2xl mt-10 mb-5">Badges</h1>
-          <div className="flex flex-row justify-center items-center badge-div">
+          <div className="flex sm:flex-row flex-col  justify-center items-center badge-div">
             <div>
               <img
                 src="./badge-community.png"
