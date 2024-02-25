@@ -92,7 +92,7 @@ const Anger = ({ swal }) => {
           Loading...
         </p>
       ) : (
-        <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center underline">
+        <div className=" flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center">
           <motion.h1
             initial="hidden"
             animate="show"
@@ -153,10 +153,11 @@ const Anger = ({ swal }) => {
                       onClick={() => handleDay1Verse()}
                       className="cursor-pointer underline   "
                     >
-                      Matthew&nbsp;6:12&nbsp;-15
+                      Matthew
+                      <span className="notranslate">&nbsp;6:12-&nbsp;15</span>
                     </h1>
                     <label
-                      className="container cursor-pointer"
+                      className="container cursor-pointer  flex justify-end"
                       onClick={handleLabelClick}
                     >
                       <input
@@ -213,10 +214,11 @@ const Anger = ({ swal }) => {
                       className="cursor-pointer underline"
                       onClick={() => handleDay2Verse()}
                     >
-                      Ephesians&nbsp;4:26&nbsp;-27
+                      Ephesians
+                      <span className="notranslate">&nbsp;4:26-&nbsp;27</span>
                     </h1>
                     <label
-                      className="container cursor-pointer "
+                      className="container cursor-pointer  flex justify-end"
                       onClick={handleLabelClick}
                     >
                       <input
@@ -272,10 +274,11 @@ const Anger = ({ swal }) => {
                       className="cursor-pointer underline"
                       onClick={() => handleDay3Verse()}
                     >
-                      1&nbsp;Corinthians&nbsp;10:24
+                      <span className="notranslate">1&nbsp;</span>Corinthians
+                       <span className="notranslate">&nbsp;10:24</span>
                     </h1>
                     <label
-                      className="container cursor-pointer"
+                      className="container cursor-pointer  flex justify-end"
                       onClick={handleLabelClick}
                     >
                       <input

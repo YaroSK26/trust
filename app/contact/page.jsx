@@ -10,13 +10,11 @@ import Footer from "../../components/Footer";
 import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
+import { useClerk } from "@clerk/nextjs";
+import axios from "axios";
 
 const Contact = ({ swal }) => {
-  const {
-    theme,
-    toggleTheme,
-    windowWidth,
-  } = useFunctions();
+  const { theme, toggleTheme, windowWidth } = useFunctions();
 
   const [form, setForm] = useState({
     name: "",
@@ -31,51 +29,67 @@ const Contact = ({ swal }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
+  const clerk = useClerk();
+  const userId = clerk.user ? clerk.user.id : null;
 
-    emailjs
-      .send(
-        "service_81tw9xw",
-        "template_m37okw1",
-        {
-          from_name: form.name,
-          to_name: "Jaroslav",
-          from_email: form.email,
-          to_email: "jaroba0@gmail.com",
-          message: form.message,
-        },
-        "ao9Pnvt-EA8-h9gBU"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          swal.fire({
-            title: "Thank you for your email",
-            text: "We will send you a feedback soon!",
-            icon: "success",
-          });
+ const handleSubmit = async (e) => {
+   e.preventDefault();
+   setLoading(true);
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
+   // Najprv overíme existenciu userId
+   try {
+     const checkResponse = await axios.get(`/api/contact?userId=${userId}`);
 
-          toast.error("Something went wrong.");
-        }
-      );
-  };
+     const userIds = checkResponse.data.Contacts.map(
+       (contact) => contact.userId
+     );
+     if (userIds.includes(userId)) {
+     } else {
+       toast("You earned a badge!", {
+         icon: "🎉",
+       });
+     }
 
-     const isSmallScreen = useMediaQuery({ maxWidth: 768 });
-     const cols = isSmallScreen ? 10 : 15;
-     const rows = isSmallScreen ? 6 : 8;
-    
+     const sendEmailResponse = await emailjs.send(
+       "service_81tw9xw",
+       "template_m37okw1",
+       {
+         from_name: form.name,
+         to_name: "Jaroslav",
+         from_email: form.email,
+         to_email: "jaroba0@gmail.com",
+         message: form.message,
+       },
+       "ao9Pnvt-EA8-h9gBU"
+     );
+
+     if (sendEmailResponse.status === 200) {
+       await axios.post("/api/contact", { userId: userId });
+       swal.fire({
+         title: "Thank you for your email",
+         text: "We will send you a feedback soon!",
+         icon: "success",
+       });
+       setForm({
+         name: "",
+         email: "",
+         message: "",
+       });
+     } else {
+       throw new Error("Failed to send email.");
+     }
+   } catch (error) {
+     console.error("Error:", error);
+     toast.error("Failed to process your request.");
+   } finally {
+     setLoading(false);
+   }
+ };
+
+
+  const isSmallScreen = useMediaQuery({ maxWidth: 768 });
+  const cols = isSmallScreen ? 10 : 15;
+  const rows = isSmallScreen ? 6 : 8;
 
   return (
     <div>
@@ -117,7 +131,7 @@ const Contact = ({ swal }) => {
               id="name"
               value={form.name}
               onChange={handleChange}
-              autocomplete="off"
+              autoComplete="off"
               placeholder="Enter your name"
               className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72"
             />
@@ -128,7 +142,7 @@ const Contact = ({ swal }) => {
               id="email"
               value={form.email}
               onChange={handleChange}
-              autocomplete="off"
+              autoComplete="off"
               placeholder="Enter your valid address"
               className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1  w-64 sm:w-72"
             />
@@ -140,7 +154,7 @@ const Contact = ({ swal }) => {
               id="message"
               value={form.message}
               onChange={handleChange}
-              autocomplete="off"
+              autoComplete="off"
               placeholder="Enter your message"
               className="bg-transparent resize-none outline-none border-t-transparent border-x-transparent   border-b-[var(--color2)] border p-1 "
             ></textarea>

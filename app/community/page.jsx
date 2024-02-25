@@ -15,8 +15,8 @@ import { motion } from "framer-motion";
 const Community = ({ swal }) => {
   const { theme, toggleTheme } =
     useFunctions();
-  //timer
-  // Load initial state from localStorage or set to default
+//!timer
+
   const [messageCount, setMessageCount] = useState(
     parseInt(localStorage.getItem("messageCount")) || 0
   );
@@ -24,7 +24,6 @@ const Community = ({ swal }) => {
     parseInt(localStorage.getItem("timer")) || 0
   );
 
-  // Update localStorage when messageCount or timer changes
   useEffect(() => {
     localStorage.setItem("messageCount", messageCount);
     localStorage.setItem("timer", timer);
@@ -36,13 +35,13 @@ const Community = ({ swal }) => {
         interval = setInterval(() => {
           setTimer((prev) => {
             const newTime = prev - 1;
-            localStorage.setItem("timer", newTime.toString()); // Update localStorage
+            localStorage.setItem("timer", newTime.toString()); 
             return newTime;
           });
         }, 1000);
       } else if (timer === 0 && messageCount > 0) {
-        setMessageCount(0); // Reset message count after 1 minute
-        localStorage.setItem("messageCount", "0"); // Reset localStorage
+        setMessageCount(0); 
+        localStorage.setItem("messageCount", "0");
       }
       return () => clearInterval(interval);
     }, [timer]);
@@ -50,7 +49,6 @@ const Community = ({ swal }) => {
   //! POST
   const getCurrentDate = (date) => {
     if (!date) {
-      // If date is undefined, return the current date
       date = new Date();
     }
 
@@ -75,19 +73,25 @@ const Community = ({ swal }) => {
   const handleCommunity = async (e) => {
     e.preventDefault();
     if (messageCount < 2) {
-      // Increment message count right away
       setMessageCount((prevCount) => {
         if (prevCount < 2) {
           if (prevCount === 0) {
-            setTimer(60); // Start the timer when the first message is sent
+            setTimer(60);
           }
-          return prevCount + 1; // Increase the message count
+          return prevCount + 1;
         }
-        return prevCount; // Return the previous count if 2 messages have already been sent
+        return prevCount;
       });
 
-      try {
-        // existing logic for posting message
+     try {
+        const isFirstMessage = !comm.some((item) => item.userId === userId);
+
+        if (isFirstMessage) {
+          toast("You earned a badge!", {
+            icon: "🎉",
+          });
+        }
+
         const data = {
           text: text,
           date: selectedDate,
@@ -100,28 +104,31 @@ const Community = ({ swal }) => {
 
         const res = await axios.post("/api/community", data);
 
-        const refreshPage = () => {
-          setTimeout(() => {
-            window.location.reload();
-          }, 500);
-        };
-
-        if (res) {
+        if (res.data) {
           toast.success("Sent!");
-          refreshPage();
+
+          setComm((prevComm) => [
+            ...prevComm,
+            {
+              ...data, 
+              _id: res.data._id, 
+            },
+          ]);
+          setText(""); 
         } else {
           throw new Error("Error");
         }
       } catch (error) {
         console.error(error);
-        toast.error("Failed to send message.");
+        toast.error("Failed to send me ssage.");
       } finally {
-        setLoading(false); // Ensure loading is false after operation
+        setLoading(false);
       }
     } else {
       toast.error("You can only send 2 messages per minute.");
     }
   };
+
 
   //!GET
   const [comm, setComm] = useState([]);
@@ -146,7 +153,7 @@ const Community = ({ swal }) => {
     }
   }, [userId]);
 
-  //delete message ,copy message
+  //!delete message ,copy message
 
   const handleCopyText = (text) => {
     navigator.clipboard.writeText(text);
@@ -163,20 +170,20 @@ const Community = ({ swal }) => {
         confirmButtonText: "Yes, delete",
         reverseButtons: true,
       })
-      .then(function (result) {
+      .then(async (result) => {
         if (result.isConfirmed) {
-          axios.delete(`/api/community?id=${id}`).then(() => {
+          try {
+            await axios.delete(`/api/community?id=${id}`);
             toast.success("Deleted!");
-            axios.get("/api/community").then((response) => {
-              setCommLoading(true);
-              setComm(response.data.Comm);
-              setCommLoading(false);
-              window.location.href = `${window.location.origin}/community`;
-            });
-          });
+            setComm((prevComm) => prevComm.filter((item) => item._id !== id)); // Aktualizuje stav comm
+          } catch (error) {
+            console.error("Error deleting the message:", error);
+            toast.error("Failed to delete the message.");
+          }
         }
       });
   };
+
 
   return (
     <div>

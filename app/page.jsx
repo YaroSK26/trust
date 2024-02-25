@@ -68,7 +68,7 @@ const Layout = () => {
         </div>
 
         <div className="text-[var(--color2)]">
-          <div className=" bottom-2 absolute inset-x-1/2  flex justify-center items-center gap-3">
+          <div className=" bottom-5 absolute inset-x-1/2  flex justify-center items-center gap-3">
             <Link
               target="_blank"
               href={"https://www.instagram.com/jaroslav_barabas/"}

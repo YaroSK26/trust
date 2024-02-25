@@ -13,8 +13,6 @@ import { toast } from "react-hot-toast";
 
 const Settings = () => {
   const { theme, toggleTheme } = useFunctions();
-  const translateScriptLoaded = useRef(false);
-  const [loaded,setLoaded] = useState(false)
 
   //!verses
 
@@ -50,7 +48,6 @@ const Settings = () => {
       const response = await axios.delete(`/api/saved?id=${_id}`);
       if (response.status === 200) {
         toast.success("Bookmark removed!");
-        // Odstránime verš z lokálneho stavu po úspešnom zmazaní
         setSavedVerses((prevVerses) =>
           prevVerses.filter((verse) => verse._id !== _id)
         );
@@ -62,6 +59,77 @@ const Settings = () => {
       toast.error("Failed to delete verse.");
     }
   };
+
+
+
+
+
+//!badges
+
+ const [comm, setComm] = useState([]);
+
+ useEffect(() => {
+   const fetchComm = async () => {
+     try {
+       const response = await axios.get("api/community");
+       setComm(response.data.Comm);
+     } catch (error) {
+       console.error("Failed to fetch community", error);
+       setComm([]);
+     }
+   };
+
+   if (userId) {
+     fetchComm();
+   }
+ }, [userId]);
+
+ const badge1 = comm.some((item) => item.userId === userId);
+
+
+const [badge2, setBadge2] = useState(false);
+
+useEffect(() => {
+  const fetchPlans = async () => {
+    if (userId) {
+      try {
+         const response = await axios.get("/api/plans", {
+           params: { userId: userId }, 
+         });
+        const contacts = response.data.Plans || [];
+        if(contacts.length >= 18);
+      } catch (error) {
+        console.error("Failed to fetch contacts", error);
+        setBadge2(false);
+      }
+    }
+  };
+
+  fetchPlans();
+}, [userId]);
+
+
+
+ const [contact, setContact] = useState([]);
+
+ useEffect(() => {
+   const fetchContact = async () => {
+     try {
+       const response = await axios.get("api/contact");
+       setContact(response.data.Contacts);
+     } catch (error) {
+       console.error("Failed to fetch community", error);
+       setContact([]);
+     }
+   };
+
+   if (userId) {
+     fetchContact();
+   }
+ }, [userId]);
+
+ const badge3 = contact.some((item) => item.userId === userId);
+
 
   return (
     <div>
@@ -96,14 +164,39 @@ const Settings = () => {
         <div>
           <h1 className="text-center text-2xl mt-10 mb-5">Badges</h1>
           <div className="flex flex-row justify-center items-center badge-div">
-            {/* <img src="./badge-plan.png" alt="" />
-            <img  src="./badge-community.png" alt="" />
-            <img  src="./badge-contact.png" alt="" /> */}
-            <p>Coming soon..</p>
+            <div>
+              <img
+                src="./badge-community.png"
+                alt="badge for sending a message in community"
+                // Prispôsobenie triedy na základe toho, či užívateľ poslal správu
+                className={badge1 ? "" : "grayscale"}
+              />
+              <p className="text-center  h-5 w-52">
+                Send a message <br /> in community
+              </p>
+            </div>
+            <div>
+              <img
+                src="./badge-plan.png"
+                alt="badge for completing all plans"
+                className={badge2 ? "" : "grayscale"}
+              />
+              <p className="text-center h-5 w-52 ">Finish all plans</p>
+            </div>
+            <div>
+              <img
+                src="./badge-contact.png"
+                alt="badge for sending a feedback in community"
+                className={badge3 ? "" : "grayscale"}
+              />
+              <p className="text-center  h-5 w-52">
+                Send a feedback <br /> in contact
+              </p>
+            </div>
           </div>
         </div>
         <div>
-          <h1 className="text-center text-2xl mt-10 mb-5">Saved verses</h1>
+          <h1 className="text-center text-2xl mt-16 mb-5">Saved verses</h1>
           <div className="flex justify-center items-center  flex-col">
             {savedVerses.length ? (
               <ul className="text-center  lg:w-[30rem] w-[19rem] ">

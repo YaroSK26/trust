@@ -20,7 +20,6 @@ const usePlanLogic = (userId, planName) => {
         const response = await axios.get("/api/plans", {
           params: { userId, planName },
         });
-
         const plans = response.data.Plans;
         const newState = { ...dayStates };
         plans.forEach((plan) => {
@@ -41,37 +40,49 @@ const usePlanLogic = (userId, planName) => {
     fetchData();
   }, [userId, planName]);
 
-  const handleCheckboxChange = async (dayNumber, type) => {
-    const dayNum = Number(dayNumber);
-    const currentState = dayStates[dayNum][type];
+ const handleCheckboxChange = async (dayNumber, type) => {
+   const dayNum = Number(dayNumber);
+   const currentState = dayStates[dayNum][type];
 
-    const newState = {
-      ...dayStates,
-      [dayNum]: { ...dayStates[dayNum], [type]: !currentState },
-    };
+   const newState = {
+     ...dayStates,
+     [dayNum]: { ...dayStates[dayNum], [type]: !currentState },
+   };
 
-    setDayStates(newState);
+   setDayStates(newState);
 
-    try {
-      const data = {
-        userId,
-        planName: planName,
-        planDay: dayNum.toString(),
-        thoughtOrVerse: type.charAt(0).toUpperCase() + type.slice(1),
-      };
+   try {
+     const data = {
+       userId,
+       planName: planName,
+       planDay: dayNum.toString(),
+       thoughtOrVerse: type.charAt(0).toUpperCase() + type.slice(1),
+     };
 
-      if (!currentState) {
-        await axios.post("/api/plans", data);
-      } else {
-        await axios.delete("/api/plans", { data: data });
-      }
-    } catch (error) {
-      console.error("Error updating plan", error);
-      toast.error("Failed to update.");
-    }
+     if (!currentState) {
+       await axios.post("/api/plans", data);
+     } else {
+       await axios.delete("/api/plans", { data: data });
+     }
 
-    checkIfAllFilled(newState);
-  };
+     const response = await axios.get("/api/plans", {
+       params: { userId },
+     });
+     const plans = response.data.Plans;
+
+     if (plans.length === 18) {
+       toast("You earned a badge!", {
+         icon: "🎉",
+       });
+     }
+
+     checkIfAllFilled(newState);
+   } catch (error) {
+     console.error("Error updating plan", error);
+     toast.error("Failed to update.");
+   }
+ };
+
 
   const checkIfAllFilled = (states) => {
     const allFilled = Object.values(states).every(

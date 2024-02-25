@@ -6,8 +6,9 @@ export async function POST(request) {
   try {
     const { text, date, userId, profileImg,name } = await request.json();
     await connectMongoDB();
-    await Community.create({ text, date, userId, profileImg,name });
-    return NextResponse.json({ message: "Community Created" }, { status: 201 });
+    const newMessage = await Community.create({ text, date, userId, profileImg, name });
+    // Vrátenie odpovede s _id novej správy
+    return NextResponse.json({ message: "Community Created", _id: newMessage._id }, { status: 201 });
   } catch (error) {
     // Log the error for debugging
     console.error(error);

@@ -20,11 +20,11 @@ export async function GET(request) {
     const userId = searchParams.get("userId");
     const planName = searchParams.get("planName");
 
-    let query = { planName: planName };
+    let query = {};
     if (userId) query.userId = userId;
     if (planName) query.planName = planName;
 
-    const Plans = await Plan.find(query); 
+    const Plans = await Plan.find(query);
 
     return NextResponse.json({ Plans });
   } catch (error) {

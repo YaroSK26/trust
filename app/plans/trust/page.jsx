@@ -93,7 +93,7 @@ const Trust = ({ swal }) => {
           Loading...
         </p>
       ) : (
-        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center underline">
+        <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center ">
           <motion.h1
             initial="hidden"
             animate="show"
@@ -154,7 +154,8 @@ const Trust = ({ swal }) => {
                       onClick={() => handleDay1Verse()}
                       className="cursor-pointer underline"
                     >
-                      Proverbs&nbsp;3:5&nbsp;-6
+                      Proverbs
+                      <span className="notranslate">&nbsp;3:5-&nbsp;6 </span>
                     </h1>
                     <label
                       className="container cursor-pointer"
@@ -214,10 +215,10 @@ const Trust = ({ swal }) => {
                       className="cursor-pointer underline"
                       onClick={() => handleDay2Verse()}
                     >
-                      Isaiah&nbsp;43:2
+                      Isaiah <span className="notranslate">&nbsp;43:2</span>
                     </h1>
                     <label
-                      className="container cursor-pointer "
+                      className="container cursor-pointer  flex justify-end"
                       onClick={handleLabelClick}
                     >
                       <input
@@ -273,17 +274,17 @@ const Trust = ({ swal }) => {
                       className="cursor-pointer underline"
                       onClick={() => handleDay3Verse()}
                     >
-                      Proverbs&nbsp;16:9
+                      Proverbs <span className="notranslate">&nbsp;16:9</span>
                     </h1>
                     <label
-                      className="container cursor-pointer"
+                      className="container cursor-pointer flex justify-end"
                       onClick={handleLabelClick}
                     >
                       <input
                         disabled={loading}
                         type="checkbox"
-                        checked={dayStates[1].verse}
-                        onChange={(event) => handleCheckboxChange(1, "verse")}
+                        checked={dayStates[3].verse}
+                        onChange={(event) => handleCheckboxChange(3, "verse")}
                       />
                       <div className="checkmark"></div>
                     </label>
