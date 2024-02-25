@@ -97,7 +97,7 @@ const Community = ({ swal }) => {
           date: selectedDate,
           userId,
           profileImg,
-          name: clerk.user.firstName,
+          name: clerk.user.fullName,
         };
 
         setLoading(true);
@@ -230,7 +230,7 @@ const Community = ({ swal }) => {
                           />
 
                           <h1 className="pl-[18px] text-[var(--color1)]">
-                            {i.text} - {i.name ? i.name : "Guest"}
+                            {i.text} - {i.name ? i.name : "Unknown"}
                           </h1>
                           <img
                             className="w-10 rounded-full"

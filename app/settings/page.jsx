@@ -97,7 +97,9 @@ useEffect(() => {
            params: { userId: userId }, 
          });
         const contacts = response.data.Plans || [];
-        if(contacts.length >= 18);
+        if(contacts.length >= 18){
+          setBadge2(true)
+        }
       } catch (error) {
         console.error("Failed to fetch contacts", error);
         setBadge2(false);
