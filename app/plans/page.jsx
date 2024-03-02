@@ -67,7 +67,7 @@ const Plans = () => {
               <select
                 value={tagFilter}
                 onChange={(e) => setTagFilter(e.target.value)}
-                className="bg-transparent border-t-transparent border-x-transparent cursor-pointer outline-none border-b-[var(--color2)] border p-1 w-52"
+                className="bg-[var(--color1)] border-t-transparent border-x-transparent cursor-pointer outline-none border-b-[var(--color2)] border p-1 w-52"
               >
                 <option value="">Filter by Tag</option>
                 {uniqueTags.map((tag) => (
