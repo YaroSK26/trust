@@ -97,7 +97,7 @@ const Anger = ({ swal }) => {
             initial="hidden"
             animate="show"
             variants={textVariant()}
-            className="text-4xl  mt-10  flex justify-center items-center relative"
+            className="text-[40px]  mt-10  flex justify-center items-center relative"
           >
             <Link href={"/home"}>
               <ArrowLeft className="absolute  left-[-40px] top-2 cursor-pointer" />
@@ -275,7 +275,7 @@ const Anger = ({ swal }) => {
                       onClick={() => handleDay3Verse()}
                     >
                       <span className="notranslate">1&nbsp;</span>Corinthians
-                       <span className="notranslate">&nbsp;10:24</span>
+                      <span className="notranslate">&nbsp;10:24</span>
                     </h1>
                     <label
                       className="container cursor-pointer  flex justify-end"

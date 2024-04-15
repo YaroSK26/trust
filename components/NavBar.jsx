@@ -78,7 +78,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </ul>
           )}
           {windowWidth <= 768 && isSignedIn && (
-            <div className="">
+            <div className="flex justify-center items-center">
               <button
                 onClick={toggleMobileMenu}
                 className="md:hidden z-50"
@@ -87,13 +87,17 @@ const Navbar = ({ theme, toggleTheme }) => {
                 {isMobileMenuOpen ? (
                   <X className="mt-16" />
                 ) : (
-                  <Menu className="text-[var(--color2)]" />
+                  <Menu className="text-[var(--color2)] " />
                 )}
               </button>
 
               {isMobileMenuOpen && (
                 <div className="flex flex-col mt-10 gap-5 justify-start w-[100vw] p-0 h-[100vh] bg-[var(--color1)] ">
-                  <Link href={"/home"} onClick={toggleMobileMenu} className="w-1">
+                  <Link
+                    href={"/home"}
+                    onClick={toggleMobileMenu}
+                    className="w-1"
+                  >
                     Home
                   </Link>
                   <Link
@@ -129,7 +133,6 @@ const Navbar = ({ theme, toggleTheme }) => {
       </nav>
     </div>
   );
-
 };
 
 export default Navbar;

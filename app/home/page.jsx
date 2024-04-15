@@ -10,6 +10,7 @@ import { fadeIn, textVariant } from "../../utils/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "../../components/projects";
+import Quiz from "../../components/Quiz"
 
 const Dashboard = () => {
   const { theme, toggleTheme } = useFunctions();
@@ -27,7 +28,7 @@ const Dashboard = () => {
         <div className="text-[var(--color2)] flex justify-center ">
           <TestAPI></TestAPI>
         </div>
-        <h1 className="text-center text-4xl mt-10 underline">Bible Plans</h1>
+        <h1 className="text-center text-[40px] mt-10 underline">Bible Plans</h1>
         <div className=" flex justify-center items-center flex-wrap gap-10 mt-10 p-4 ">
           {projects.slice(0, 3).map((project, index) => (
             <Tilt
@@ -85,6 +86,9 @@ const Dashboard = () => {
             See more...
           </p>
         </Link>
+          
+          <Quiz></Quiz>
+
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
             <path

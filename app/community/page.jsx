@@ -196,7 +196,7 @@ const Community = ({ swal }) => {
           variants={slideIn("left", "tween", 0.2, 1)}
           className="text-[var(--color2)] text-center mt-10 flex justify-center items-center flex-col gap-3"
         >
-          <h1 className=" text-4xl underline">Community</h1>
+          <h1 className="text-[40px] underline">Community</h1>
 
           <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[400px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
             <div className="flex bg-[var(--color2)] text-[var(--color1)] rounded-lg py-2 justify-center items-center">

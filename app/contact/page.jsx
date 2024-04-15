@@ -122,7 +122,7 @@ const Contact = ({ swal }) => {
             onSubmit={handleSubmit}
             className="flex flex-col gap-3"
           >
-            <h1 className="text-4xl text-center underline">Contact Us</h1>
+            <h1 className="text-[40px] text-center underline">Contact Us</h1>
 
             <input
               required

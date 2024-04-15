@@ -117,7 +117,7 @@ const Prayers = () => {
             variants={slideIn("left", "tween", 0.2, 1)}
             onSubmit={(e) => handlePrayers(e)}
           >
-            <h1 className=" text-4xl underline mb-8">Prayers</h1>
+            <h1 className=" text-[40px] underline mb-8">Prayers</h1>
             <div className="flex flex-col">
               <label htmlFor="prayer" className="text-center mb-3">
                 Tell god something

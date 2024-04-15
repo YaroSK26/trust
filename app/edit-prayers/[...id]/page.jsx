@@ -64,7 +64,7 @@ const EditPage = ({ swal }) => {
       <Navbar theme={theme} toggleTheme={toggleTheme}></Navbar>
       <div className="flex min-h-screen  flex-col  pt-20 text-[var(--color2)] justify-between items-center gap-2">
         <div className="flex flex-col mt-10">
-          <h1 className="text-center text-4xl font-bold mb-4 underline">
+          <h1 className="text-center text-[40px] font-bold mb-4 underline">
             Edit prayer
           </h1>
           <textarea
