@@ -78,21 +78,16 @@ const Navbar = ({ theme, toggleTheme }) => {
             </ul>
           )}
           {windowWidth <= 768 && isSignedIn && (
-            <div className="flex justify-center items-center">
-              <button
-                onClick={toggleMobileMenu}
-                className="md:hidden z-50"
-                style={{ transform: "translate(10%, 10%)" }}
-              >
+            <div className="flex justify-center items-center ml-3">
+              <button onClick={toggleMobileMenu} className="md:hidden z-50 ">
                 {isMobileMenuOpen ? (
-                  <X className="mt-16" />
+                  <X className="absolute top-[335px] left-[27px] w-10 h-10" />
                 ) : (
                   <Menu className="text-[var(--color2)] " />
                 )}
               </button>
-
               {isMobileMenuOpen && (
-                <div className="flex flex-col mt-10 gap-5 justify-start w-[100vw] p-0 h-[100vh] bg-[var(--color1)] ">
+                <div className="flex text-xl flex-col mt-10 gap-5 justify-start w-[100vw] p-0 h-[100vh] bg-[var(--color1)] ">
                   <Link
                     href={"/home"}
                     onClick={toggleMobileMenu}
@@ -122,9 +117,14 @@ const Navbar = ({ theme, toggleTheme }) => {
                     Contact
                   </Link>
                   <a href="/settings" onClick={toggleMobileMenu}>
-                    <Settings size={28} />
+                    <Settings size={36} />
                   </a>
-                  <UserButton afterSignOutUrl="/"></UserButton>
+                  <span className="ml-1">
+                    <UserButton
+                      afterSignOutUrl="/"
+                      style={{ fontSize: "1.2rem", padding: "0.5rem 1rem" }}
+                    ></UserButton>
+                  </span>
                 </div>
               )}
             </div>

@@ -14,19 +14,25 @@ const Quiz = () => {
   const handleAnswerClick = (answer) => {
     setSelectedAnswer(answer);
   };
+const handleSubmit = () => {
+  if (!selectedAnswer) return;
 
-  const handleSubmit = () => {
-    if (!selectedAnswer) return;
+  const isCorrect = currentQuestion.answers.find(
+    (a) => a === selectedAnswer
+  ).correct;
 
-    const isCorrect = currentQuestion.answers.find(
-      (a) => a === selectedAnswer
-    ).correct;
-
+  if (isCorrect) {
     setFeedback({
-      correct: isCorrect,
+      correct: true,
       explanation: currentQuestion.explanation,
     });
-  };
+  } else {
+    setFeedback({
+      correct: false,
+      explanation: null,
+    });
+  }
+};
 
   const handleNextQuestion = () => {
     setSelectedAnswer(null);
