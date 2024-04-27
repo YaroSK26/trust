@@ -13,9 +13,8 @@ import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
 
 const Community = ({ swal }) => {
-  const { theme, toggleTheme } =
-    useFunctions();
-//!timer
+  const { theme, toggleTheme } = useFunctions();
+  //!timer
 
   const [messageCount, setMessageCount] = useState(
     parseInt(localStorage.getItem("messageCount")) || 0
@@ -29,23 +28,23 @@ const Community = ({ swal }) => {
     localStorage.setItem("timer", timer);
   }, [messageCount, timer]);
 
-    useEffect(() => {
-      let interval;
-      if (timer > 0) {
-        interval = setInterval(() => {
-          setTimer((prev) => {
-            const newTime = prev - 1;
-            localStorage.setItem("timer", newTime.toString()); 
-            return newTime;
-          });
-        }, 1000);
-      } else if (timer === 0 && messageCount > 0) {
-        setMessageCount(0); 
-        localStorage.setItem("messageCount", "0");
-      }
-      return () => clearInterval(interval);
-    }, [timer]);
-    
+  useEffect(() => {
+    let interval;
+    if (timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => {
+          const newTime = prev - 1;
+          localStorage.setItem("timer", newTime.toString());
+          return newTime;
+        });
+      }, 1000);
+    } else if (timer === 0 && messageCount > 0) {
+      setMessageCount(0);
+      localStorage.setItem("messageCount", "0");
+    }
+    return () => clearInterval(interval);
+  }, [timer]);
+
   //! POST
   const getCurrentDate = (date) => {
     if (!date) {
@@ -83,7 +82,7 @@ const Community = ({ swal }) => {
         return prevCount;
       });
 
-     try {
+      try {
         const isFirstMessage = !comm.some((item) => item.userId === userId);
 
         if (isFirstMessage) {
@@ -110,11 +109,11 @@ const Community = ({ swal }) => {
           setComm((prevComm) => [
             ...prevComm,
             {
-              ...data, 
-              _id: res.data._id, 
+              ...data,
+              _id: res.data._id,
             },
           ]);
-          setText(""); 
+          setText("");
         } else {
           throw new Error("Error");
         }
@@ -128,7 +127,6 @@ const Community = ({ swal }) => {
       toast.error("You can only send 2 messages per minute.");
     }
   };
-
 
   //!GET
   const [comm, setComm] = useState([]);
@@ -184,6 +182,21 @@ const Community = ({ swal }) => {
       });
   };
 
+  const [userIdRole, setUserIdRole] = useState(null); // Use state to manage user ID
+
+  useEffect(() => {
+    if (
+      clerk.user &&
+      clerk.user.organizationMemberships &&
+      clerk.user.organizationMemberships.length > 0
+    ) {
+      setUserIdRole(clerk.user.organizationMemberships[0].role);
+    } else {
+      setUserIdRole("User");
+    }
+  }, [clerk.user]);
+
+  
 
   return (
     <div>
@@ -254,6 +267,13 @@ const Community = ({ swal }) => {
                             size={15}
                             className="cursor-pointer absolute right-0 top-0 text-[var(--color1)]"
                           />
+                          {userIdRole === "org:admin" ? (
+                            <Trash
+                              onClick={() => handleDelete(i._id)}
+                              size={15}
+                              className="cursor-pointer absolute right-0 top-5 text-red-500"
+                            />
+                          ) : null}
                         </div>
                       )}
                     </span>

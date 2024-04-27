@@ -7,7 +7,7 @@ import { withSwal } from "react-sweetalert2";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import Footer from "../../components/Footer";
-import { slideIn } from "../../utils/motion";
+import {slideIn, textVariant } from "../../utils/motion";
 import { motion } from "framer-motion";
 import { useMediaQuery } from "react-responsive";
 import { useClerk } from "@clerk/nextjs";
@@ -165,6 +165,21 @@ const Contact = ({ swal }) => {
             </center>
           </motion.form>
         </div>
+        <motion.div
+          variants={textVariant()}
+          initial="hidden"
+          animate="show"
+          className="flex justify-center items-center flex-col gap-5"
+        >
+          <h1 className="text-center text-[var(--color2)] text-2xl md:mt-24 ">
+            Or scan this code
+          </h1>
+          <img
+            className="md:w-[400px] md:h-[400px] w-[250px] h-[250px]"
+            src="qr-code.png"
+            alt="qr code -redirect to gmail"
+          />
+        </motion.div>
         <Footer></Footer>
       </div>
     </div>

@@ -1,7 +1,6 @@
-
-
 let questions = [
   {
+    id: 1,
     question: "Where was Jesus born?",
     answers: [
       { text: "Egypt", correct: false },
@@ -255,10 +254,10 @@ let questions = [
   {
     question: "What is the Jewish sacred text called?",
     answers: [
-      { text: "The Tanakh", correct: true },
       { text: "The Corinth", correct: false },
       { text: "The Abrahamic Law", correct: false },
       { text: "The Quran", correct: false },
+      { text: "The Tanakh", correct: true },
     ],
     explanation: "The Tanakh is essentially the Hebrew Bible.",
   },
@@ -324,9 +323,9 @@ let questions = [
     question:
       "What was the name of the giant who Goliath fought and was defeated by David?",
     answers: [
-      { text: "Goliath", correct: true },
       { text: "Philistine", correct: false },
       { text: "Saul", correct: false },
+      { text: "Goliath", correct: true },
       { text: "Og", correct: false },
     ],
     explanation:
@@ -336,8 +335,8 @@ let questions = [
     question:
       "What was the name of the king of Israel who was known for his wisdom?",
     answers: [
-      { text: "Solomon", correct: true },
       { text: "David", correct: false },
+      { text: "Solomon", correct: true },
       { text: "Moses", correct: false },
       { text: "Abraham", correct: false },
     ],
@@ -347,10 +346,10 @@ let questions = [
   {
     question: "What was the name of the prophet who was swallowed by a whale?",
     answers: [
-      { text: "Jonah", correct: true },
       { text: "Noah", correct: false },
       { text: "Moses", correct: false },
       { text: "Elijah", correct: false },
+      { text: "Jonah", correct: true },
     ],
     explanation:
       "The prophet Jonah is famously known for being swallowed by a whale and later being rescued after three days.",
@@ -358,10 +357,10 @@ let questions = [
   {
     question: "What was the name of the place where Jesus was crucified?",
     answers: [
-      { text: "Golgotha", correct: true },
       { text: "Gethsemane", correct: false },
       { text: "Nazareth", correct: false },
       { text: "Bethlehem", correct: false },
+      { text: "Golgotha", correct: true },
     ],
     explanation:
       "Golgotha, also known as Calvary, is the site where Jesus was crucified.",
@@ -369,10 +368,10 @@ let questions = [
   {
     question: "What was the name of the apostle who betrayed Jesus?",
     answers: [
-      { text: "Judas Iscariot", correct: true },
       { text: "Peter", correct: false },
       { text: "John", correct: false },
       { text: "Paul", correct: false },
+      { text: "Judas Iscariot", correct: true },
     ],
     explanation:
       "Judas Iscariot is the apostle who betrayed Jesus for 30 pieces of silver.",
@@ -380,10 +379,10 @@ let questions = [
   {
     question: "What was the name of the first book of the New Testament?",
     answers: [
-      { text: "Matthew", correct: true },
       { text: "Mark", correct: false },
       { text: "Luke", correct: false },
       { text: "John", correct: false },
+      { text: "Matthew", correct: true },
     ],
     explanation:
       "The Gospel of Matthew is the first book of the New Testament.",
@@ -391,9 +390,9 @@ let questions = [
   {
     question: "What was the name of the first woman created by God?",
     answers: [
-      { text: "Eve", correct: true },
       { text: "Sarah", correct: false },
       { text: "Ruth", correct: false },
+      { text: "Eve", correct: true },
       { text: "Mary", correct: false },
     ],
     explanation: "Eve was the first woman created by God.",
@@ -425,8 +424,8 @@ let questions = [
     question:
       "What was the name of the woman who anointed Jesus with oil before his crucifixion?",
     answers: [
-      { text: "Mary Magdalene", correct: true },
       { text: "Martha", correct: false },
+      { text: "Mary Magdalene", correct: true },
       { text: "Mary, the mother of Jesus", correct: false },
       { text: "Salome", correct: false },
     ],
@@ -437,8 +436,8 @@ let questions = [
     question:
       "What was the name of the apostle who was known for his missionary journeys and letters to early churches?",
     answers: [
-      { text: "Paul", correct: true },
       { text: "Peter", correct: false },
+      { text: "Paul", correct: true },
       { text: "John", correct: false },
       { text: "James", correct: false },
     ],
@@ -449,8 +448,8 @@ let questions = [
     question:
       "What was the name of the mountain where Moses received the Ten Commandments?",
     answers: [
-      { text: "Mount Sinai", correct: true },
       { text: "Mount Tabor", correct: false },
+      { text: "Mount Sinai", correct: true },
       { text: "Mount Carmel", correct: false },
       { text: "Mount Hermon", correct: false },
     ],
@@ -460,10 +459,10 @@ let questions = [
   {
     question: "What was the name of the language that Jesus spoke?",
     answers: [
-      { text: "Aramaic", correct: true },
       { text: "Hebrew", correct: false },
       { text: "Greek", correct: false },
       { text: "Latin", correct: false },
+      { text: "Aramaic", correct: true },
     ],
     explanation:
       "Aramaic was the common language spoken in Galilee and Judea during Jesus' time, and it is believed that he primarily spoke Aramaic.",
@@ -472,10 +471,10 @@ let questions = [
     question:
       "What was the name of the high priest who refused to let the apostles leave prison?",
     answers: [
-      { text: "Caiaphas", correct: true },
       { text: "Annas", correct: false },
       { text: "Pilate", correct: false },
       { text: "Herod", correct: false },
+      { text: "Caiaphas", correct: true },
     ],
     explanation:
       "Caiaphas was the Jewish high priest at the time of Jesus' arrest and crucifixion, and he played a key role in the prosecution of Jesus. Acts 5:17-18 states, 'Then the high priest rose up, and with him all who were of the council of the Pharisees, and filled with jealousy, they arrested the apostles and put them in public custody.'",
@@ -484,9 +483,9 @@ let questions = [
     question:
       "What was the name of the disciple who denied Jesus three times before the rooster crowed?",
     answers: [
-      { text: "Peter", correct: true },
       { text: "James", correct: false },
       { text: "John", correct: false },
+      { text: "Peter", correct: true },
       { text: "Judas", correct: false },
     ],
     explanation:
@@ -495,8 +494,8 @@ let questions = [
   {
     question: "What was the name of the first person to be healed by Jesus?",
     answers: [
-      { text: "Peter's mother-in-law", correct: true },
       { text: "The man with leprosy", correct: false },
+      { text: "Peter's mother-in-law", correct: true },
       { text: "The paralytic man lowered through the roof", correct: false },
       { text: "The blind man who could see", correct: false },
     ],
@@ -506,9 +505,9 @@ let questions = [
   {
     question: "What was the name of the city where Jesus was resurrected?",
     answers: [
-      { text: "Jerusalem", correct: true },
       { text: "Bethlehem", correct: false },
       { text: "Nazareth", correct: false },
+      { text: "Jerusalem", correct: true },
       { text: "Capernaum", correct: false },
     ],
     explanation:
@@ -518,10 +517,10 @@ let questions = [
     question:
       "What was the name of the book of the Bible that tells the story of creation?",
     answers: [
-      { text: "Genesis", correct: true },
-      { text: "Exodus", correct: false },
       { text: "Leviticus", correct: false },
+      { text: "Genesis", correct: true },
       { text: "Numbers", correct: false },
+      { text: "Exodus", correct: false },
     ],
     explanation:
       "The book of Genesis is the first book of the Old Testament and the Bible, and it recounts the story of creation, the fall of man, and the early history of humanity. Genesis 1:1 states, 'In the beginning, God created the heavens and the earth.'",
@@ -530,8 +529,8 @@ let questions = [
     question:
       "What was the name of the language that the New Testament was written in?",
     answers: [
-      { text: "Greek", correct: true },
       { text: "Aramaic", correct: false },
+      { text: "Greek", correct: true },
       { text: "Hebrew", correct: false },
       { text: "Latin", correct: false },
     ],
@@ -565,6 +564,7 @@ let questions = [
       { text: "Grape", correct: false },
       { text: "Fig", correct: false },
       { text: "Pomegranate", correct: true },
+      { text: "Apple", correct: false },
     ],
     explanation:
       "Judges 16:17 tells us that Samson's strength came from his hair, a vow made by his parents to God. After Delilah convinces him to reveal the secret of his strength, she has him shave his head, rendering him powerless.",
@@ -597,8 +597,8 @@ let questions = [
     question:
       "What is the name of the proverb that says, 'A soft answer turns away wrath, but a harsh word stirs up anger'?",
     answers: [
-      { text: "Proverbs 15:1", correct: true },
       { text: "Psalms 23:1", correct: false },
+      { text: "Proverbs 15:1", correct: true },
       { text: "Ecclesiastes 3:1", correct: false },
       { text: "Matthew 7:1", correct: false },
     ],
@@ -609,9 +609,9 @@ let questions = [
     question:
       "'Love your enemies and pray for those who persecute you.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 5:44", correct: true },
       { text: "Mark 12:31", correct: false },
       { text: "Luke 6:27", correct: false },
+      { text: "Matthew 5:44", correct: true },
       { text: "1 John 4:8", correct: false },
     ],
     explanation:
@@ -621,8 +621,8 @@ let questions = [
     question:
       "'Come to me, all who labor and are heavy laden, and I will give you rest.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 11:28", correct: true },
       { text: "Mark 6:31", correct: false },
+      { text: "Matthew 11:28", correct: true },
       { text: "Luke 9:11", correct: false },
       { text: "John 14:6", correct: false },
     ],
@@ -645,10 +645,10 @@ let questions = [
     question:
       "'You shall love the Lord your God with all your heart and with all your soul and with all your mind.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 22:37", correct: true },
       { text: "Mark 12:30", correct: false },
       { text: "Luke 10:27", correct: false },
       { text: "1 John 4:21", correct: false },
+      { text: "Matthew 22:37", correct: true },
     ],
     explanation:
       "This verse, known as the 'Shema' is considered one of the most important commandments in Judaism and Christianity, emphasizing the centrality of loving God.",
@@ -657,9 +657,9 @@ let questions = [
     question:
       "'Do not worry about your life, what you will eat or what you will wear. For life is more than food, and the body more than clothing.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 6:25", correct: true },
       { text: "Luke 12:22", correct: false },
       { text: "Philippians 4:6-7", correct: false },
+      { text: "Matthew 6:25", correct: true },
       { text: "1 Peter 5:7", correct: false },
     ],
     explanation:
@@ -669,9 +669,9 @@ let questions = [
     question:
       "'The Lord is my shepherd, I shall not want.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Psalm 23:1", correct: true },
       { text: "Isaiah 40:11", correct: false },
       { text: "John 10:11", correct: false },
+      { text: "Psalm 23:1", correct: true },
       { text: "Hebrews 13:5-6", correct: false },
     ],
     explanation:
@@ -681,9 +681,9 @@ let questions = [
     question:
       "'All things work together for the good of those who love God, who have been called according to his purpose.' - What is the book, chapter, and verse of this verse?",
     answers: [
+      { text: "Ephesians 2:8-9", correct: false },
       { text: "Romans 8:28", correct: true },
       { text: "1 Corinthians 13:4-7", correct: false },
-      { text: "Ephesians 2:8-9", correct: false },
       { text: "James 1:2-4", correct: false },
     ],
     explanation:
@@ -693,9 +693,9 @@ let questions = [
     question:
       "'For I am not ashamed of the gospel, because it is the power of God that brings salvation to everyone who believes: first to the Jew, then to the Gentile.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Romans 1:16", correct: true },
       { text: "Galatians 3:28", correct: false },
       { text: "Ephesians 2:8-9", correct: false },
+      { text: "Romans 1:16", correct: true },
       { text: "Colossians 1:20", correct: false },
     ],
     explanation:
@@ -705,9 +705,9 @@ let questions = [
     question:
       "'Let no one boast in himself. Thus says the Lord: 'Let not the wise man boast in his wisdom, let not the mighty man boast in his might, let not the rich man boast in his riches.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Jeremiah 9:23-24", correct: true },
       { text: "1 Corinthians 1:29-31", correct: false },
       { text: "James 4:6", correct: false },
+      { text: "Jeremiah 9:23-24", correct: true },
       { text: "1 Peter 5:5", correct: false },
     ],
     explanation:
@@ -717,10 +717,10 @@ let questions = [
     question:
       "'But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, gentleness, self-control.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Galatians 5:22-23", correct: true },
       { text: "Ephesians 4:2-3", correct: false },
       { text: "Philippians 4:8", correct: false },
       { text: "1 Timothy 3:12", correct: false },
+      { text: "Galatians 5:22-23", correct: true },
     ],
     explanation:
       "This verse from Paul's letter to the Galatians highlights the positive attributes that the Holy Spirit produces in believers.",
@@ -729,8 +729,8 @@ let questions = [
     question:
       "'Ask, and it will be given to you; seek, and you will find; knock, and it will be opened to you.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 7:7", correct: true },
       { text: "Mark 11:24", correct: false },
+      { text: "Matthew 7:7", correct: true },
       { text: "Luke 11:9", correct: false },
       { text: "John 14:14", correct: false },
     ],
@@ -741,10 +741,10 @@ let questions = [
     question:
       "'Two are better than one, because they have a good reward for their toil. For if they fall, one will lift up his fellow. But woe to him who is alone when he falls and has no one to lift him up.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Ecclesiastes 4:9-10", correct: true },
       { text: "Proverbs 13:20", correct: false },
       { text: "Proverbs 18:24", correct: false },
       { text: "Proverbs 27:17", correct: false },
+      { text: "Ecclesiastes 4:9-10", correct: true },
     ],
     explanation:
       "Ecclesiastes emphasizes the value of community and companionship in this passage.",
@@ -777,8 +777,8 @@ let questions = [
     question:
       "'For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Romans 6:23", correct: true },
       { text: "John 3:16", correct: false },
+      { text: "Romans 6:23", correct: true },
       { text: "1 Corinthians 15:55", correct: false },
       { text: "Revelation 20:14", correct: false },
     ],
@@ -801,10 +801,10 @@ let questions = [
     question:
       "'Blessed are the meek, for they will inherit the earth.' - What is the book, chapter, and verse of this verse?",
     answers: [
-      { text: "Matthew 5:5", correct: true },
       { text: "Luke 6:20", correct: false },
       { text: "James 1:20", correct: false },
       { text: "1 Peter 3:4", correct: false },
+      { text: "Matthew 5:5", correct: true },
     ],
     explanation:
       "This Beatitude from the Sermon on the Mount highlights the value of humility and meekness before God.",
@@ -849,9 +849,9 @@ let questions = [
     question:
       "'The Lord is my shepherd, I shall not want.' - What book of the Bible is this verse from?",
     answers: [
-      { text: "Psalms", correct: true },
       { text: "Proverbs", correct: false },
       { text: "Isaiah", correct: false },
+      { text: "Psalms", correct: true },
       { text: "John", correct: false },
     ],
     explanation:
@@ -861,10 +861,10 @@ let questions = [
     question:
       "'A new commandment I give to you: Love one another. As I have loved you, so you must love one another.' - What Gospel book is this verse from?",
     answers: [
-      { text: "John", correct: true },
       { text: "Matthew", correct: false },
       { text: "Luke", correct: false },
       { text: "Mark", correct: false },
+      { text: "John", correct: true },
     ],
     explanation:
       "John 13:34 is a central teaching of Jesus about love within the Christian community.",
@@ -873,9 +873,9 @@ let questions = [
     question:
       "'For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord.' - What letter of the Apostle Paul is this verse from?",
     answers: [
-      { text: "Romans", correct: true },
       { text: " Corinthians", correct: false },
       { text: "Ephesians", correct: false },
+      { text: "Romans", correct: true },
       { text: "Hebrews", correct: false },
     ],
     explanation:
@@ -885,10 +885,10 @@ let questions = [
     question:
       "'Let the little children come to me, and do not hinder them, for the kingdom of God belongs to such as these.' - What Gospel book is this verse from?",
     answers: [
-      { text: "Mark", correct: true },
       { text: "Matthew", correct: false },
       { text: "Luke", correct: false },
       { text: "John", correct: false },
+      { text: "Mark", correct: true },
     ],
     explanation:
       "Mark 10:14 (or parallels in Matthew and Luke) emphasizes Jesus' welcome of children.",
@@ -897,9 +897,9 @@ let questions = [
     question:
       "'The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction.' - What book of wisdom literature is this verse from?",
     answers: [
-      { text: "Proverbs", correct: true },
       { text: "Job", correct: false },
       { text: "Ecclesiastes", correct: false },
+      { text: "Proverbs", correct: true },
       { text: "Song of Solomon", correct: false },
     ],
     explanation:
@@ -909,8 +909,8 @@ let questions = [
     question:
       "'No one has ever seen God, but the only begotten Son, who is in the bosom of the Father, he has made him known.' - What book of the New Testament is this verse from?",
     answers: [
-      { text: "John", correct: true },
       { text: "Romans", correct: false },
+      { text: "John", correct: true },
       { text: "Hebrews", correct: false },
       { text: "1 John", correct: false },
     ],
@@ -921,10 +921,10 @@ let questions = [
     question:
       "'For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.' - What Gospel book is this verse from?",
     answers: [
-      { text: "John", correct: true },
       { text: "Matthew", correct: false },
       { text: "Luke", correct: false },
       { text: "Mark", correct: false },
+      { text: "John", correct: true },
     ],
     explanation:
       "John 3:16, often called the 'Gospel in a nutshell,' summarizes God's love and the path to salvation through Jesus.",
@@ -933,9 +933,9 @@ let questions = [
     question:
       "'Faith is the assurance of things hoped for, the conviction of things not seen.' - What letter of the Apostle Paul is this verse from?",
     answers: [
-      { text: "Hebrews", correct: true },
       { text: "Romans", correct: false },
       { text: "Ephesians", correct: false },
+      { text: "Hebrews", correct: true },
       { text: "Philippians", correct: false },
     ],
     explanation:
@@ -945,8 +945,8 @@ let questions = [
     question:
       "'Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.' - What Gospel book is this verse from?",
     answers: [
-      { text: "Matthew", correct: true },
       { text: "Mark", correct: false },
+      { text: "Matthew", correct: true },
       { text: "Luke", correct: false },
       { text: "John", correct: false },
     ],
@@ -957,8 +957,8 @@ let questions = [
     question:
       "'I have fought the good fight, I have finished the race, I have kept the faith.' - What letter of the Apostle Paul is this verse from?",
     answers: [
-      { text: "2 Timothy", correct: true },
       { text: "1 Corinthians", correct: false },
+      { text: "2 Timothy", correct: true },
       { text: "Philippians", correct: false },
       { text: "Titus", correct: false },
     ],
@@ -969,10 +969,10 @@ let questions = [
     question:
       "'Two are better than one, because they have a good reward for their toil. For if they fall, one will lift up his fellow. But woe to him who is alone when he falls and has no one to lift him up.' - What Old Testament book is this verse from?",
     answers: [
-      { text: "Ecclesiastes", correct: true },
       { text: "Proverbs", correct: false },
       { text: "Job", correct: false },
       { text: "Genesis", correct: false },
+      { text: "Ecclesiastes", correct: true },
     ],
     explanation:
       "Ecclesiastes 4:9-10 emphasizes the value of companionship and working together.",
@@ -981,9 +981,9 @@ let questions = [
     question:
       "'The heart is deceitful above all things and desperately wicked; who can understand it?' - What prophetic book is this verse from?",
     answers: [
-      { text: "Jeremiah", correct: true },
       { text: "Isaiah", correct: false },
       { text: "Ezekiel", correct: false },
+      { text: "Jeremiah", correct: true },
       { text: "Daniel", correct: false },
     ],
     explanation:
@@ -1017,10 +1017,10 @@ let questions = [
     question:
       "'Vanity of vanities, says the Preacher, vanity of vanities. All is vanity.' - What book of the Old Testament opens with this famous statement about the fleeting nature of life?",
     answers: [
-      { text: "Ecclesiastes", correct: true },
       { text: "Psalms", correct: false },
       { text: "Proverbs", correct: false },
       { text: "Job", correct: false },
+      { text: "Ecclesiastes", correct: true },
     ],
     explanation:
       "Ecclesiastes 1:2 introduces the book's theme of searching for meaning in a seemingly meaningless world.",
@@ -1029,8 +1029,8 @@ let questions = [
     question:
       "'Whoever digs a pit will fall into it; whoever removes a stone will be struck by it.' - What book of wisdom literature warns of the dangers of evil actions?",
     answers: [
-      { text: "Proverbs", correct: true },
       { text: "Job", correct: false },
+      { text: "Proverbs", correct: true },
       { text: "Ecclesiastes", correct: false },
       { text: "Song of Solomon", correct: false },
     ],
@@ -1041,9 +1041,9 @@ let questions = [
     question:
       "'The Lord is my light and my salvation; whom shall I fear? The Lord is the strength of my life; of whom shall I be afraid?' - What book of Psalms expresses this declaration of trust in God?",
     answers: [
-      { text: "Psalms", correct: true },
       { text: "Isaiah", correct: false },
       { text: "Jeremiah", correct: false },
+      { text: "Psalms", correct: true },
       { text: "Daniel", correct: false },
     ],
     explanation:
@@ -1053,9 +1053,9 @@ let questions = [
     question:
       "'For the word of God is living and active, sharper than any two-edged sword, piercing to the division of soul and spirit, of joints and marrow, and discerning the thoughts and intentions of the heart.' - What letter of the Apostle Paul emphasizes the power of God's word?",
     answers: [
-      { text: "Hebrews", correct: true },
       { text: "Romans", correct: false },
       { text: "Ephesians", correct: false },
+      { text: "Hebrews", correct: true },
       { text: "1 Corinthians", correct: false },
     ],
     explanation:
@@ -1065,9 +1065,9 @@ let questions = [
     question:
       "'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you. And behold, I am with you always, to the end of the age.' - What is the name for Jesus' final command to his disciples before his ascension?",
     answers: [
-      { text: "The Great Commission", correct: true },
       { text: "The Farewell Discourse", correct: false },
       { text: "The Sermon on the Mount", correct: false },
+      { text: "The Great Commission", correct: true },
       { text: "The Parable of the Good Samaritan", correct: false },
     ],
     explanation:
@@ -1077,10 +1077,10 @@ let questions = [
     question:
       "'There is a time for everything, and a season for every activity under the heavens:' - What book of the Old Testament explores themes of life's fleeting nature and the importance of finding meaning?",
     answers: [
-      { text: "Ecclesiastes", correct: true },
       { text: "Psalms", correct: false },
       { text: "Proverbs", correct: false },
       { text: "Job", correct: false },
+      { text: "Ecclesiastes", correct: true },
     ],
     explanation:
       "Ecclesiastes 3:1 introduces the book's central theme of impermanence and the search for significance within the cycles of life.",
@@ -1089,8 +1089,8 @@ let questions = [
     question:
       "'The fear of the Lord is the beginning of knowledge, but fools despise wisdom and instruction.' - What book of wisdom literature emphasizes the importance of reverence for God?",
     answers: [
-      { text: "Proverbs", correct: true },
       { text: "Job", correct: false },
+      { text: "Proverbs", correct: true },
       { text: "Ecclesiastes", correct: false },
       { text: "Song of Solomon", correct: false },
     ],
@@ -1124,8 +1124,8 @@ let questions = [
     question:
       "'Love the Lord your God with all your heart and with all your soul and with all your mind.' - What is the first and greatest commandment according to Jesus?",
     answers: [
-      { text: "The Great Commandment", correct: true },
       { text: "The Golden Rule", correct: false },
+      { text: "The Great Commandment", correct: true },
       { text: "The Beatitudes", correct: false },
       { text: "The Lord's Prayer", correct: false },
     ],
@@ -1136,10 +1136,10 @@ let questions = [
     question:
       "'He who walks with the wise becomes wise, but the companion of fools will suffer harm.' - What book of wisdom literature emphasizes the importance of choosing good companions?",
     answers: [
-      { text: "Proverbs", correct: true },
       { text: "Ecclesiastes", correct: false },
       { text: "Psalms", correct: false },
 
+      { text: "Proverbs", correct: true },
       { text: "Job", correct: false },
     ],
     explanation:
@@ -1149,8 +1149,8 @@ let questions = [
     question:
       "'No one has ever seen God; but if we love one another, God lives in us, and his love is perfected in us.' - What letter of the Apostle John emphasizes the connection between love for God and love for others?",
     answers: [
-      { text: "1 John", correct: true },
       { text: "John", correct: false },
+      { text: "1 John", correct: true },
       { text: "Romans", correct: false },
       { text: "Hebrews", correct: false },
     ],
@@ -1168,6 +1168,371 @@ let questions = [
     ],
     explanation:
       "Romans 6:23 presents the consequence of sin (death) alongside the hope of eternal life offered through Christ.",
+  },
+  {
+    question: "Which book comes after the Book of Genesis in the Bible?",
+    answers: [
+      { text: "Leviticus", correct: false },
+      { text: "Numbers", correct: false },
+      { text: "Exodus", correct: true },
+      { text: "Deuteronomy", correct: false },
+    ],
+    explanation: "The Book of Exodus follows the Book of Genesis in the Bible.",
+  },
+  {
+    question: "Who was the brother of Moses?",
+    answers: [
+      { text: "Elijah", correct: false },
+      { text: "David", correct: false },
+      { text: "Isaac", correct: false },
+      { text: "Aaron", correct: true },
+    ],
+    explanation:
+      '"And the Lord said unto Moses in Midian, Go, return into Egypt: for all the men are dead \
+        which sought thy life. And Moses took his wife and his sons, and set them upon an ass, \
+        and he returned to the land of Egypt: and Moses took the rod of God in his hand. And the \
+        Lord said unto Moses, When thou goest to return into Egypt, see that thou do all those \
+        wonders before Pharaoh, which I have put in thine hand: but I will harden his heart, that \
+        he shall not let the people go." - Exodus 4:19-21.',
+  },
+  {
+    question:
+      "What was the name of the giant Philistine warrior defeated by David?",
+    answers: [
+      { text: "Saul", correct: false },
+      { text: "Samson", correct: false },
+      { text: "Goliath", correct: true },
+      { text: "Eli", correct: false },
+    ],
+    explanation:
+      '"And there went out a champion out of the camp of the Philistines, named Goliath, of Gath, \
+        whose height was six cubits and a span. And he had an helmet of brass upon his head, and he \
+        was armed with a coat of mail; and the weight of the coat was five thousand shekels of brass. \
+        And he had greaves of brass upon his legs, and a target of brass between his shoulders. And the \
+        staff of his spear was like a weaver’s beam; and his spear’s head weighed six hundred \
+        shekels of iron: and one bearing a shield went before him." - 1 Samuel 17:4-7.',
+  },
+  {
+    question: "Who was known as the 'weeping prophet'?",
+    answers: [
+      { text: "Isaiah", correct: false },
+      { text: "Ezekiel", correct: false },
+      { text: "Jeremiah", correct: true },
+      { text: "Daniel", correct: false },
+    ],
+    explanation:
+      '"For the hurt of the daughter of my people am I hurt; I am black; astonishment hath taken hold on me. \
+        Is there no balm in Gilead; is there no physician there? why then is not the health of the daughter of \
+        my people recovered?" - Jeremiah 8:21-22.',
+  },
+  {
+    question: "Who was the first king of Israel?",
+    answers: [
+      { text: "David", correct: false },
+      { text: "Saul", correct: true },
+      { text: "Solomon", correct: false },
+      { text: "Samuel", correct: false },
+    ],
+    explanation:
+      '"Then Samuel took a vial of oil, and poured it upon his head, and kissed him, and said, \
+        Is it not because the Lord hath anointed thee to be captain over his inheritance?" - 1 Samuel 10:1.',
+  },
+  {
+    question: "What event marks the beginning of Jesus' public ministry?",
+    answers: [
+      { text: "His birth in Bethlehem", correct: false },
+      { text: "His baptism by John the Baptist", correct: true },
+      { text: "His crucifixion", correct: false },
+      { text: "His transfiguration", correct: false },
+    ],
+    explanation:
+      "Jesus' baptism by John the Baptist marks the beginning of his public ministry.",
+  },
+  {
+    question: "What is the central teaching of Jesus known as?",
+    answers: [
+      { text: "The Last Supper", correct: false },
+      { text: "The Sermon on the Mount", correct: true },
+      { text: "The Parables", correct: false },
+      { text: "The Beatitudes", correct: false },
+    ],
+    explanation:
+      "The central teaching of Jesus is known as the Sermon on the Mount.",
+  },
+  {
+    question: "Who denied knowing Jesus three times before the rooster crowed?",
+    answers: [
+      { text: "John", correct: false },
+      { text: "Judas Iscariot", correct: false },
+      { text: "Peter", correct: true },
+      { text: "James", correct: false },
+    ],
+    explanation:
+      "Peter denied knowing Jesus three times before the rooster crowed, fulfilling Jesus' prediction.",
+  },
+  {
+    question:
+      "What is the name of the high priest who questioned Jesus during his trial?",
+    answers: [
+      { text: "Annas", correct: false },
+      { text: "Pontius Pilate", correct: false },
+      { text: "Herod", correct: false },
+      { text: "Caiaphas", correct: true },
+    ],
+    explanation:
+      "Caiaphas was the high priest who questioned Jesus during his trial.",
+  },
+  {
+    question: "What did Jesus say shortly before his ascension into heaven?",
+    answers: [
+      {
+        text: "'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit'",
+        correct: true,
+      },
+      {
+        text: "'Truly, I say to you, today you will be with me in paradise'",
+        correct: false,
+      },
+      { text: "'It is finished'", correct: false },
+      { text: "'My God, my God, why have you forsaken me?'", correct: false },
+    ],
+    explanation:
+      "Jesus said, 'Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit,' shortly before his ascension into heaven.",
+  },
+  {
+    question: "On what day did the Holy Spirit descend upon the apostles?",
+    answers: [
+      { text: "Passover", correct: false },
+      { text: "Yom Kippur", correct: false },
+      { text: "Pentecost", correct: true },
+      { text: "Tabernacles", correct: false },
+    ],
+    explanation:
+      "The Holy Spirit descended upon the apostles on the day of Pentecost.",
+  },
+  {
+    question: "Who wrote the Book of Revelation?",
+    answers: [
+      { text: "Paul", correct: false },
+      { text: "Peter", correct: false },
+      { text: "James", correct: false },
+      { text: "John", correct: true },
+    ],
+    explanation: "The Book of Revelation was written by the apostle John.",
+  },
+  {
+    question: "Who was the first martyr of the Christian church?",
+    answers: [
+      { text: "Paul", correct: false },
+      { text: "Stephen", correct: true },
+      { text: "Peter", correct: false },
+      { text: "James", correct: false },
+    ],
+    explanation: "Stephen was the first martyr of the Christian church.",
+  },
+  {
+    question: "Who baptized Jesus in the River Jordan?",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "James", correct: false },
+      { text: "John the Baptist", correct: true },
+      { text: "Andrew", correct: false },
+    ],
+    explanation: "John the Baptist baptized Jesus in the River Jordan.",
+  },
+  {
+    question:
+      "Which disciple famously doubted Jesus' resurrection until he saw Jesus' wounds?",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: false },
+      { text: "James", correct: false },
+      { text: "Thomas", correct: true },
+    ],
+    explanation:
+      "Thomas famously doubted Jesus' resurrection until he saw Jesus' wounds.",
+  },
+  {
+    question:
+      "What did Jesus instruct his disciples to do in remembrance of him?",
+    answers: [
+      { text: "Take communion", correct: true },
+      { text: "Recite the Lord's Prayer", correct: false },
+      { text: "Perform miracles", correct: false },
+      { text: "Observe the Sabbath", correct: false },
+    ],
+    explanation:
+      "Jesus instructed his disciples to take communion in remembrance of him.",
+  },
+  {
+    question: "What is the shortest verse in the Bible (english)?",
+    answers: [
+      { text: "'God is love'", correct: false },
+      { text: "'Jesus wept'", correct: true },
+      { text: "'Trust in the Lord with all your heart'", correct: false },
+      { text: "'For God so loved the world'", correct: false },
+    ],
+    explanation: "'Jesus wept' is the shortest verse in the Bible. John 11:35",
+  },
+  {
+    question:
+      "What was the profession of Matthew before he became a disciple of Jesus?",
+    answers: [
+      { text: "Fisherman", correct: false },
+      { text: "Carpenter", correct: false },
+      { text: "Scribe", correct: false },
+      { text: "Tax collector", correct: true },
+    ],
+    explanation:
+      "Matthew was a tax collector before he became a disciple of Jesus.",
+  },
+  {
+    question: "What was the name of the city where Jesus was crucified?",
+    answers: [
+      { text: "Nazareth", correct: false },
+      { text: "Jerusalem", correct: true },
+      { text: "Bethlehem", correct: false },
+      { text: "Capernaum", correct: false },
+    ],
+    explanation: "Jesus was crucified in Jerusalem.",
+  },
+  {
+    question: "What did Jesus say is the greatest commandment?",
+    answers: [
+      { text: "'You shall have no other gods before me'", correct: false },
+      { text: "'You shall not murder'", correct: false },
+      { text: "'Honor your father and your mother'", correct: false },
+      {
+        text: "'You shall love the Lord your God with all your heart, and with all your soul, and with all your mind'",
+        correct: true,
+      },
+    ],
+    explanation:
+      "Jesus said, 'You shall love the Lord your God with all your heart, and with all your soul, and with all your mind' is the greatest commandment.",
+  },
+  {
+    question: "What is the last book of the Old Testament?",
+    answers: [
+      { text: "Malachi", correct: true },
+      { text: "Zechariah", correct: false },
+      { text: "Haggai", correct: false },
+      { text: "Nehemiah", correct: false },
+    ],
+    explanation: "The Book of Malachi is the last book of the Old Testament.",
+  },
+  {
+    question: "What is the last book of the New Testament?",
+    answers: [
+      { text: "Jude", correct: false },
+      { text: "2 Peter", correct: false },
+      { text: "Revelation", correct: true },
+      { text: "2 John", correct: false },
+    ],
+    explanation:
+      "The Book of Revelation is the last book of the New Testament.",
+  },
+  {
+    question: "What is the first book of the Pentateuch?",
+    answers: [
+      { text: "Exodus", correct: false },
+      { text: "Genesis", correct: true },
+      { text: "Numbers", correct: false },
+      { text: "Leviticus", correct: false },
+    ],
+    explanation: "The Book of Genesis is the first book of the Pentateuch.",
+  },
+  {
+    question: "What book comes after the Book of James in the New Testament?",
+    answers: [
+      { text: "2 Peter", correct: false },
+      { text: "1 Peter", correct: true },
+      { text: "1 John", correct: false },
+      { text: "2 John", correct: false },
+    ],
+    explanation:
+      "The First Epistle of Peter (1 Peter) comes after the Book of James in the New Testament.",
+  },
+  {
+    question: "Which book precedes the Book of Acts in the New Testament?",
+    answers: [
+      { text: "Luke", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "John", correct: true },
+      { text: "Mark", correct: false },
+    ],
+    explanation:
+      "The Gospel according to John precedes the Book of Acts in the New Testament.",
+  },
+  {
+    question:
+      "What book follows the Book of Lamentations in the Old Testament?",
+    answers: [
+      { text: "Daniel", correct: false },
+      { text: "Ezekiel", correct: true },
+      { text: "Hosea", correct: false },
+      { text: "Joel", correct: false },
+    ],
+    explanation:
+      "The Book of Ezekiel follows the Book of Lamentations in the Old Testament.",
+  },
+  {
+    question: "What book comes before the Book of Psalms in the Old Testament?",
+    answers: [
+      { text: "Proverbs", correct: false },
+      { text: "Song of Solomon", correct: false },
+      { text: "Ecclesiastes", correct: false },
+      { text: "Job", correct: true },
+    ],
+    explanation:
+      "The Book of Job comes before the Book of Psalms in the Old Testament.",
+  },
+  {
+    question:
+      "Which book in the Old Testament describes the life, experiences, and wisdom of an elderly man known for his patience and endurance?",
+    answers: [
+      { text: "Job", correct: true },
+      { text: "Ecclesiastes", correct: false },
+      { text: "Proverbs", correct: false },
+      { text: "Psalms", correct: false },
+    ],
+    explanation:
+      "The Book of Job describes the life, experiences, and wisdom of an elderly man known for his patience and endurance.",
+  },
+  {
+    question:
+      "Which book in the New Testament is a letter written by the apostle Paul to a church addressing various issues including divisions and immorality?",
+    answers: [
+      { text: "Romans", correct: false },
+      { text: "Galatians", correct: false },
+      { text: "1 Corinthians", correct: true },
+      { text: "Philippians", correct: false },
+    ],
+    explanation:
+      "The First Epistle to the Corinthians (1 Corinthians) is a letter written by the apostle Paul to a church addressing various issues including divisions and immorality.",
+  },
+  {
+    question:
+      "Which book in the Old Testament contains a collection of prayers, songs, and poems attributed to various authors?",
+    answers: [
+      { text: "Proverbs", correct: false },
+      { text: "Song of Solomon", correct: false },
+      { text: "Psalms", correct: true },
+      { text: "Ecclesiastes", correct: false },
+    ],
+    explanation:
+      "The Book of Psalms contains a collection of prayers, songs, and poems attributed to various authors.",
+  },
+  {
+    question:
+      "Special question: What is the favorite food of the author of this website? ",
+    answers: [
+      { text: "Tomato", correct: false },
+      { text: "Chicken breast", correct: true },
+      { text: "Donut", correct: false },
+      { text: "Apple ice cream ", correct: false },
+    ],
+    explanation:
+      "The Book of Psalms contains a collection of prayers, songs, and poems attributed to various authors.",
   },
 ];
 export default questions;

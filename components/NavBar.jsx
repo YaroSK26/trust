@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, useClerk } from "@clerk/nextjs";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { Menu, Settings, X } from "lucide-react";
@@ -28,6 +28,22 @@ const Navbar = ({ theme, toggleTheme }) => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const clerk = useClerk();
+  const [userId, setUserId] = useState(null); // Use state to manage user ID
+
+
+  useEffect(() => {
+    if (
+      clerk.user &&
+      clerk.user.organizationMemberships &&
+      clerk.user.organizationMemberships.length > 0
+    ) {
+      setUserId(clerk.user.organizationMemberships[0].role); 
+    } else {
+      setUserId("User"); 
+    }
+  }, [clerk.user]); 
   return (
     <div className={isMobileMenuOpen ? "fixed inset-0 z-50" : "relative"}>
       <nav
@@ -62,6 +78,13 @@ const Navbar = ({ theme, toggleTheme }) => {
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
+
+              {userId === "org:admin" ? (
+                <li>
+                  <Link href={"/admin"}>Admin</Link>
+                </li>
+              ) : null}
+
               <UserButton afterSignOutUrl="/"></UserButton>
               <a href="/settings">
                 <Settings size={28} />
@@ -72,7 +95,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             <ul className="flex gap-3 justify-end items-center no-underline transition-none">
               <li>
                 <Link href={"/sign-up"}>
-                  <button className="button">Login</button>
+                  <button className="button transition-none">Login</button>
                 </Link>
               </li>
             </ul>
@@ -81,7 +104,11 @@ const Navbar = ({ theme, toggleTheme }) => {
             <div className="flex justify-center items-center ml-3">
               <button onClick={toggleMobileMenu} className="md:hidden z-50 ">
                 {isMobileMenuOpen ? (
-                  <X className="absolute top-[335px] left-[27px] w-10 h-10" />
+                  <X
+                    className={`absolute ${
+                      userId === "org:admin" ? "top-[380px]" : "top-[335px]"
+                    } left-[27px] w-10 h-10`}
+                  />
                 ) : (
                   <Menu className="text-[var(--color2)] " />
                 )}
@@ -116,6 +143,16 @@ const Navbar = ({ theme, toggleTheme }) => {
                   >
                     Contact
                   </Link>
+                  {userId === "org:admin" ? (
+                    <Link
+                      href={"/admin"}
+                      onClick={toggleMobileMenu}
+                      className="w-1"
+                    >
+                      Admin
+                    </Link>
+                  ) : null}
+
                   <a href="/settings" onClick={toggleMobileMenu}>
                     <Settings size={36} />
                   </a>
