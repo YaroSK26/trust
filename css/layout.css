@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Barlow&family=Jost:wght@500&family=Noto+Sans+Osmanya&family=Poppins:wght@300;500;600&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?&family=Poppins:wght@300;500;600&&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -261,4 +261,9 @@ nav ul li :hover::after {
 
 .badge-div img{
   @apply w-52 h-52
+}
+
+
+.justify-center {
+  justify-content: center;
 }

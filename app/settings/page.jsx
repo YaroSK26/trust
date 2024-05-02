@@ -13,6 +13,7 @@ import { toast } from "react-hot-toast";
 
 const Settings = () => {
   const { theme, toggleTheme } = useFunctions();
+  const [isLoading, setIsLoading] = useState(false);
 
   //!verses
 
@@ -22,6 +23,7 @@ const Settings = () => {
 
   useEffect(() => {
     const fetchSavedVerses = async () => {
+      setIsLoading(true);
       if (userId) {
         try {
           const response = await axios.get(`/api/saved?userId=${userId}`);
@@ -34,6 +36,7 @@ const Settings = () => {
           setSavedVerses([]);
         }
       }
+      setIsLoading(false);
     };
 
     fetchSavedVerses();
@@ -157,10 +160,7 @@ useEffect(() => {
 
         <div className="flex justify-center items-center flex-col  rounded">
           <h1 className="text-center text-2xl mt-10 mb-5">Language</h1>
-          <div
-            id="google_translate_element"
-            className="w-28 xs:w-36 sm:w-72"
-          ></div>
+          <div id="google_translate_element" className="w-28  sm:w-72"></div>
         </div>
 
         <div>
@@ -200,24 +200,28 @@ useEffect(() => {
         <div>
           <h1 className="text-center text-2xl mt-16 mb-5">Saved verses</h1>
           <div className="flex justify-center items-center  flex-col">
-            {savedVerses.length ? (
+            {isLoading ? (
+              <p>Loading...</p>
+            ) : savedVerses.length ? (
               <ul className="text-center  lg:w-[30rem] w-[19rem] ">
                 {savedVerses.map((verse) => (
                   <li className="relative" key={verse._id}>
                     <p>
                       {verse.date} <br />
                     </p>
-                    <Copy
-                      onClick={() => handleCopyText(verse.text)}
-                      size={20}
-                      className="cursor-pointer absolute right-[-20px] text-[var(--color2)]"
-                    />
-                    <BookmarkCheck
-                      onClick={(e) => handleBookDelete(verse._id)}
-                      className="cursor-pointer absolute  right-[-22px] top-[50px]  text-[var(--color2)]"
-                    />
                     {verse.text} - {verse.author} <br />
-                    <br />
+                    <div className="flex justify-center items-center gap-5 py-5">
+                      <Copy
+                        onClick={() => handleCopyText(verse.text)}
+                        size={32}
+                        className="cursor-pointer  text-[var(--color2)]"
+                      />
+                      <BookmarkCheck
+                        size={32}
+                        onClick={(e) => handleBookDelete(verse._id)}
+                        className="cursor-pointer text-[var(--color2)]"
+                      />
+                    </div>
                   </li>
                 ))}
               </ul>

@@ -32,7 +32,7 @@ const Layout = () => {
             alt="logo of the Trust site"
           />
         </Link>
-        <div className="right-44  absolute">
+        <div className="right-44 sm:block hidden absolute">
           <label className="switch">
             <input
               type="checkbox"
@@ -62,9 +62,23 @@ const Layout = () => {
           <p className="md:text-xl sm:text-lg text-md italic mb-8">
             You are on the right path
           </p>
-          <Link href={isSignedIn ? "/home" : "/sign-up"}>
-            <button className="button">{isSignedIn ? "Home" : "Login"}</button>
-          </Link>
+          <div className="flex justify-center flex-col items-center gap-5">
+            <Link href={isSignedIn ? "/home" : "/sign-up"}>
+              <button className="button">
+                {isSignedIn ? "Home" : "Login"}
+              </button>
+            </Link>
+            <div className=" sm:hidden block">
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  onChange={toggleTheme}
+                  checked={theme === "light"}
+                />
+                <span className="slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
 
         <div className="text-[var(--color2)]">

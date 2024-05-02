@@ -181,13 +181,13 @@ const TestAPI = () => {
             )}
           </div>
 
-          <h1 className="font-bold text-2xl mt-8 mb-4 text-center font-barlow">
+          <h1 className="font-bold text-2xl mt-8 mb-4 text-center">
             {quote.text}
           </h1>
           <p className="italic text-center">{quote.reference}</p>
         </div>
       ) : (
-        <h1 className="font-bold text-2xl mt-8 mb-4 text-center font-barlow">
+        <h1 className="font-bold text-2xl mt-8 mb-4 text-center">
           Loading...
         </h1>
       )}

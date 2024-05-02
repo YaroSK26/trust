@@ -5,8 +5,8 @@ import { ToasterProvider } from "../components/ToastProvider";
 import { CrispProvider } from "../components/CrispProvider";
 import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from '../components/CookieConsent';
-import Head from 'next/head';
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,11 +21,6 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/icon.png" sizes="any" />
       <ClerkProvider>
         <body className={inter.className}>
-          <Head>
-            <link rel="icon" href="/icon.png" sizes="any" />
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-          </Head>
           <ToasterProvider />
           <Script
             src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -41,6 +36,7 @@ export default function RootLayout({ children }) {
           </Script>
           {children}
           <Analytics />
+          <SpeedInsights />
           <CookieConsent />
           <CrispProvider />
         </body>

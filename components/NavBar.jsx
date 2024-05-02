@@ -64,8 +64,8 @@ const Navbar = ({ theme, toggleTheme }) => {
               />
             </Link>
           </div>
-          {windowWidth > 768 && isSignedIn && (
-            <ul className="flex gap-3 justify-end items-center">
+          {windowWidth > 1024 && isSignedIn && (
+            <ul className="flex gap-4  justify-end items-center">
               <li>
                 <Link href={"/home"}>Home</Link>
               </li>
@@ -74,6 +74,9 @@ const Navbar = ({ theme, toggleTheme }) => {
               </li>
               <li>
                 <Link href={"/prayers"}>Prayers</Link>
+              </li>
+              <li>
+                <Link href={"/bible"}>Bible</Link>
               </li>
               <li>
                 <Link href={"/contact"}>Contact</Link>
@@ -92,7 +95,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </ul>
           )}
           {!isSignedIn && (
-            <ul className="flex gap-3 justify-end items-center no-underline transition-none">
+            <ul className="flex gap-3 lg:justify-end items-center no-underline transition-none">
               <li>
                 <Link href={"/sign-up"}>
                   <button className="button transition-none">Login</button>
@@ -100,13 +103,13 @@ const Navbar = ({ theme, toggleTheme }) => {
               </li>
             </ul>
           )}
-          {windowWidth <= 768 && isSignedIn && (
+          {windowWidth <= 1024 && isSignedIn && (
             <div className="flex justify-center items-center ml-3">
-              <button onClick={toggleMobileMenu} className="md:hidden z-50 ">
+              <button onClick={toggleMobileMenu} className="lg:hidden z-50 ">
                 {isMobileMenuOpen ? (
                   <X
                     className={`absolute ${
-                      userId === "org:admin" ? "top-[380px]" : "top-[335px]"
+                      userId === "org:admin" ? "top-[430px]" : "top-[380px]"
                     } left-[27px] w-10 h-10`}
                   />
                 ) : (
@@ -135,6 +138,13 @@ const Navbar = ({ theme, toggleTheme }) => {
                     className="w-1"
                   >
                     Prayers
+                  </Link>
+                  <Link
+                    href={"/bible"}
+                    onClick={toggleMobileMenu}
+                    className="w-1"
+                  >
+                    Bible
                   </Link>
                   <Link
                     href={"/contact"}
