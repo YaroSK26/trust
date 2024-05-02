@@ -43,7 +43,7 @@ const handleSubmit = () => {
 
   return (
     <div className="flex mi flex-col pt-28 text-[var(--color2)] items-center">
-      <h1 className="text-[35px] md:text-[40px] underline text-center mb-8">
+      <h1 className="text-[30px] md:text-[40px] underline text-center mb-8">
         How much do you know?
       </h1>
       {currentQuestion && (

@@ -7,6 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 import CookieConsent from '../components/CookieConsent';
 import Head from 'next/head';
 import Script from 'next/script';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,8 +24,10 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <Head>
             <link rel="icon" href="/icon.png" sizes="any" />
-            <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
           </Head>
           <ToasterProvider />
           <Script
@@ -41,6 +44,7 @@ export default function RootLayout({ children }) {
           </Script>
           {children}
           <Analytics />
+          <SpeedInsights />
           <CookieConsent />
           <CrispProvider />
         </body>

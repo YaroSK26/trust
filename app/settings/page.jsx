@@ -159,7 +159,7 @@ useEffect(() => {
           <h1 className="text-center text-2xl mt-10 mb-5">Language</h1>
           <div
             id="google_translate_element"
-            className="w-28 xs:w-36 sm:w-72"
+            className="w-28  sm:w-72"
           ></div>
         </div>
 
