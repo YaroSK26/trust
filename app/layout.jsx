@@ -21,6 +21,16 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/icon.png" sizes="any" />
       <ClerkProvider>
         <body className={inter.className}>
+<<<<<<< HEAD
+=======
+          <Head>
+            <link rel="icon" href="/icon.png" sizes="any" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+          </Head>
+>>>>>>> 20effcca0f4c9bfbc2d7aaaf4f97250dbe564bdf
           <ToasterProvider />
           <Script
             src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"

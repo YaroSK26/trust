@@ -160,7 +160,14 @@ useEffect(() => {
 
         <div className="flex justify-center items-center flex-col  rounded">
           <h1 className="text-center text-2xl mt-10 mb-5">Language</h1>
+<<<<<<< HEAD
           <div id="google_translate_element" className="w-28  sm:w-72"></div>
+=======
+          <div
+            id="google_translate_element"
+            className="w-28  sm:w-72"
+          ></div>
+>>>>>>> 20effcca0f4c9bfbc2d7aaaf4f97250dbe564bdf
         </div>
 
         <div>
