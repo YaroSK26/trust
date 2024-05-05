@@ -7,6 +7,14 @@ import TypewriterComponent from "typewriter-effect";
 import useFunctions from "../components/Functions";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import {
+  ClerkLoading,
+  ClerkLoaded,
+  SignedOut,
+  SignedIn,
+  SignUpButton,
+} from "@clerk/clerk-react";
+import { Loader } from "lucide-react";
 import "../css/layout.css";
 
 const Layout = () => {
@@ -42,9 +50,25 @@ const Layout = () => {
             <span className="slider"></span>
           </label>
         </div>
-        <Link href={isSignedIn ? "/home" : "/sign-up"}>
-          <button className="button">{isSignedIn ? "Home" : "Login"}</button>
-        </Link>
+        <ClerkLoading>
+          <Loader></Loader>
+        </ClerkLoading>
+        <ClerkLoaded>
+          <SignedOut>
+            <SignUpButton
+              mode="modal"
+              afterSignInUrl="/home"
+              afterSignUpUrl="/home"
+            >
+              <button className="button">Login</button>
+            </SignUpButton>
+          </SignedOut>
+          <SignedIn>
+            <Link href="/home">
+              <button className="button">Home</button>
+            </Link>
+          </SignedIn>
+        </ClerkLoaded>
       </nav>
 
       <section className="mt-[70px]  mb-2">
@@ -63,11 +87,25 @@ const Layout = () => {
             You are on the right path
           </p>
           <div className="flex justify-center flex-col items-center gap-5">
-            <Link href={isSignedIn ? "/home" : "/sign-up"}>
-              <button className="button">
-                {isSignedIn ? "Home" : "Login"}
-              </button>
-            </Link>
+            <ClerkLoading>
+              <Loader></Loader>
+            </ClerkLoading>
+            <ClerkLoaded>
+              <SignedOut>
+                <SignUpButton
+                  mode="modal"
+                  afterSignInUrl="/home"
+                  afterSignUpUrl="/home"
+                >
+                  <button className="button">Login</button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <Link href="/home">
+                  <button className="button">Home</button>
+                </Link>
+              </SignedIn>
+            </ClerkLoaded>
             <div className=" sm:hidden block">
               <label className="switch">
                 <input

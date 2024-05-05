@@ -1,5 +1,5 @@
-"use client"
-import { useState,useEffect } from "react";
+"use client";
+import { useState, useEffect } from "react";
 import Navbar from "../../components/NavBar";
 import useFunctions from "../../components/Functions";
 import Footer from "../../components/Footer";
@@ -8,7 +8,6 @@ import { Bookmark, BookmarkCheck, Copy } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
-
 
 const BibleData = () => {
   const { theme, toggleTheme } = useFunctions();
@@ -41,24 +40,25 @@ const BibleData = () => {
     setSelectedVerse(null);
   };
 
-const handleClickVerse = (verseNum) => {
-  const book = data.books.find((book) => book.name === selectedBook);
-  const chapter = book.chapters.find(
-    (chapter) => chapter.num === selectedChapter
-  );
-  const verseText = chapter.verses.find((verse) => verse.num === verseNum).text;
-  setSelectedVerseText(verseText);
-  setSelectedVerse(verseNum);
-};
+  const handleClickVerse = (verseNum) => {
+    const book = data.books.find((book) => book.name === selectedBook);
+    const chapter = book.chapters.find(
+      (chapter) => chapter.num === selectedChapter
+    );
+    const verseText = chapter.verses.find(
+      (verse) => verse.num === verseNum
+    ).text;
+    setSelectedVerseText(verseText);
+    setSelectedVerse(verseNum);
+  };
 
-//copy and save
-const handleCopyText = () => {
-  if (selectedVerseText) {
-    navigator.clipboard.writeText(selectedVerseText);
-    toast.success("Text copied!");
-  }
-};
-
+  //copy and save
+  const handleCopyText = () => {
+    if (selectedVerseText) {
+      navigator.clipboard.writeText(selectedVerseText);
+      toast.success("Text copied!");
+    }
+  };
 
   //!booked
   const getCurrentDate = (date) => {
@@ -79,74 +79,74 @@ const handleCopyText = () => {
   const [savedId, setSavedId] = useState(null);
   const [booked, setBooked] = useState(false);
 
-const handleBookPost = async (e) => {
-  //! POST
-  try {
-    e.preventDefault();
+  const handleBookPost = async (e) => {
+    //! POST
+    try {
+      e.preventDefault();
 
-    const data = {
-      text: selectedVerseText,
-      author: `${selectedBook} ${selectedChapter}:${selectedVerse}`,
-      date: selectedDate,
-      userId,
-    };
+      const data = {
+        text: selectedVerseText,
+        author: `${selectedBook} ${selectedChapter}:${selectedVerse}`,
+        date: selectedDate,
+        userId,
+      };
 
-    setLoading(true);
+      setLoading(true);
 
-    const res = await axios.post("/api/saved", data);
+      const res = await axios.post("/api/saved", data);
 
-    const refreshPage = () => {
-      setTimeout(() => {
-        window.location.reload();
-      }, 500);
-    };
+      const refreshPage = () => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
+      };
 
-    if (res) {
-      toast.success("Bookmark Saved!");
-      refreshPage();
-      setLoading(false);
-    } else {
-      throw new Error("Error");
-    }
-  } catch (error) {
-    console.error(error);
-  }
-};
-useEffect(() => {
-  const checkIfBooked = async () => {
-    const verseReference = `${selectedBook} ${selectedChapter}:${selectedVerse}`;
-
-    if (userId && verseReference) {
-      try {
-        const response = await axios.get(
-          `/api/saved?userId=${userId}&verseReference=${encodeURIComponent(
-            verseReference
-          )}`
-        );
-
-        if (
-          response.data.Saved2.some(
-            (item) => item.userId === userId && item.author === verseReference
-          )
-        ) {
-          const savedItem = response.data.Saved2.find(
-            (item) => item.userId === userId && item.author === verseReference
-          );
-          setBooked(true);
-          setSavedId(savedItem._id);
-        } else {
-          setBooked(false);
-          setSavedId(null);
-        }
-      } catch (error) {
-        console.error("Error checking if verse is saved:", error);
-        setBooked(false);
+      if (res) {
+        toast.success("Bookmark Saved!");
+        refreshPage();
+        setLoading(false);
+      } else {
+        throw new Error("Error");
       }
+    } catch (error) {
+      console.error(error);
     }
   };
+  useEffect(() => {
+    const checkIfBooked = async () => {
+      const verseReference = `${selectedBook} ${selectedChapter}:${selectedVerse}`;
 
-  checkIfBooked();
-}, [userId, selectedBook, selectedChapter, selectedVerse]);
+      if (userId && verseReference) {
+        try {
+          const response = await axios.get(
+            `/api/saved?userId=${userId}&verseReference=${encodeURIComponent(
+              verseReference
+            )}`
+          );
+
+          if (
+            response.data.Saved2.some(
+              (item) => item.userId === userId && item.author === verseReference
+            )
+          ) {
+            const savedItem = response.data.Saved2.find(
+              (item) => item.userId === userId && item.author === verseReference
+            );
+            setBooked(true);
+            setSavedId(savedItem._id);
+          } else {
+            setBooked(false);
+            setSavedId(null);
+          }
+        } catch (error) {
+          console.error("Error checking if verse is saved:", error);
+          setBooked(false);
+        }
+      }
+    };
+
+    checkIfBooked();
+  }, [userId, selectedBook, selectedChapter, selectedVerse]);
 
   //!delete
 
@@ -171,11 +171,22 @@ useEffect(() => {
     }
   };
 
+  const oldTestamentBooks = data.books.slice(0, 39);
+  const newTestamentBooks = data.books.slice(39);
+
+  const filteredOldTestamentBooks = oldTestamentBooks.filter((book) =>
+    book.name.toLowerCase().includes(filterText.toLowerCase())
+  );
+
+  const filteredNewTestamentBooks = newTestamentBooks.filter((book) =>
+    book.name.toLowerCase().includes(filterText.toLowerCase())
+  );
+
   return (
     <div>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      <div className="flex justify-center items-center flex-col pt-28 text-[var(--color2)]">
+      <div className="flex justify-center items-center flex-col pt-28 pb-10 text-[var(--color2)] mb-10">
         <span className="mb-8">
           <h1 className="text-[40px] underline ">Bible</h1>
           {data.version} version
@@ -189,12 +200,15 @@ useEffect(() => {
           className="bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72"
         />
 
-        <div className="grid gap-2 pt-12 sm:grid-cols-5  grid-cols-2">
+        <div
+          className="flex flex-wrap gap-2 pt-10 px-2 justify-center items-center"
+          style={{ maxWidth: "500px" }}
+        >
           <div style={{ gridColumn: "span 5", margin: "20px 0 20px 0 " }}>
-            <h2 className="text-center text-xl">Old testament</h2>
+            <h2 className="text-center text-xl w-[95vw]">Old testament</h2>
           </div>
-          {filteredBooks.map((book, index) => (
-            <>
+          {filteredOldTestamentBooks.length > 0 ? (
+            filteredOldTestamentBooks.map((book, index) => (
               <button
                 className="hover:text-blue-600"
                 key={index}
@@ -202,13 +216,27 @@ useEffect(() => {
               >
                 {book.name}
               </button>
-              {book.name === "Malachi" && (
-                <div style={{ gridColumn: "span 5", margin: "20px 0 20px 0 " }}>
-                  <h2 className="text-center text-xl">New testament</h2>
-                </div>
-              )}
-            </>
-          ))}
+            ))
+          ) : (
+            <div>Nothing found.</div>
+          )}
+
+          <div style={{ gridColumn: "span 5", margin: "20px 0 20px 0 " }}>
+            <h2 className="text-center text-xl w-[95vw]">New testament</h2>
+          </div>
+          {filteredNewTestamentBooks.length > 0 ? (
+            filteredNewTestamentBooks.map((book, index) => (
+              <button
+                className="hover:text-blue-600"
+                key={index}
+                onClick={() => handleClickBook(book.name)}
+              >
+                {book.name}
+              </button>
+            ))
+          ) : (
+            <div>Nothing found.</div>
+          )}
         </div>
         {selectedBook && (
           <div className="flex items-center justify-center flex-col pt-10">
@@ -216,8 +244,8 @@ useEffect(() => {
             <div className="flex items-center justify-center flex-col">
               <h3>Chapters</h3>
               <span
-                className="flex flex-wrap gap-2 pt-10 px-2"
-                style={{ maxWidth: "650px" }}
+                className="flex flex-wrap gap-2 pt-10 px-2 justify-center items-center"
+                style={{ maxWidth: "500px" }}
               >
                 {data.books
                   .find((book) => book.name === selectedBook)
@@ -239,8 +267,8 @@ useEffect(() => {
                   <h4>Verses</h4>
                   <div className="flex justify-center">
                     <span
-                      className="flex flex-wrap gap-2 pt-10 px-2"
-                      style={{ maxWidth: "650px" }}
+                      className="flex flex-wrap gap-2 pt-10 px-2 justify-center items-center"
+                      style={{ maxWidth: "500px" }}
                     >
                       {data.books
                         .find((book) => book.name === selectedBook)

@@ -7,7 +7,6 @@ import useFunctions from "../../components/Functions";
 import Footer from "../../components/Footer";
 import { useClerk } from "@clerk/nextjs";
 import { useState, useEffect } from "react";
-import { Pencil, Trash } from "lucide-react";
 import Link from "next/link";
 import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";

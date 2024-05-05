@@ -38,5 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Todo
 
-1 Api routes give correct verse only for one device, you will see different verse from other device - give same verse (per day) for everyone regardless of device 
 2 Api routes are not protected and sign in users can access to /api pages
