@@ -31,7 +31,7 @@ const Layout = () => {
   }, [isSignedIn, router]);
 
   return (
-    <div className={`${theme} notranslate`} style={{ width: "100vw" }}>
+    <div className={`${theme} notranslate`}>
       <nav className="border-b-2 border-[var(--color2)] bg-[var(--color1)] gap-2  flex justify-between items-center h-20 px-4 transition-all relative">
         <Link href={"/"}>
           <img

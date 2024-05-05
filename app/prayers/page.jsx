@@ -11,7 +11,6 @@ import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
 import { slideIn } from "../../utils/motion";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
 
 
 const Prayers = () => {
@@ -100,9 +99,6 @@ const Prayers = () => {
     }
   }, [userId]);
 
-   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
-   const cols = isSmallScreen ? 24 : 24;
-   const rows = isSmallScreen ? 7 : 7;
 
 
   return (
@@ -126,9 +122,7 @@ const Prayers = () => {
                 required
                 type="text"
                 placeholder="I am happy for .. "
-                className="bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
-                rows={rows}
-                cols={cols}
+                className=" w-72 h-52 bg-transparent resize-none outline-none    border-[var(--color2)] border-2 rounded-lg p-2 "
                 id="prayer"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
@@ -155,9 +149,7 @@ const Prayers = () => {
                     <textarea
                       type="text"
                       placeholder="Loading.. "
-                      className="bg-transparent resize-none outline-none  border-[var(--color2)] border-2 rounded-lg p-2  "
-                      rows={rows}
-                      cols={cols}
+                      className="  w-72 h-52 bg-transparent resize-none outline-none  border-[var(--color2)] border-2 rounded-lg p-2  "
                       id={`prayer-${index}`}
                       value={prayer.text}
                       readOnly

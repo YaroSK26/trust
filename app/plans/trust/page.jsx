@@ -101,7 +101,7 @@ const Trust = ({ swal }) => {
             className="text-[40px]  mt-10  flex justify-center items-center relative "
           >
             <Link href={"/home"}>
-              <ArrowLeft className="absolute  left-[-40px] top-2 cursor-pointer" />
+              <ArrowLeft className="absolute  left-[-40px] top-5 cursor-pointer" />
             </Link>
             Trust
           </motion.h1>

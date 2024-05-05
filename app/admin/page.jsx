@@ -56,10 +56,10 @@ const AdminPage = ({ swal }) => {
             {questionsDelete.map((q, index) => (
               <div
                 key={index}
-                className="flex flex-col justify-center items-center text-center gap-7 md:w-[500px] lg:w-[750px] m-auto"
+                className="flex flex-col px-2 justify-center items-center text-center gap-7 md:w-[500px] lg:w-[750px] m-auto"
               >
                 <h2 className="text-2xl">{q.question}</h2>
-                <ul className="grid md:grid-cols-2 grid-cols-1 gap-6">
+                <ul className="grid md:grid-cols-2 grid-cols-1 gap-6 ">
                   {q.answers.map((answer, ansIndex) => (
                     <li
                       key={ansIndex}

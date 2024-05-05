@@ -8,6 +8,8 @@ import { Bookmark, BookmarkCheck, Copy } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { useClerk } from "@clerk/nextjs";
 import axios from "axios";
+import { slideIn } from "../../utils/motion";
+import { motion } from "framer-motion";
 
 const BibleData = () => {
   const { theme, toggleTheme } = useFunctions();
@@ -17,10 +19,6 @@ const BibleData = () => {
   const handleFilterChange = (event) => {
     setFilterText(event.target.value);
   };
-
-  const filteredBooks = data.books.filter((book) =>
-    book.name.toLowerCase().includes(filterText.toLowerCase())
-  );
 
   //bible
   const [selectedBook, setSelectedBook] = useState(null);
@@ -186,7 +184,12 @@ const BibleData = () => {
     <div>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      <div className="flex justify-center items-center flex-col pt-28 pb-10 text-[var(--color2)] mb-10">
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={slideIn("left", "tween", 0.2, 1)}
+        className="flex justify-center items-center flex-col pt-28 pb-10 text-[var(--color2)] mb-10"
+      >
         <span className="mb-8">
           <h1 className="text-[40px] underline ">Bible</h1>
           {data.version} version
@@ -205,7 +208,7 @@ const BibleData = () => {
           style={{ maxWidth: "500px" }}
         >
           <div style={{ gridColumn: "span 5", margin: "20px 0 20px 0 " }}>
-            <h2 className="text-center text-xl w-[95vw]">Old testament</h2>
+            <h2 className="text-center text-2xl w-[95vw]">Old testament</h2>
           </div>
           {filteredOldTestamentBooks.length > 0 ? (
             filteredOldTestamentBooks.map((book, index) => (
@@ -222,7 +225,7 @@ const BibleData = () => {
           )}
 
           <div style={{ gridColumn: "span 5", margin: "20px 0 20px 0 " }}>
-            <h2 className="text-center text-xl w-[95vw]">New testament</h2>
+            <h2 className="text-center text-2xl w-[95vw]">New testament</h2>
           </div>
           {filteredNewTestamentBooks.length > 0 ? (
             filteredNewTestamentBooks.map((book, index) => (
@@ -318,7 +321,7 @@ const BibleData = () => {
             )}
           </div>
         )}
-      </div>
+      </motion.div>
       <Footer></Footer>
     </div>
   );

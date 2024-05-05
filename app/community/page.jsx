@@ -212,7 +212,7 @@ const Community = ({ swal }) => {
           <h1 className="text-[40px] underline">Community</h1>
 
           <div className="bg-[var(--color3)] sm:w-[500px] sm:h-[500px] w-[275px] h-[400px]  my-2 rounded-lg mx-1 border  border-[var(--color2)] ">
-            <div className="flex bg-[var(--color2)] text-[var(--color1)] rounded-lg py-2 justify-center items-center">
+            <div className="flex bg-[var(--color2)]  border-b-[var(--color1)] border-b-2 text-[var(--color1)] rounded-lg py-2 justify-center items-center">
               <p className="mr-2">get to know people like you</p>
               <MessagesSquare />
             </div>
