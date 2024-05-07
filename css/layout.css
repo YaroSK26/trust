@@ -1,47 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?&family=Poppins:wght@300;500;600&&display=swap');
+@import url("https://fonts.googleapis.com/css2?&family=Poppins:wght@300;500;600&&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*{
-    font-family: Poppins, sans-serif;
+* {
+  font-family: Poppins, sans-serif;
 }
 
-body,html{
-     background-color: var(--color1);
-     transition: all 150ms ease;
-     box-sizing: border-box;
+body,
+html {
+  background-color: var(--color1);
+  transition: all 150ms ease;
+  box-sizing: border-box;
 }
 
 .button {
-    background-color: var(--color2);
-    color: var(--color1);
-    font-weight: bold;
-    text-transform: uppercase;
-    box-shadow: var(--color2) 0px 2px 29px 0px;
-    border: none;
-    outline: none;
-    width: 150px;
-    height: 50px;
-    border-radius: 20px;
-    transition: all .5s ease;
-    text-decoration: none;
+  background-color: var(--color2);
+  color: var(--color1);
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: var(--color2) 0px 2px 29px 0px;
+  border: none;
+  outline: none;
+  width: 150px;
+  height: 50px;
+  border-radius: 20px;
+  transition: all 0.5s ease;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 350px) {
-    .button {
-        width: 125px;
-        height: 45px;
-    }
+  .button {
+    width: 125px;
+    height: 45px;
+  }
 }
 
-.button:hover{
-    background-color: var(--color1);
-    border: 1px solid var(--color2);
-    color: var(--color2);
-    transition: all .5s ease;
-    box-shadow: none;
-    text-decoration: none;
+.button:hover {
+  background-color: var(--color1);
+  border: 1px solid var(--color2);
+  color: var(--color2);
+  transition: all 0.5s ease;
+  box-shadow: none;
+  text-decoration: none;
 }
 
 /* The switch - the box around the slider */
@@ -62,7 +63,7 @@ body,html{
 
 /* The slider */
 .slider {
-  --background: #5E6368;
+  --background: #5e6368;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -70,7 +71,7 @@ body,html{
   right: 0;
   bottom: 0;
   background-color: var(--background);
-  transition: .5s;
+  transition: 0.5s;
   border-radius: 30px;
 }
 
@@ -82,18 +83,18 @@ body,html{
   border-radius: 50%;
   left: 10%;
   bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #E4E7E7;
+  box-shadow: inset 8px -4px 0px 0px #e4e7e7;
   background: var(--background);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 input:checked + .slider {
-  background-color: #5E6368;
+  background-color: #5e6368;
 }
 
 input:checked + .slider:before {
   transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #E4E7E7;
+  box-shadow: inset 15px -4px 0px 15px #e4e7e7;
 }
 
 /*dark white rezim */
@@ -104,7 +105,8 @@ input:checked + .slider:before {
   --color3: #111313;
 }
 
-body.light, html.light {
+body.light,
+html.light {
   --color1: #e4e7e7;
   --color2: #0a0b0b;
   --color3: #eee;
@@ -116,7 +118,6 @@ body.light, html.light {
   opacity: 0;
   height: 0;
   width: 0;
-  
 }
 
 .container {
@@ -125,7 +126,7 @@ body.light, html.light {
 }
 
 .checkmark {
-  --clr: #0B6E4F;
+  --clr: #0b6e4f;
   position: relative;
   top: 0;
   left: 0;
@@ -138,7 +139,7 @@ body.light, html.light {
 
 .container input:checked ~ .checkmark {
   background-color: var(--clr);
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   animation: pulse 500ms ease-in-out;
 }
 
@@ -157,14 +158,14 @@ body.light, html.light {
   top: 0.3em;
   width: 0.25em;
   height: 0.5em;
-  border: solid #E0E0E2;
+  border: solid #e0e0e2;
   border-width: 0 0.15em 0.15em 0;
   transform: rotate(45deg);
 }
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 #0B6E4F90;
+    box-shadow: 0 0 0 #0b6e4f90;
     rotate: 20deg;
   }
 
@@ -173,43 +174,43 @@ body.light, html.light {
   }
 
   75% {
-    box-shadow: 0 0 0 10px #0B6E4F60;
+    box-shadow: 0 0 0 10px #0b6e4f60;
   }
 
   100% {
-    box-shadow: 0 0 0 13px #0B6E4F30;
+    box-shadow: 0 0 0 13px #0b6e4f30;
     rotate: 0;
   }
 }
 
 /*nav*/
-nav ul li  {
-    text-decoration: none;
-    transition: color 1s;
-    position: relative;
+nav ul li {
+  text-decoration: none;
+  transition: color 1s;
+  position: relative;
 }
 
 nav ul li ::before {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: var(--color2);
-    transition: width 0.5s ease;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color2);
+  transition: width 0.5s ease;
 }
 
 nav ul li :hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 nav ul li :hover::after {
-    width: 0%;}
-
+  width: 0%;
+}
 
 #google_translate_element {
-  @apply flex justify-center items-center  
+  @apply flex justify-center items-center;
 }
 
 #google_translate_element select {
@@ -218,11 +219,11 @@ nav ul li :hover::after {
 
 .goog-te-gadget .goog-te-combo {
   padding: 10px;
-  border: 1px solid #ccc; 
-  border-radius: 5px; 
-  background-color: var(--clr); 
-  @apply bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72; 
-  cursor: pointer; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: var(--clr);
+  @apply bg-transparent border-t-transparent border-x-transparent  outline-none border-b-[var(--color2)] border p-1 w-64 sm:w-72;
+  cursor: pointer;
 }
 
 /* Skrytie značky Google */
@@ -240,10 +241,9 @@ nav ul li :hover::after {
 
 #google_translate_element span {
   display: none !important;
-
 }
 
-#google_translate_element div, 
+#google_translate_element div,
 #google_translate_element span {
   visibility: hidden;
 }
@@ -256,14 +256,76 @@ nav ul li :hover::after {
   visibility: visible;
 }
 
-
-
-
-.badge-div img{
-  @apply w-52 h-52
+.badge-div img {
+  @apply w-52 h-52;
 }
-
 
 .justify-center {
   justify-content: center;
+}
+
+/*preloader*/
+:root {
+  --loader-text-color: #e4e7e7;
+  --loader-dot-color: #e4e7e7;
+  --loader-bg: #0a0b0b;
+}
+.loader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: var(--loader-bg);
+  display: grid;
+  place-content: center;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Air */
+.svg {
+  width: 20rem;
+}
+.svg text {
+  font-size: 5rem;
+  stroke-width: 2;
+}
+.svg text.text-body {
+  stroke: var(--loader-text-color);
+  animation: 4s infinite alternate animate-stroke;
+}
+.svg text.dot {
+  fill: var(--loader-dot-color);
+  stroke: var(--loader-dot-color);
+  animation: 4s infinite alternate animate-dot;
+}
+
+@keyframes animate-stroke {
+  0% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 3;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+  50% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 3;
+  }
+  80%,
+  100% {
+    fill: var(--loader-text-color);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
+}
+@keyframes animate-dot {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

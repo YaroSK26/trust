@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Instagram, Github } from "lucide-react";
 import TypewriterComponent from "typewriter-effect";
 import useFunctions from "../components/Functions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ClerkLoading,
@@ -29,6 +29,31 @@ const Layout = () => {
       router.push("/home");
     }
   }, [isSignedIn, router]);
+   const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+     const timer = setTimeout(() => {
+       setLoading(false);
+     }, 3000); // Change this to the time you want
+
+     return () => clearTimeout(timer); // This will clear the timer when the component unmounts
+   }, []);
+
+   if (loading) {
+     return (
+      <div class="loader-container">
+		<svg className="svg" viewBox="0 0 400 160">
+			<text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+				Trust
+			</text>
+			<text x="50%" y="50%" dx="1.5em" dy=".32rem" text-anchor="middle" class="dot">
+				.
+			</text>
+		</svg>
+	</div>
+     ); 
+   }
+
 
   return (
     <div className={`${theme} notranslate`}>
@@ -69,7 +94,7 @@ const Layout = () => {
             </Link>
           </SignedIn>
         </ClerkLoaded>
-      </nav>
+      </nav>  
 
       <section className="mt-[70px]  mb-2">
         <div className="text-[var(--color2)] flex justify-center items-center flex-col px-1">
