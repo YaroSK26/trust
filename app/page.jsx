@@ -34,9 +34,9 @@ const Layout = () => {
    useEffect(() => {
      const timer = setTimeout(() => {
        setLoading(false);
-     }, 3000); // Change this to the time you want
+     }, 3000); 
 
-     return () => clearTimeout(timer); // This will clear the timer when the component unmounts
+     return () => clearTimeout(timer); 
    }, []);
 
    if (loading) {

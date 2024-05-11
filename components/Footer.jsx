@@ -20,7 +20,7 @@ const Footer = () => {
           &copy; Copyright all rights reserved. Created by &nbsp;
           <Link
             target="_blank"
-            href={"https://jaroslav-portfolio.vercel.app/"}
+            href={"https://jaroslav.website/"}
             className="underline"
           >
              Jaroslav Barabáš
