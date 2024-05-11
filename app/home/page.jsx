@@ -11,9 +11,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { projects } from "../../components/projects";
 import Quiz from "../../components/Quiz"
+import useLenis from "../../components/lenis";
 
 const Dashboard = () => {
   const { theme, toggleTheme } = useFunctions();
+  useLenis();
 
   return (
     <div className={theme}>

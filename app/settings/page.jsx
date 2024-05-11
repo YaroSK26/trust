@@ -10,9 +10,11 @@ import "../../css/layout.css";
 import { useClerk } from "@clerk/nextjs";
 import { BookmarkCheck, Copy } from "lucide-react";
 import { toast } from "react-hot-toast";
+import useLenis from "../../components/lenis";
 
 const Settings = () => {
   const { theme, toggleTheme } = useFunctions();
+  useLenis();
   const [isLoading, setIsLoading] = useState(false);
 
   //!verses
