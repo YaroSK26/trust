@@ -1534,5 +1534,257 @@ let questions = [
     explanation:
       "The Book of Psalms contains a collection of prayers, songs, and poems attributed to various authors.",
   },
+  {
+    question: "Guess the biblical character: 🍎🐍",
+    answers: [
+      { text: "Adam", correct: false },
+      { text: "Eve", correct: true },
+      { text: "Noah", correct: false },
+      { text: "Moses", correct: false },
+    ],
+    explanation:
+      "Eve is associated with the apple and the snake from the story of the Garden of Eden.",
+  },
+  {
+    question: "Guess the biblical character: 🌊🚢🕊️",
+    answers: [
+      { text: "Jonah", correct: false },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: true },
+      { text: "Adam", correct: false },
+    ],
+    explanation:
+      "Noah is known for the story of the Great Flood, where he built an ark and sent out a dove to find land.",
+  },
+  {
+    question: "Guess the biblical character: 🌾🔥",
+    answers: [
+      { text: "Samson", correct: false },
+      { text: "Moses", correct: true },
+      { text: "Noah", correct: false },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Moses is associated with the burning bush, where he received his call from God.",
+  },
+  {
+    question: "Guess the biblical character: 🐳🙏",
+    answers: [
+      { text: "Jonah", correct: true },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Adam", correct: false },
+    ],
+    explanation: "Jonah is known for being swallowed by a big fish or whale.",
+  },
+  {
+    question: "Guess the biblical character: 🦁💪",
+    answers: [
+      { text: "Samson", correct: true },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Samson is known for his superhuman strength and his encounter with a lion.",
+  },
+  {
+    question: "Guess the biblical character: 👑💍",
+    answers: [
+      { text: "Samson", correct: false },
+      { text: "Solomon", correct: true },
+      { text: "Noah", correct: false },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Solomon is known as a wise king who also built the first temple in Jerusalem.",
+  },
+  {
+    question: "Guess the biblical character: 🍷🍞",
+    answers: [
+      { text: "Jesus", correct: true },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Adam", correct: false },
+    ],
+    explanation:
+      "Jesus is known for the Last Supper, where bread and wine were significant elements.",
+  },
+  {
+    question: "Guess the biblical character: 🌈",
+    answers: [
+      { text: "Samson", correct: false },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: true },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Noah is associated with the rainbow, which was a sign of God's promise after the Great Flood.",
+  },
+  {
+    question: "Guess the biblical character: 🌟👑🎁",
+    answers: [
+      { text: "Samson", correct: false },
+      { text: "Solomon", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Jesus", correct: true },
+    ],
+    explanation:
+      "Jesus is associated with the Star of Bethlehem and the gifts from the three wise men.",
+  },
+  {
+    question: "Guess the biblical character: 🐑🔥",
+    answers: [
+      { text: "Abraham", correct: true },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Adam", correct: false },
+    ],
+    explanation:
+      "Abraham is known for the story where he was asked to sacrifice his son, but was provided a ram by God.",
+  },
+  {
+    question: "Guess the biblical character: 🌾👑",
+    answers: [
+      { text: "Ruth", correct: true },
+      { text: "Moses", correct: false },
+      { text: "Noah", correct: false },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Ruth is known for her story in the field of Boaz, who later became her husband and she became an ancestor of King David.",
+  },
+  {
+    question: "Guess the biblical character: 🐦🌿",
+    answers: [
+      { text: "Samson", correct: false },
+      { text: "Solomon", correct: false },
+      { text: "Noah", correct: true },
+      { text: "Eve", correct: false },
+    ],
+    explanation:
+      "Noah is associated with the dove returning with an olive branch, signaling the end of the flood.",
+  },
+  {
+    question: "Guess the apostle: 🐟🎣",
+    answers: [
+      { text: "Peter", correct: true },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "Peter, also known as Simon Peter, was a fisherman before he became an apostle.",
+  },
+  {
+    question: "Guess the apostle: 📖💰",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: true },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "Matthew, also known as Levi, was a tax collector before he became an apostle.",
+  },
+  {
+    question: "Guess the apostle: 💋💰",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: true },
+    ],
+    explanation:
+      "Judas Iscariot is known for betraying Jesus with a kiss for thirty pieces of silver.",
+  },
+  {
+    question: "Guess the apostle: 🦅✍️",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: true },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "John, also known as John the Evangelist, is traditionally regarded as the author of the Gospel of John.",
+  },
+  {
+    question: "Guess the apostle: 🗡️👂",
+    answers: [
+      { text: "Peter", correct: true },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "Peter is known for cutting off the ear of a servant of the high priest during Jesus' arrest.",
+  },
+  {
+    question: "Guess the apostle: 🐍🔥",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "Paul", correct: true },
+    ],
+    explanation:
+      "Paul, though not one of the original twelve, is known for surviving a snake bite unharmed.",
+  },
+  {
+    question: "Guess the apostle: 🌌📖",
+    answers: [
+      { text: "Peter", correct: false },
+      { text: "John", correct: true },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "John is traditionally regarded as the author of the book of Revelation, which contains visions of the end times.",
+  },
+  {
+    question: "Guess the apostle: 🎣👥",
+    answers: [
+      { text: "Andrew", correct: true },
+      { text: "John", correct: false },
+      { text: "Matthew", correct: false },
+      { text: "Judas", correct: false },
+    ],
+    explanation:
+      "Andrew, Peter's brother, was also a fisherman and is known for bringing others to Jesus.",
+  },
+  {
+    question: "Guess the prophet: 🌱🔥",
+    answers: [
+      { text: "Isaiah", correct: true },
+      { text: "Ezekiel", correct: false },
+      { text: "John", correct: false },
+      { text: "Daniel", correct: false },
+    ],
+    explanation:
+      "Isaiah is known for his prophecy of the Messiah coming from the stump of Jesse and being a light for the nations.",
+  },
+  {
+    question: "Guess the prophet: 💀🌱",
+    answers: [
+      { text: "Isaiah", correct: false },
+      { text: "Ezekiel", correct: true },
+      { text: "John", correct: false },
+      { text: "Daniel", correct: false },
+    ],
+    explanation:
+      "Ezekiel is known for his vision of the valley of dry bones being brought to life.",
+  },
+  {
+    question: "Guess the prophet: 🦗🍯",
+    answers: [
+      { text: "Isaiah", correct: false },
+      { text: "Ezekiel", correct: false },
+      { text: "John", correct: true },
+      { text: "Daniel", correct: false },
+    ],
+    explanation:
+      "John the Baptist is known for his diet of locusts and wild honey in the wilderness.",
+  },
 ];
 export default questions;
