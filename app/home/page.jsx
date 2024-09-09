@@ -88,8 +88,13 @@ const Dashboard = () => {
             See more...
           </p>
         </Link>
-          
-          <Quiz></Quiz>
+
+        <Quiz></Quiz>
+
+        <h1 className="text-center mt-12">
+          Check out my other christian site!{" "}
+          <a className="underline" href="https://bible-story.vercel.app/" target="_blank">Bible Story</a>
+        </h1>
 
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
