@@ -1,13 +1,12 @@
-"use client"
+"use client";
 
 import { Github, Instagram } from "lucide-react";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 
-
 const Footer = () => {
-   const isSmallScreen = useMediaQuery({ maxWidth: 600 });
-   const iconSize = isSmallScreen ? 38 : 48;
+  const isSmallScreen = useMediaQuery({ maxWidth: 600 });
+  const iconSize = isSmallScreen ? 38 : 48;
   return (
     <div className="mt-16 flex justify-center items-center text-center  ">
       <footer
@@ -20,10 +19,10 @@ const Footer = () => {
           &copy; Copyright all rights reserved. Created by &nbsp;
           <Link
             target="_blank"
-            href={"https://jaroslav.website/"}
+            href={"https://jaroslav-portfolio.eu/"}
             className="underline"
           >
-             Jaroslav Barabáš
+            Jaroslav Barabáš
           </Link>
         </p>
         <div className=" flex justify-center items-center gap-3 text-[var(--color2)] mt-1">

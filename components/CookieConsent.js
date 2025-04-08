@@ -6,7 +6,8 @@ const CookieConsent = () => {
     const script = document.createElement('script');
     script.id = "cookieyes";
     script.type = "text/javascript";
-    script.src = "https://cdn-cookieyes.com/client_data/0a62e24c3ffdcc1e3e7c1446/script.js";
+    script.src =
+      "https://cdn-cookieyes.com/client_data/ac72522637e2ee34f1e20530/script.js";
     script.async = true;
     document.body.appendChild(script);
 
